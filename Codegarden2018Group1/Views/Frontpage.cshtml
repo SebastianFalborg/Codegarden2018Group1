@@ -1,0 +1,7 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Frontpage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Shared/_Layout.cshtml";
+}
+<h1>@Model.Content.Headline</h1>
+<p>@Model.Content.Bodytext</p>
