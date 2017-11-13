@@ -1,2 +1,22 @@
-﻿body {
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+footer {
+    background-color: $gray;
+    padding: 25px 0;
+
+    p, span {
+        color: white;
+        font-size: 0.7rem;
+    }
+
+    ul {
+        li {
+            display: inline-block;
+
+            a {
+                color: white;
+                font-size: 0.7rem;
+            }
+        }
+    }
 }
