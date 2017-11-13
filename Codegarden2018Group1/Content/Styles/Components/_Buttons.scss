@@ -3,6 +3,7 @@
 
 a, button {
     &.main-link {
+        @include font-bold;
         width: 100%;
         background-color: white;
         border-radius: 3px;

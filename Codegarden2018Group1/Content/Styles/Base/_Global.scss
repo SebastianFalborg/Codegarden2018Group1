@@ -6,15 +6,33 @@ html{
 body{
     margin:0;
     padding:0;
+    @include font-regular;
 }
 h1, h2,h3,h4{
+    @include font-bold;
 
 }
-.cover{
-    @include cover;
+h1{
+    font-size: 3.5rem;
+}
+h2{
+    font-size: 3rem;
+    color: $red;
+}
+
+p{
+    @include font-regular;
 }
 a{
+    color: white;
     &:hover, &:active, &:focus{
         text-decoration: none;
+        color: white;
     }
+}
+hr {
+    border-top: 1px solid $light-gray;
+}
+.cover {
+    @include cover;
 }

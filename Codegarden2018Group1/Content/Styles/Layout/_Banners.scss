@@ -23,3 +23,18 @@
         }
     }
 }
+@include phones {
+    .main-banner {
+        height: 100vh;
+
+        &.frontpage-banner {
+            .banner-content {
+
+                svg {
+                    width: 270px;
+                    height: 190px;
+                }
+            }
+        }
+    }
+}

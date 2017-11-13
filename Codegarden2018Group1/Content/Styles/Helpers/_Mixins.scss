@@ -103,49 +103,20 @@
 
 //font
 
-@font-face {
+/*@font-face {
     font-family: 'Montserrat-ExtraLight';
     src: url('/Content/Fonts/Montserrat-ExtraLight.otf') format('opentype'),url('/Content/Fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-ExtraLight.woff') format('woff'), url('/Content/Fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('/Content/Fonts/Montserrat-ExtraLight.svg#svgFontName') format('svg');
-}
+}*/
 
-@font-face {
-    font-family: 'Montserrat-Light';
-    src: url('/Content/Fonts/Montserrat-Light.otf') format('opentype'),url('/Content/Fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-Light.woff') format('woff'), url('/Content/Fonts/Montserrat-Light.ttf') format('truetype'), url('/Content/Fonts/Montserrat-Light.svg#svgFontName') format('svg');
-}
-
-@font-face {
-    font-family: 'Montserrat-Regular';
-    src: url('/Content/Fonts/Montserrat-Regular.otf') format('opentype'),url('/Content/Fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-Regular.woff') format('woff'), url('/Content/Fonts/Montserrat-Regular.ttf') format('truetype'), url('/Content/Fonts/Montserrat-Regular.svg#svgFontName') format('svg');
-}
-
-@font-face {
-    font-family: 'Montserrat-SemiBold';
-    src: url('/Content/Fonts/Montserrat-SemiBold.otf') format('opentype'),url('/Content/Fonts/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-SemiBold.woff') format('woff'), url('/Content/Fonts/Montserrat-SemiBold.ttf') format('truetype'), url('/Content/Fonts/Montserrat-SemiBold.svg#svgFontName') format('svg');
-}
-
-@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url('/Content/Fonts/Montserrat-Bold.otf') format('opentype'), url('/Content/Fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-Bold.woff') format('woff'), url('/Content/Fonts/Montserrat-Bold.ttf') format('truetype'), url('/Content/Fonts/Montserrat-Bold.svg#svgFontName') format('svg');
-}
-
-@mixin font-ExtraLight {
-    font-family: 'Montserrat-ExtraLight', sans-serif;
-}
-
-@mixin font-light {
-    font-family: 'Montserrat-Light', sans-serif;
-}
 
 @mixin font-regular {
-    font-family: 'Montserrat-Regular', sans-serif;
-}
-
-@mixin font-semibold {
-    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
 }
 
 @mixin font-bold {
-    font-family: 'Montserrat-Bold', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 

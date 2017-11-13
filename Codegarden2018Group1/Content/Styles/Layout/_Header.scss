@@ -2,7 +2,7 @@
 @import "../Helpers/Vars";
 
 $menu-icon-width: 30px;
-$menu-icon-height: 3px;
+$menu-icon-height: 2px;
 $menu-icon-space: 7px;
 header {
     position: fixed;
@@ -14,26 +14,35 @@ header {
 }
 
 .menu-icon-container {
-    position:absolute;
-    top:25px;
-    right:25px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
     cursor: pointer;
-    width: $menu-icon-width;
-    height: 50px;
-    z-index:5;
+    width: ($menu-icon-width * 1.8);
+    height: ($menu-icon-width * 1.8);
+    z-index: 5;
+    background-color: $purple;
+    border-radius: 50%;
+    transition: $transition;
+    &:hover{
+        transform: scale(1.08);
+    }
+
     &.active {
+        background-color: white;
+
         span {
             &.menu-icon {
-                transform: rotate(45deg) translate(0px,9px);
-                background-color: white;
+                transform: rotate(45deg) translate(6px,6px);
+                background-color: $purple;
 
                 &::before {
                     opacity: 0;
                 }
 
                 &::after {
-                    transform: rotate(-90deg) translate(13px, -1px);
-                    background-color: white;
+                    transform: rotate(-90deg) translate(14px, 0px);
+                    background-color: $purple;
                 }
             }
         }
@@ -46,17 +55,18 @@ header {
         &.menu-icon {
             position: absolute;
             top: 0;
-            background-color: $purple;
+            background-color: white;
             width: $menu-icon-width;
             height: $menu-icon-height;
             padding: 0;
             transition: $transition;
+            margin: 19px 12px;
 
             &::before, &::after {
                 content: '';
                 position: absolute;
                 top: $menu-icon-space;
-                background-color: $purple;
+                background-color: white;
                 width: $menu-icon-width;
                 height: $menu-icon-height;
                 transition: $transition;
@@ -108,6 +118,7 @@ header {
                 transition: $transition;
 
                 a {
+                    @include font-bold;
                     color: white;
                     font-size: 1.1rem;
                     display: block;

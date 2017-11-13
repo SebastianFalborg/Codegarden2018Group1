@@ -303,6 +303,7 @@
     <Content Include="Content\Styles\Base\_BootstrapOverwrites.scss" />
     <Content Include="Content\Styles\Partials\_MainBlock.scss" />
     <Content Include="Content\Styles\Layout\_Banners.scss" />
+    <Content Include="Content\Styles\Layout\_Overlay.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -331,6 +332,7 @@
     <Content Include="Views\Partials\_Navigation.cshtml" />
     <Content Include="Views\AboutPage.cshtml" />
     <Content Include="Views\Partials\_Sprint.cshtml" />
+    <Content Include="Views\Partials\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -366,6 +368,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\AboutPage.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />

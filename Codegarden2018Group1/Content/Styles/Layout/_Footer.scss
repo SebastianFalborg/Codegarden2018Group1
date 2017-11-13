@@ -4,17 +4,26 @@ footer {
     background-color: $gray;
     padding: 25px 0;
 
-    p, span {
+    p {
         color: white;
+        font-size: 0.7rem;
+    }
+
+    span, ul {
+        display: inline-block;
+    }
+
+    span {
+        color: $light-gray;
         font-size: 0.7rem;
     }
 
     ul {
         li {
             display: inline-block;
-
+            margin: 0 5px;
             a {
-                color: white;
+                color: $light-gray;
                 font-size: 0.7rem;
             }
         }
