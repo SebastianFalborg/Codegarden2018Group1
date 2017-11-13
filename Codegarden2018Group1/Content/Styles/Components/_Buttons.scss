@@ -1,0 +1,20 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+a, button {
+    &.main-link {
+        width: 100%;
+        background-color: white;
+        border-radius: 3px;
+        display: inline-block;
+        padding: 12px 0;
+        color: black;
+        border: 0;
+        text-align: center;
+
+        &.green-btn {
+            background-color: $green;
+            color: white;
+        }
+    }
+}

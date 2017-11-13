@@ -1,1 +1,17 @@
-﻿@import "Base/Global";
+﻿
+// base
+@import "Base/Global";
+@import "Base/BootstrapOverwrites";
+
+// components
+@import "Components/Buttons";
+
+// layout
+@import "Layout/Banners";
+@import "Layout/Footer";
+@import "Layout/Header";
+@import "Layout/Overlay";
+
+
+// partials
+@import "Partials/MainBlock";

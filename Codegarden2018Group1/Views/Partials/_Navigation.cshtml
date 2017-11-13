@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<!-- Navbar -->
+<nav>
+        <ul class="list-unstyled">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            @{ var selection = CurrentPage.Site().Children.Where("Visible");}
+            @foreach (var item in selection)
+            {
+
+                <li class="@(item.IsAncestorOrSelf(CurrentPage) ? "active" : "")">
+                    <a href="@item.url">@item.Name</a>
+                </li>
+            }
+        </ul>
+</nav>

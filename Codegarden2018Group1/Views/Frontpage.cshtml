@@ -3,5 +3,21 @@
 @{
     Layout = "Shared/_Layout.cshtml";
 }
-<h1>@Model.Content.Headline</h1>
-<p>@Model.Content.Bodytext</p>
+<div class="main-banner frontpage-banner cover" style="background-image:url('@Model.Content.BannerImage.Url')">
+    <div class="image-overlay"></div>
+    <div class="banner-content">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#logo-svg" />
+        </svg>
+        <div class="banner-links">
+            <a href="@Model.Content.BannerLink.Url" class="main-link green-btn">Convince your boss</a>
+            <a href="@Model.Content.BannerSecondLink.Url" class="main-link">See the program</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+@*<h1>@Model.Content.Headline</h1>*@
+@*<p>@Model.Content.Bodytext</p>*@

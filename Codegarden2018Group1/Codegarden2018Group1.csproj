@@ -297,10 +297,17 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\Styles\Layout\_Header.scss" />
+    <Content Include="Content\Styles\Layout\_Footer.scss" />
+    <Content Include="Content\Styles\Components\_Buttons.scss" />
+    <Content Include="Content\Styles\Base\_BootstrapOverwrites.scss" />
+    <Content Include="Content\Styles\Partials\_MainBlock.scss" />
+    <Content Include="Content\Styles\Layout\_Banners.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Custom\Custom.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
@@ -321,6 +328,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Views\Partials\_Navigation.cshtml" />
+    <Content Include="Views\AboutPage.cshtml" />
+    <Content Include="Views\Partials\_Sprint.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -368,11 +378,9 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Fonts\" />
     <Folder Include="Content\Img\Icons\" />
     <Folder Include="Content\Img\Logo\" />
-    <Folder Include="Content\Styles\Components\" />
-    <Folder Include="Content\Styles\Layout\" />
-    <Folder Include="Content\Styles\Partials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

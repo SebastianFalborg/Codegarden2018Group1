@@ -1,5 +1,5 @@
-﻿
-
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
 html{
     font-size: 16px;
 }
@@ -9,4 +9,12 @@ body{
 }
 h1, h2,h3,h4{
 
+}
+.cover{
+    @include cover;
+}
+a{
+    &:hover, &:active, &:focus{
+        text-decoration: none;
+    }
 }

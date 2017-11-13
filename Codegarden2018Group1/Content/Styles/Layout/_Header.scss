@@ -1,0 +1,119 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+$menu-icon-width: 30px;
+$menu-icon-height: 3px;
+$menu-icon-space: 7px;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $header-height;
+    z-index: 5;
+}
+
+.menu-icon-container {
+    position:absolute;
+    top:25px;
+    right:25px;
+    cursor: pointer;
+    width: $menu-icon-width;
+    height: 50px;
+    z-index:5;
+    &.active {
+        span {
+            &.menu-icon {
+                transform: rotate(45deg) translate(0px,9px);
+                background-color: white;
+
+                &::before {
+                    opacity: 0;
+                }
+
+                &::after {
+                    transform: rotate(-90deg) translate(13px, -1px);
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    span {
+        padding: 15px 0;
+        display: inline-block;
+
+        &.menu-icon {
+            position: absolute;
+            top: 0;
+            background-color: $purple;
+            width: $menu-icon-width;
+            height: $menu-icon-height;
+            padding: 0;
+            transition: $transition;
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: $menu-icon-space;
+                background-color: $purple;
+                width: $menu-icon-width;
+                height: $menu-icon-height;
+                transition: $transition;
+            }
+
+            &::after {
+                top: ($menu-icon-space * 2);
+            }
+        }
+    }
+}
+.navigation-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    background-color: $purple;
+    transform: translateX(100%);
+    transition: $transition;
+
+    &.active {
+        transform: translateX(0);
+
+        nav {
+            ul {
+                li {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    nav {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        ul {
+            @include center;
+            width: 80%;
+            text-align: left;
+
+            li {
+                transform: translateX(-10px);
+                opacity: 0;
+                transition-delay: 0.5s;
+                transition: $transition;
+
+                a {
+                    color: white;
+                    font-size: 1.1rem;
+                    display: block;
+                    margin: 15px 0;
+                }
+            }
+        }
+    }
+}

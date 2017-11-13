@@ -8,14 +8,24 @@
     <link href="~/Content/Styles/Style.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="main-wrapper">
+        <header>
+            <div class="menu-icon-container" data-menu-toggle>
+                <span class="menu-icon"></span>
+            </div>
+            <div class="navigation-container" data-menu-content>
+                @Html.Partial("_Navigation")
+            </div>
+        </header>
+        <div>
+            @RenderBody()
+        </div>
+        <footer>
+            <h2>footer</h2>
+        </footer>
     </div>
-
-
-
-
-
+  
+    @Html.Partial("_Sprint")
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/Custom/Custom.js"></script>

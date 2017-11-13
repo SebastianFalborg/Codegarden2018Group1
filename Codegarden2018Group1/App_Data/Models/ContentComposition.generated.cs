@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Frontpage</summary>
-	[PublishedContentModel("frontpage")]
-	public partial class Frontpage : PublishedContentModel
+	/// <summary>Content composition</summary>
+	[PublishedContentModel("contentComposition")]
+	public partial class ContentComposition : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "frontpage";
+		public new const string ModelTypeAlias = "contentComposition";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Frontpage(IPublishedContent content)
+		public ContentComposition(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +40,9 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Frontpage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentComposition, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Banner image
-		///</summary>
-		[ImplementPropertyType("bannerImage")]
-		public IPublishedContent BannerImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("bannerImage"); }
-		}
-
-		///<summary>
-		/// Banner link
-		///</summary>
-		[ImplementPropertyType("bannerLink")]
-		public IPublishedContent BannerLink
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("bannerLink"); }
-		}
-
-		///<summary>
-		/// Banner second link
-		///</summary>
-		[ImplementPropertyType("bannerSecondLink")]
-		public IPublishedContent BannerSecondLink
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("bannerSecondLink"); }
 		}
 
 		///<summary>
@@ -79,6 +52,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Bodytext
 		{
 			get { return this.GetPropertyValue<string>("bodytext"); }
+		}
+
+		///<summary>
+		/// Content image
+		///</summary>
+		[ImplementPropertyType("contentImage")]
+		public IPublishedContent ContentImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("contentImage"); }
 		}
 
 		///<summary>

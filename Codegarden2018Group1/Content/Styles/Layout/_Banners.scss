@@ -1,0 +1,25 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.main-banner {
+    position: relative;
+    height: 80vh;
+
+    &.frontpage-banner {
+        .banner-content {
+            @include center;
+
+            svg {
+                width: 450px;
+                height: 318px;
+            }
+
+            .banner-links {
+                margin: 0 50px;
+                a{
+                    margin-bottom:15px;
+                }
+            }
+        }
+    }
+}
