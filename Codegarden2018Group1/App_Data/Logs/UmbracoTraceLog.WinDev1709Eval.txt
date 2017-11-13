@@ -1,0 +1,48 @@
+﻿ 2017-11-13 07:11:35,037 [P5584/D2/T10] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: InitializationError
+
+_shutDownMessage=Initialization Error
+HostingEnvironment initiated shutdown
+Directory rename change notification for 'Z:\GitHub\Codegarden2018Group1\Codegarden2018Group1'.
+Overwhelming Change Notification in Codegarden2018Group1
+CONFIG change
+CONFIG change
+CONFIG change
+CONFIG change
+CONFIG change
+Overwhelming Change Notification in 
+CONFIG change
+CONFIG change
+CONFIG change
+CONFIG change
+Change Notification for critical directories.
+Overwhelming Change Notification in App_WebReferences
+CONFIG change
+Change Notification for critical directories.
+Overwhelming Change Notification in App_Code
+CONFIG change
+Overwhelming Change Notification in Z:\GitHub\Codegarden2018Group1\Codegarden2018Group1
+CONFIG change
+Change Notification for critical directories.
+Overwhelming Change Notification in App_GlobalResources
+Change Notification for critical directories.
+Overwhelming Change Notification in App_Browsers
+CONFIG change
+CONFIG change
+CONFIG change
+Change Notification for critical directories.
+Overwhelming Change Notification in bin
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.AppDomainShutdownTimerCallback(Object state)
+   at System.Threading.TimerQueueTimer.CallCallbackInContext(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+   at System.Threading.TimerQueue.AppDomainTimerCallback()
