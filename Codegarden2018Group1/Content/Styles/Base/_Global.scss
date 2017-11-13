@@ -36,3 +36,17 @@ hr {
 .cover {
     @include cover;
 }
+.main-wrapper {
+    position: relative;
+    transition: $transition;
+    transition-delay: 0.2s;
+
+    &.active {
+        transform: translateX(-$menu-width / 2);
+
+        .main-overlay {
+            visibility:visible;
+            opacity: 1;
+        }
+    }
+}

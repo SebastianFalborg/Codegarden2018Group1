@@ -9,15 +9,16 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
-    <div class="main-wrapper">
-        <header>
-            <div class="menu-icon-container" data-menu-toggle>
-                <span class="menu-icon"></span>
-            </div>
-            <div class="navigation-container" data-menu-content>
-                @Html.Partial("_Navigation")
-            </div>
-        </header>
+    <header>
+        <div class="menu-icon-container" data-menu-toggle>
+            <span class="menu-icon"></span>
+        </div>
+        <div class="navigation-container" data-menu-content>
+            @Html.Partial("_Navigation")
+        </div>
+    </header>
+    <div class="main-wrapper" data-main-wrapper>
+       <div class="main-overlay"></div>
         <div>
             @RenderBody()
         </div>

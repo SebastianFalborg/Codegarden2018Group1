@@ -40,6 +40,16 @@ hr {
   background-position: center center;
   background-repeat: no-repeat; }
 
+.main-wrapper {
+  position: relative;
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-delay: 0.2s; }
+  .main-wrapper.active {
+    transform: translateX(-200px); }
+    .main-wrapper.active .main-overlay {
+      visibility: visible;
+      opacity: 1; }
+
 /*@font-face {
     font-family: 'Montserrat-ExtraLight';
     src: url('/Content/Fonts/Montserrat-ExtraLight.otf') format('opentype'),url('/Content/Fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-ExtraLight.woff') format('woff'), url('/Content/Fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('/Content/Fonts/Montserrat-ExtraLight.svg#svgFontName') format('svg');
@@ -174,9 +184,11 @@ header {
   width: 400px;
   background-color: #7f71cd;
   transform: translateX(100%);
-  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-delay: 0.2s; }
   .navigation-container.active {
-    transform: translateX(0); }
+    transform: translateX(0);
+    transition-delay: 0s; }
     .navigation-container.active nav ul li {
       transform: translateX(0);
       opacity: 1; }
@@ -208,11 +220,17 @@ header {
     font-family: 'Montserrat-ExtraLight';
     src: url('/Content/Fonts/Montserrat-ExtraLight.otf') format('opentype'),url('/Content/Fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-ExtraLight.woff') format('woff'), url('/Content/Fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('/Content/Fonts/Montserrat-ExtraLight.svg#svgFontName') format('svg');
 }*/
-.image-overlay {
+.image-overlay, .main-overlay {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.6); }
+
+.main-overlay {
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
 

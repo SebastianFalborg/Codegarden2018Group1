@@ -1,9 +1,14 @@
 ﻿@import "../Helpers/Mixins";
 @import "../Helpers/Vars";
 
-.image-overlay{
-    position:absolute;
+.image-overlay, .main-overlay {
+    position: absolute;
     @include all-sides;
     background: rgba(0,0,0,0.6);
-    
+}
+.main-overlay{
+    z-index:15;
+    opacity:0;
+    visibility:hidden;
+transition: $transition;
 }

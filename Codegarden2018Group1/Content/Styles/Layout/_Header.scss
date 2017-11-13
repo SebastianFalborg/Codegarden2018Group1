@@ -83,13 +83,15 @@ header {
     right: 0;
     top: 0;
     bottom: 0;
-    width: 400px;
+    width: $menu-width;
     background-color: $purple;
     transform: translateX(100%);
     transition: $transition;
+    transition-delay: 0.2s;
 
     &.active {
         transform: translateX(0);
+        transition-delay: 0s;
 
         nav {
             ul {
