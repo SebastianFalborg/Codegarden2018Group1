@@ -1,0 +1,152 @@
+﻿@import "Vars";
+
+// small phones
+@mixin small-phones {
+    @media only screen and (max-width: 350px) {
+        @content;
+    }
+}
+
+// phones
+@mixin phones {
+    @media only screen and (max-width: $extra-small) {
+        @content;
+    }
+}
+
+// tablets
+@mixin tablets {
+    @media only screen and (min-width: $small) and (max-width: $medium) {
+        @content;
+    }
+}
+
+// Mobile and tablets
+@mixin phones-tablets {
+    @media only screen and (max-width: $medium) {
+        @content;
+    }
+}
+
+@mixin tablet-horizontal {
+    @media only screen and (max-width: $tablet-horizontal) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (max-width: $large) {
+        @content;
+    }
+}
+
+@mixin desktop-xl {
+    @media only screen and (min-width: $extra-large) {
+        @content;
+    }
+}
+
+// Helpers
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: none;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d8d9de;
+        outline: none;
+        border-radius: 25px;
+    }
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin all-sides {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+//font
+
+@font-face {
+    font-family: 'Montserrat-ExtraLight';
+    src: url('/Content/Fonts/Montserrat-ExtraLight.otf') format('opentype'),url('/Content/Fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-ExtraLight.woff') format('woff'), url('/Content/Fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('/Content/Fonts/Montserrat-ExtraLight.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url('/Content/Fonts/Montserrat-Light.otf') format('opentype'),url('/Content/Fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-Light.woff') format('woff'), url('/Content/Fonts/Montserrat-Light.ttf') format('truetype'), url('/Content/Fonts/Montserrat-Light.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/Content/Fonts/Montserrat-Regular.otf') format('opentype'),url('/Content/Fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-Regular.woff') format('woff'), url('/Content/Fonts/Montserrat-Regular.ttf') format('truetype'), url('/Content/Fonts/Montserrat-Regular.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('/Content/Fonts/Montserrat-SemiBold.otf') format('opentype'),url('/Content/Fonts/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-SemiBold.woff') format('woff'), url('/Content/Fonts/Montserrat-SemiBold.ttf') format('truetype'), url('/Content/Fonts/Montserrat-SemiBold.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/Content/Fonts/Montserrat-Bold.otf') format('opentype'), url('/Content/Fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-Bold.woff') format('woff'), url('/Content/Fonts/Montserrat-Bold.ttf') format('truetype'), url('/Content/Fonts/Montserrat-Bold.svg#svgFontName') format('svg');
+}
+
+@mixin font-ExtraLight {
+    font-family: 'Montserrat-ExtraLight', sans-serif;
+}
+
+@mixin font-light {
+    font-family: 'Montserrat-Light', sans-serif;
+}
+
+@mixin font-regular {
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+@mixin font-semibold {
+    font-family: 'Montserrat-SemiBold', sans-serif;
+}
+
+@mixin font-bold {
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+
+

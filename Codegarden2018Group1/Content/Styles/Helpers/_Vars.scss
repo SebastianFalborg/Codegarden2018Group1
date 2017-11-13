@@ -1,0 +1,21 @@
+﻿// Codegarden colors
+$green: #313c40;
+$gray: #b2b1b1;
+
+// Layout
+$header-height: 80px;
+
+
+//transitions
+$cubic: cubic-bezier(0.785,.135,.15,.86);
+$transition: 0.4s $cubic;
+$shadow: 0px 0px 62px 0px rgba(1, 1, 0, 0.1);
+
+// Breakpoints
+$extra-small: 767px;
+$small: 768px;
+$medium: 992px;
+$tablet-horizontal: 1025px;
+$large: 1200px;
+$larger: 1366px;
+$extra-large: 1600px;

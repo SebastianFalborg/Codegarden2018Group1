@@ -252,6 +252,17 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap.css" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap.min.css" />
+    <Content Include="Content\Styles\Style.css">
+      <DependentUpon>Style.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Style.min.css">
+      <DependentUpon>Style.css</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />
@@ -270,7 +281,30 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="Content\Styles\Base\_Global.scss" />
+    <Content Include="Content\Styles\Helpers\_Vars.scss" />
+    <Content Include="Content\Styles\Helpers\_Mixins.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap.min.css.map" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap.css.map" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Styles\Bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\Styles\Style.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -285,6 +319,8 @@
     <None Include="Properties\PublishProfiles\Codegarden2018Group1 - Web Deploy.pubxml" />
     <Content Include="Views\Frontpage.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -330,6 +366,13 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Img\Icons\" />
+    <Folder Include="Content\Img\Logo\" />
+    <Folder Include="Content\Styles\Components\" />
+    <Folder Include="Content\Styles\Layout\" />
+    <Folder Include="Content\Styles\Partials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
