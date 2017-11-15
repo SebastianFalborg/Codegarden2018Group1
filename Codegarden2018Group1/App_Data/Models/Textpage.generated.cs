@@ -20,30 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	// Mixin content Type 1060 with alias "contentComposition"
-	/// <summary>Content composition</summary>
-	public partial interface IContentComposition : IPublishedContent
-	{
-		/// <summary>Bodytext</summary>
-		string Bodytext { get; }
-
-		/// <summary>Content image</summary>
-		IPublishedContent ContentImage { get; }
-
-		/// <summary>Headline</summary>
-		string Headline { get; }
-	}
-
-	/// <summary>Content composition</summary>
-	[PublishedContentModel("contentComposition")]
-	public partial class ContentComposition : PublishedContentModel, IContentComposition
+	/// <summary>Textpage</summary>
+	[PublishedContentModel("textpage")]
+	public partial class Textpage : PublishedContentModel, IContentComposition, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "contentComposition";
+		public new const string ModelTypeAlias = "textpage";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ContentComposition(IPublishedContent content)
+		public Textpage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -54,9 +40,18 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentComposition, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Textpage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Main content
+		///</summary>
+		[ImplementPropertyType("mainContent")]
+		public IHtmlString MainContent
+		{
+			get { return this.GetPropertyValue<IHtmlString>("mainContent"); }
 		}
 
 		///<summary>
@@ -65,11 +60,8 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("bodytext")]
 		public string Bodytext
 		{
-			get { return GetBodytext(this); }
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetBodytext(this); }
 		}
-
-		/// <summary>Static getter for Bodytext</summary>
-		public static string GetBodytext(IContentComposition that) { return that.GetPropertyValue<string>("bodytext"); }
 
 		///<summary>
 		/// Content image
@@ -77,11 +69,8 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("contentImage")]
 		public IPublishedContent ContentImage
 		{
-			get { return GetContentImage(this); }
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetContentImage(this); }
 		}
-
-		/// <summary>Static getter for Content image</summary>
-		public static IPublishedContent GetContentImage(IContentComposition that) { return that.GetPropertyValue<IPublishedContent>("contentImage"); }
 
 		///<summary>
 		/// Headline
@@ -89,10 +78,25 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("headline")]
 		public string Headline
 		{
-			get { return GetHeadline(this); }
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetHeadline(this); }
 		}
 
-		/// <summary>Static getter for Headline</summary>
-		public static string GetHeadline(IContentComposition that) { return that.GetPropertyValue<string>("headline"); }
+		///<summary>
+		/// Meta description
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta keywords
+		///</summary>
+		[ImplementPropertyType("metaKeywords")]
+		public string MetaKeywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaKeywords(this); }
+		}
 	}
 }

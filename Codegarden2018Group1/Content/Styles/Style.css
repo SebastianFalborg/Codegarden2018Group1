@@ -13,21 +13,30 @@ body {
 
 h1, h2, h3, h4 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 700; }
+  font-weight: 700;
+  line-height: 1.2; }
 
 h1 {
+  color: white;
   font-size: 3.5rem; }
 
 h2 {
-  font-size: 3rem;
-  color: #ff4053; }
+  font-size: 1.75rem;
+  color: #ff4053;
+  margin-bottom: 20px; }
 
 p {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 20px; }
+  p img {
+    width: 100%;
+    margin: 30px 0; }
 
 a {
-  color: white; }
+  color: white;
+  transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
   a:hover, a:active, a:focus {
     text-decoration: none;
     color: white; }
@@ -49,6 +58,17 @@ hr {
     .main-wrapper.active .main-overlay {
       visibility: visible;
       opacity: 1; }
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 13px; }
+  h1 {
+    font-size: 30px; }
+  .main-wrapper {
+    transition-delay: 0.1s; }
+  hr {
+    margin-top: 18px;
+    margin-bottom: 10px; } }
 
 /*@font-face {
     font-family: 'Montserrat-ExtraLight';
@@ -75,26 +95,40 @@ a.main-link, button.main-link {
 }*/
 .main-banner {
   position: relative;
-  height: 80vh; }
-  .main-banner.frontpage-banner .banner-content {
+  height: 60vh; }
+  .main-banner.frontpage-banner {
+    height: 80vh; }
+    .main-banner.frontpage-banner .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .main-banner.frontpage-banner .banner-content svg {
+        width: 450px;
+        height: 318px; }
+      .main-banner.frontpage-banner .banner-content .banner-links {
+        margin: 0 50px; }
+        .main-banner.frontpage-banner .banner-content .banner-links a {
+          margin-bottom: 15px; }
+  .main-banner .banner-content {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    .main-banner.frontpage-banner .banner-content svg {
-      width: 450px;
-      height: 318px; }
-    .main-banner.frontpage-banner .banner-content .banner-links {
-      margin: 0 50px; }
-      .main-banner.frontpage-banner .banner-content .banner-links a {
-        margin-bottom: 15px; }
+    transform: translateY(-50%);
+    z-index: 1; }
 
 @media only screen and (max-width: 767px) {
   .main-banner {
-    height: 100vh; }
-    .main-banner.frontpage-banner .banner-content svg {
-      width: 270px;
-      height: 190px; } }
+    height: 40vh; }
+    .main-banner.frontpage-banner {
+      height: 100vh; }
+      .main-banner.frontpage-banner .banner-content svg {
+        width: 270px;
+        height: 190px; }
+    .main-banner .banner-content {
+      bottom: 20px;
+      top: auto;
+      left: 15px;
+      transform: none; } }
 
 /*@font-face {
     font-family: 'Montserrat-ExtraLight';
@@ -105,7 +139,9 @@ footer {
   padding: 25px 0; }
   footer p {
     color: white;
-    font-size: 0.7rem; }
+    font-size: 0.7rem;
+    line-height: 1.5;
+    margin: 0; }
   footer span, footer ul {
     display: inline-block; }
   footer span {
@@ -117,6 +153,17 @@ footer {
     footer ul li a {
       color: #9C9C9C;
       font-size: 0.7rem; }
+
+@media only screen and (max-width: 767px) {
+  footer {
+    padding: 18px 0; }
+    footer ul {
+      margin: 0; }
+      footer ul li {
+        display: inline-block;
+        margin: 0 5px; }
+        footer ul li a {
+          font-size: 0.8rem; } }
 
 /*@font-face {
     font-family: 'Montserrat-ExtraLight';
@@ -138,6 +185,7 @@ header {
   width: 54px;
   height: 54px;
   z-index: 5;
+  box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.15);
   background-color: #7f71cd;
   border-radius: 50%;
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
@@ -214,7 +262,48 @@ header {
           color: white;
           font-size: 1.1rem;
           display: block;
-          margin: 15px 0; }
+          margin: 15px 0;
+          transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+          .navigation-container nav ul li a::before {
+            content: '';
+            display: inline-block;
+            height: 2px;
+            width: 0;
+            background-color: white;
+            transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            margin-right: 5px;
+            vertical-align: middle; }
+          .navigation-container nav ul li a:hover::before {
+            width: 15px; }
+
+@media only screen and (max-width: 767px) {
+  .menu-icon-container {
+    top: 15px;
+    right: 15px;
+    width: 39.6px;
+    height: 39.6px; }
+    .menu-icon-container:hover {
+      transform: scale(1); }
+    .menu-icon-container.active span.menu-icon {
+      transform: rotate(45deg) translate(3px, 4px); }
+      .menu-icon-container.active span.menu-icon::after {
+        transform: rotate(-90deg) translate(11px, 0px); }
+    .menu-icon-container span.menu-icon {
+      width: 22px;
+      height: 1px;
+      margin: 15px 10px; }
+      .menu-icon-container span.menu-icon::before, .menu-icon-container span.menu-icon::after {
+        top: 5px;
+        width: 22px;
+        height: 1px; }
+      .menu-icon-container span.menu-icon::after {
+        top: 10px; }
+  .navigation-container {
+    width: 100%;
+    transform: translateX(100%); }
+    .navigation-container nav ul {
+      width: 100%;
+      padding-left: 15px; } }
 
 /*@font-face {
     font-family: 'Montserrat-ExtraLight';
@@ -233,4 +322,15 @@ header {
   opacity: 0;
   visibility: hidden;
   transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+
+/*@font-face {
+    font-family: 'Montserrat-ExtraLight';
+    src: url('/Content/Fonts/Montserrat-ExtraLight.otf') format('opentype'),url('/Content/Fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-ExtraLight.woff') format('woff'), url('/Content/Fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('/Content/Fonts/Montserrat-ExtraLight.svg#svgFontName') format('svg');
+}*/
+.main-section {
+  margin: 80px 0; }
+
+@media only screen and (max-width: 767px) {
+  .main-section {
+    margin: 30px 0; } }
 

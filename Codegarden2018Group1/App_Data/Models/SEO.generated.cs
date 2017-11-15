@@ -20,9 +20,20 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1061 with alias "sEO"
+	/// <summary>_SEO</summary>
+	public partial interface ISEO : IPublishedContent
+	{
+		/// <summary>Meta description</summary>
+		string MetaDescription { get; }
+
+		/// <summary>Meta keywords</summary>
+		string MetaKeywords { get; }
+	}
+
 	/// <summary>_SEO</summary>
 	[PublishedContentModel("sEO")]
-	public partial class SEO : PublishedContentModel
+	public partial class SEO : PublishedContentModel, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "sEO";
@@ -51,8 +62,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("metaDescription")]
 		public string MetaDescription
 		{
-			get { return this.GetPropertyValue<string>("metaDescription"); }
+			get { return GetMetaDescription(this); }
 		}
+
+		/// <summary>Static getter for Meta description</summary>
+		public static string GetMetaDescription(ISEO that) { return that.GetPropertyValue<string>("metaDescription"); }
 
 		///<summary>
 		/// Meta keywords
@@ -60,7 +74,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("metaKeywords")]
 		public string MetaKeywords
 		{
-			get { return this.GetPropertyValue<string>("metaKeywords"); }
+			get { return GetMetaKeywords(this); }
 		}
+
+		/// <summary>Static getter for Meta keywords</summary>
+		public static string GetMetaKeywords(ISEO that) { return that.GetPropertyValue<string>("metaKeywords"); }
 	}
 }

@@ -3,9 +3,11 @@
 
 .main-banner {
     position: relative;
-    height: 80vh;
+    height: 60vh;
 
     &.frontpage-banner {
+        height: 80vh;
+
         .banner-content {
             @include center;
 
@@ -16,25 +18,38 @@
 
             .banner-links {
                 margin: 0 50px;
-                a{
-                    margin-bottom:15px;
+
+                a {
+                    margin-bottom: 15px;
                 }
             }
         }
     }
+    .banner-content{
+       @include center-y;
+       z-index:1;
+    }
 }
 @include phones {
     .main-banner {
-        height: 100vh;
+        height: 40vh;
 
         &.frontpage-banner {
-            .banner-content {
+            height: 100vh;
 
+            .banner-content {
                 svg {
                     width: 270px;
                     height: 190px;
                 }
             }
+        }
+
+        .banner-content {
+            bottom:20px;
+            top:auto;
+            left:15px;
+            transform:none;
         }
     }
 }

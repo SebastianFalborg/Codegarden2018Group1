@@ -1,41 +1,62 @@
 ﻿@import "../Helpers/Mixins";
 @import "../Helpers/Vars";
-html{
+
+html {
     font-size: 16px;
 }
-body{
-    margin:0;
-    padding:0;
+
+body {
+    margin: 0;
+    padding: 0;
     @include font-regular;
 }
-h1, h2,h3,h4{
-    @include font-bold;
 
+h1, h2, h3, h4 {
+    @include font-bold;
+    line-height: 1.2;
 }
-h1{
+
+h1 {
+    color: white;
     font-size: 3.5rem;
 }
-h2{
-    font-size: 3rem;
+
+h2 {
+    font-size: 1.75rem;
     color: $red;
+    margin-bottom: 20px;
 }
 
-p{
+p {
     @include font-regular;
+    line-height: 24px;
+    margin: 0 0 20px;
+
+    img {
+        width: 100%;
+        margin: 30px 0;
+    }
 }
-a{
+
+a {
     color: white;
-    &:hover, &:active, &:focus{
+    transition: $transition;
+
+
+    &:hover, &:active, &:focus {
         text-decoration: none;
         color: white;
     }
 }
+
 hr {
     border-top: 1px solid $light-gray;
 }
+
 .cover {
     @include cover;
 }
+
 .main-wrapper {
     position: relative;
     transition: $transition;
@@ -45,8 +66,27 @@ hr {
         transform: translateX(-$menu-width / 2);
 
         .main-overlay {
-            visibility:visible;
+            visibility: visible;
             opacity: 1;
         }
+    }
+}
+
+@include phones {
+    html {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .main-wrapper {
+        transition-delay: 0.1s;
+    }
+
+    hr {
+        margin-top: 18px;
+        margin-bottom: 10px;
     }
 }

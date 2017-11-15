@@ -2,8 +2,13 @@
 @import "../Helpers/Vars";
 
 $menu-icon-width: 30px;
+$menu-icon-width-phone: 22px;
 $menu-icon-height: 2px;
+$menu-icon-height-phone: 1px;
 $menu-icon-space: 7px;
+$menu-icon-space-phone: 5px;
+
+
 header {
     position: fixed;
     top: 0;
@@ -21,6 +26,7 @@ header {
     width: ($menu-icon-width * 1.8);
     height: ($menu-icon-width * 1.8);
     z-index: 5;
+    box-shadow: $shadow;
     background-color: $purple;
     border-radius: 50%;
     transition: $transition;
@@ -78,6 +84,7 @@ header {
         }
     }
 }
+
 .navigation-container {
     position: fixed;
     right: 0;
@@ -125,7 +132,81 @@ header {
                     font-size: 1.1rem;
                     display: block;
                     margin: 15px 0;
+                    transition: $transition;
+                    &::before{
+                        content: '';
+                        display:inline-block;
+                        height:2px;
+                        width:0;
+                        background-color: white;
+                        transition: $transition;
+                        margin-right:5px;
+                        vertical-align:middle;
+                    }
+                    &:hover {
+                        &::before{
+                            width:15px;
+                        }
+                    }
                 }
+            }
+        }
+    }
+}
+
+@include phones {
+    .menu-icon-container {
+        top: 15px;
+        right: 15px;
+        width: ($menu-icon-width-phone * 1.8);
+        height: ($menu-icon-width-phone * 1.8);
+
+        &:hover {
+            transform: scale(1);
+        }
+
+        &.active {
+            span {
+                &.menu-icon {
+                    transform: rotate(45deg) translate(3px, 4px);
+
+                    &::after {
+                        transform: rotate(-90deg) translate(11px, 0px);
+                    }
+                }
+            }
+        }
+
+        span {
+
+            &.menu-icon {
+                width: $menu-icon-width-phone;
+                height: $menu-icon-height-phone;
+                margin: 15px 10px;
+
+                &::before, &::after {
+                    top: $menu-icon-space-phone;
+                    width: $menu-icon-width-phone;
+                    height: $menu-icon-height-phone;
+                }
+
+                &::after {
+                    top: ($menu-icon-space-phone * 2);
+                }
+            }
+        }
+    }
+
+    .navigation-container {
+        width: 100%;
+        transform: translateX(100%);
+
+        nav {
+
+            ul {
+                width:100%;
+               padding-left:15px;
+
             }
         }
     }

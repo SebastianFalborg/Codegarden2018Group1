@@ -1,0 +1,11 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.main-section{
+    margin: 80px 0;
+}
+@include phones {
+    .main-section {
+        margin: 30px 0;
+    }
+}

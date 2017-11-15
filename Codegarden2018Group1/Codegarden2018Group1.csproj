@@ -330,9 +330,9 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\Partials\_Navigation.cshtml" />
-    <Content Include="Views\AboutPage.cshtml" />
-    <Content Include="Views\Partials\_Sprint.cshtml" />
+    <Content Include="Views\Partials\_Sprite.cshtml" />
     <Content Include="Views\Partials\_Footer.cshtml" />
+    <Content Include="Views\Textpage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -368,12 +368,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\Models\AboutPage.generated.cs" />
+    <Compile Include="App_Data\Models\ContentComposition.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\SEO.generated.cs" />
+    <Compile Include="App_Data\Models\Textpage.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

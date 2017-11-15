@@ -7,6 +7,8 @@ footer {
     p {
         color: white;
         font-size: 0.7rem;
+        line-height:1.5;
+        margin:0;
     }
 
     span, ul {
@@ -25,6 +27,24 @@ footer {
             a {
                 color: $light-gray;
                 font-size: 0.7rem;
+            }
+        }
+    }
+}
+@include phones {
+    footer {
+        padding: 18px 0;
+
+
+        ul {
+            margin:0;
+            li {
+                display: inline-block;
+                margin: 0 5px;
+
+                a {
+                    font-size: 0.8rem;
+                }
             }
         }
     }
