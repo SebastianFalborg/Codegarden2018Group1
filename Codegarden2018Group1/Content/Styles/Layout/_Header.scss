@@ -125,7 +125,11 @@ header {
                 opacity: 0;
                 transition-delay: 0.5s;
                 transition: $transition;
-
+                &.active{
+                    a{
+                        text-decoration:underline;
+                    }
+                }
                 a {
                     @include font-bold;
                     color: white;
@@ -133,6 +137,7 @@ header {
                     display: block;
                     margin: 15px 0;
                     transition: $transition;
+                    
                     &::before{
                         content: '';
                         display:inline-block;

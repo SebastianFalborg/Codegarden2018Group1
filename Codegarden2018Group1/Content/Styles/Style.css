@@ -256,6 +256,8 @@ header {
         opacity: 0;
         transition-delay: 0.5s;
         transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+        .navigation-container nav ul li.active a {
+          text-decoration: underline; }
         .navigation-container nav ul li a {
           font-family: 'Open Sans', sans-serif;
           font-weight: 700;

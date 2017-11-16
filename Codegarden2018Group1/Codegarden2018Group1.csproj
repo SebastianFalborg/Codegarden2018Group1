@@ -304,6 +304,7 @@
     <Content Include="Content\Styles\Partials\_MainBlock.scss" />
     <Content Include="Content\Styles\Layout\_Banners.scss" />
     <Content Include="Content\Styles\Layout\_Overlay.scss" />
+    <Content Include="Content\Styles\Layout\_Sections.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
