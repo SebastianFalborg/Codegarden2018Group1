@@ -32,9 +32,6 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Link block image</summary>
 		IPublishedContent LinkBlockImage { get; }
-
-		/// <summary>Link block link</summary>
-		IPublishedContent LinkBlockLink { get; }
 	}
 
 	/// <summary>Link block</summary>
@@ -97,17 +94,5 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Link block image</summary>
 		public static IPublishedContent GetLinkBlockImage(ILinkBlock that) { return that.GetPropertyValue<IPublishedContent>("linkBlockImage"); }
-
-		///<summary>
-		/// Link block link
-		///</summary>
-		[ImplementPropertyType("linkBlockLink")]
-		public IPublishedContent LinkBlockLink
-		{
-			get { return GetLinkBlockLink(this); }
-		}
-
-		/// <summary>Static getter for Link block link</summary>
-		public static IPublishedContent GetLinkBlockLink(ILinkBlock that) { return that.GetPropertyValue<IPublishedContent>("linkBlockLink"); }
 	}
 }

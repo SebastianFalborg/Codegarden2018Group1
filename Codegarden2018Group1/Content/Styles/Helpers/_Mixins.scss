@@ -42,7 +42,7 @@
 
 @mixin desktop-xl {
     @media only screen and (min-width: $extra-large) {
-        @content;
+  
     }
 }
 
@@ -97,18 +97,11 @@
     background-repeat: no-repeat;
 }
 
-
-
-
-
 //font
-
-/*@font-face {
-    font-family: 'Montserrat-ExtraLight';
-    src: url('/Content/Fonts/Montserrat-ExtraLight.otf') format('opentype'),url('/Content/Fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-ExtraLight.woff') format('woff'), url('/Content/Fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('/Content/Fonts/Montserrat-ExtraLight.svg#svgFontName') format('svg');
-}*/
-
-
+@mixin font-light {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
 @mixin font-regular {
     font-family: 'Open Sans', sans-serif;
         font-weight: 400;
@@ -117,6 +110,10 @@
 @mixin font-bold {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
+}
+@mixin font-extra-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
 }
 
 
