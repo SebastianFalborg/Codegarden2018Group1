@@ -14,6 +14,7 @@ body {
 h1, h2, h3, h4 {
     @include font-bold;
     line-height: 1.2;
+    text-align: center;
 }
 
 h1 {
@@ -22,17 +23,20 @@ h1 {
 }
 
 h2 {
-    font-size: 1.75rem;
+    font-size: 3rem;
     color: $red;
     margin-bottom: 20px;
 }
+
 h3 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
+
 p {
     @include font-regular;
     line-height: 24px;
     margin: 0 0 20px;
+    text-align: center;
 
     img {
         width: 100%;
@@ -73,11 +77,35 @@ hr {
         }
     }
 }
-.white-format{
-    h3, p{
+
+.white-format {
+    h3, p {
         color: white;
     }
 }
+
+.custom-ul {
+    ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+
+        li {
+            padding: 4px 0;
+            &:before {
+                content: '';
+                background-image: url('/Content/Img/Icons/icon.svg');
+                width: 11px;
+                height: 12px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
 @include phones {
     html {
         font-size: 13px;

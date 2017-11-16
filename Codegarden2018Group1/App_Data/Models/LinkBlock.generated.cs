@@ -20,9 +20,26 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1073 with alias "linkBlock"
+	/// <summary>Link block</summary>
+	public partial interface ILinkBlock : IPublishedContent
+	{
+		/// <summary>Link block bodytext</summary>
+		string LinkBlockBodytext { get; }
+
+		/// <summary>Link block headline</summary>
+		string LinkBlockHeadline { get; }
+
+		/// <summary>Link block image</summary>
+		IPublishedContent LinkBlockImage { get; }
+
+		/// <summary>Link block link</summary>
+		IPublishedContent LinkBlockLink { get; }
+	}
+
 	/// <summary>Link block</summary>
 	[PublishedContentModel("linkBlock")]
-	public partial class LinkBlock : PublishedContentModel
+	public partial class LinkBlock : PublishedContentModel, ILinkBlock
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "linkBlock";
@@ -51,8 +68,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("linkBlockBodytext")]
 		public string LinkBlockBodytext
 		{
-			get { return this.GetPropertyValue<string>("linkBlockBodytext"); }
+			get { return GetLinkBlockBodytext(this); }
 		}
+
+		/// <summary>Static getter for Link block bodytext</summary>
+		public static string GetLinkBlockBodytext(ILinkBlock that) { return that.GetPropertyValue<string>("linkBlockBodytext"); }
 
 		///<summary>
 		/// Link block headline
@@ -60,8 +80,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("linkBlockHeadline")]
 		public string LinkBlockHeadline
 		{
-			get { return this.GetPropertyValue<string>("linkBlockHeadline"); }
+			get { return GetLinkBlockHeadline(this); }
 		}
+
+		/// <summary>Static getter for Link block headline</summary>
+		public static string GetLinkBlockHeadline(ILinkBlock that) { return that.GetPropertyValue<string>("linkBlockHeadline"); }
 
 		///<summary>
 		/// Link block image
@@ -69,8 +92,11 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("linkBlockImage")]
 		public IPublishedContent LinkBlockImage
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("linkBlockImage"); }
+			get { return GetLinkBlockImage(this); }
 		}
+
+		/// <summary>Static getter for Link block image</summary>
+		public static IPublishedContent GetLinkBlockImage(ILinkBlock that) { return that.GetPropertyValue<IPublishedContent>("linkBlockImage"); }
 
 		///<summary>
 		/// Link block link
@@ -78,7 +104,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("linkBlockLink")]
 		public IPublishedContent LinkBlockLink
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("linkBlockLink"); }
+			get { return GetLinkBlockLink(this); }
 		}
+
+		/// <summary>Static getter for Link block link</summary>
+		public static IPublishedContent GetLinkBlockLink(ILinkBlock that) { return that.GetPropertyValue<IPublishedContent>("linkBlockLink"); }
 	}
 }

@@ -14,25 +14,27 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  line-height: 1.2; }
+  line-height: 1.2;
+  text-align: center; }
 
 h1 {
   color: white;
   font-size: 3.5rem; }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 3rem;
   color: #ff4053;
   margin-bottom: 20px; }
 
 h3 {
-  font-size: 1.5rem; }
+  font-size: 2.5rem; }
 
 p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 24px;
-  margin: 0 0 20px; }
+  margin: 0 0 20px;
+  text-align: center; }
   p img {
     width: 100%;
     margin: 30px 0; }
@@ -64,6 +66,21 @@ hr {
 
 .white-format h3, .white-format p {
   color: white; }
+
+.custom-ul ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+  .custom-ul ul li {
+    padding: 4px 0; }
+    .custom-ul ul li:before {
+      content: '';
+      background-image: url("/Content/Img/Icons/icon.svg");
+      width: 11px;
+      height: 12px;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: middle; }
 
 @media only screen and (max-width: 767px) {
   html {
@@ -156,7 +173,8 @@ footer {
     color: white;
     font-size: 0.7rem;
     line-height: 1.5;
-    margin: 0; }
+    margin: 0;
+    text-align: left; }
   footer span, footer ul {
     display: inline-block; }
   footer span {
@@ -347,7 +365,7 @@ header {
     font-family: 'Montserrat-ExtraLight';
     src: url('/Content/Fonts/Montserrat-ExtraLight.otf') format('opentype'),url('/Content/Fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'), url('/Content/Fonts/Montserrat-ExtraLight.woff') format('woff'), url('/Content/Fonts/Montserrat-ExtraLight.ttf') format('truetype'), url('/Content/Fonts/Montserrat-ExtraLight.svg#svgFontName') format('svg');
 }*/
-.main-section {
+.section {
   margin: 80px 0; }
 
 .image-container {
@@ -358,8 +376,10 @@ header {
     position: absolute;
     bottom: 70px;
     width: 100%; }
+    .image-container .image-container-content p, .image-container .image-container-content h3 {
+      text-align: left; }
 
 @media only screen and (max-width: 767px) {
-  .main-section {
+  .ection {
     margin: 30px 0; } }
 

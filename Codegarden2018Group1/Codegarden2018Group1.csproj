@@ -374,6 +374,8 @@
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />
+    <Compile Include="App_Data\Models\Gridpage.generated.cs" />
+    <Compile Include="App_Data\Models\GridpageItems.generated.cs" />
     <Compile Include="App_Data\Models\HideInNav.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\LinkBlock.generated.cs" />

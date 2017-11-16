@@ -127,6 +127,33 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Venue bodytext
+		///</summary>
+		[ImplementPropertyType("venueBodytext")]
+		public IHtmlString VenueBodytext
+		{
+			get { return this.GetPropertyValue<IHtmlString>("venueBodytext"); }
+		}
+
+		///<summary>
+		/// Venue headline
+		///</summary>
+		[ImplementPropertyType("venueHeadline")]
+		public string VenueHeadline
+		{
+			get { return this.GetPropertyValue<string>("venueHeadline"); }
+		}
+
+		///<summary>
+		/// Venue link
+		///</summary>
+		[ImplementPropertyType("venueLink")]
+		public IPublishedContent VenueLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("venueLink"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]
