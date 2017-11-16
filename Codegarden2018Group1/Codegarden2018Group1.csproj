@@ -305,6 +305,7 @@
     <Content Include="Content\Styles\Layout\_Banners.scss" />
     <Content Include="Content\Styles\Layout\_Overlay.scss" />
     <Content Include="Content\Styles\Layout\_Sections.scss" />
+    <Content Include="Content\convince-your-boss-codegarden18.pdf" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -373,7 +374,9 @@
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />
+    <Compile Include="App_Data\Models\HideInNav.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\LinkBlock.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\SEO.generated.cs" />
     <Compile Include="App_Data\Models\Textpage.generated.cs" />

@@ -26,7 +26,9 @@ h2 {
     color: $red;
     margin-bottom: 20px;
 }
-
+h3 {
+    font-size: 1.5rem;
+}
 p {
     @include font-regular;
     line-height: 24px;
@@ -71,7 +73,11 @@ hr {
         }
     }
 }
-
+.white-format{
+    h3, p{
+        color: white;
+    }
+}
 @include phones {
     html {
         font-size: 13px;

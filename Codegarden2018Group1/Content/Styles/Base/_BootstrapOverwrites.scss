@@ -1,1 +1,6 @@
-﻿
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.container-fluid{
+    padding:0;
+}

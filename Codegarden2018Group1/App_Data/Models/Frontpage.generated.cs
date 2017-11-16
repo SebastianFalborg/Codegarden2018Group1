@@ -46,6 +46,87 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Event description
+		///</summary>
+		[ImplementPropertyType("eventDescription")]
+		public IHtmlString EventDescription
+		{
+			get { return this.GetPropertyValue<IHtmlString>("eventDescription"); }
+		}
+
+		///<summary>
+		/// Event image
+		///</summary>
+		[ImplementPropertyType("eventImage")]
+		public IPublishedContent EventImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("eventImage"); }
+		}
+
+		///<summary>
+		/// Event link
+		///</summary>
+		[ImplementPropertyType("eventLink")]
+		public IPublishedContent EventLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("eventLink"); }
+		}
+
+		///<summary>
+		/// Event link secondary
+		///</summary>
+		[ImplementPropertyType("eventLinkSecondary")]
+		public IPublishedContent EventLinkSecondary
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("eventLinkSecondary"); }
+		}
+
+		///<summary>
+		/// Event list text
+		///</summary>
+		[ImplementPropertyType("eventListText")]
+		public IHtmlString EventListText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("eventListText"); }
+		}
+
+		///<summary>
+		/// Help yourself bodytext
+		///</summary>
+		[ImplementPropertyType("helpYourselfBodytext")]
+		public string HelpYourselfBodytext
+		{
+			get { return this.GetPropertyValue<string>("helpYourselfBodytext"); }
+		}
+
+		///<summary>
+		/// Help yourself headline
+		///</summary>
+		[ImplementPropertyType("helpYourselfHeadline")]
+		public string HelpYourselfHeadline
+		{
+			get { return this.GetPropertyValue<string>("helpYourselfHeadline"); }
+		}
+
+		///<summary>
+		/// Help yourself image
+		///</summary>
+		[ImplementPropertyType("helpYourselfImage")]
+		public IPublishedContent HelpYourselfImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("helpYourselfImage"); }
+		}
+
+		///<summary>
+		/// Help yourself link
+		///</summary>
+		[ImplementPropertyType("helpYourselfLink")]
+		public IPublishedContent HelpYourselfLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("helpYourselfLink"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]

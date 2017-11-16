@@ -4,6 +4,16 @@
 .main-section{
     margin: 80px 0;
 }
+.image-container{
+    height: 500px;
+    overflow:hidden;
+    position:relative;
+    .image-container-content{
+        position:absolute;
+        bottom:70px;
+        width:100%;
+    }
+}
 @include phones {
     .main-section {
         margin: 30px 0;

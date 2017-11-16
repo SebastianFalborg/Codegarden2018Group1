@@ -1,9 +1,15 @@
-﻿<!DOCTYPE html>
-
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    
+    <meta name="description" content="@Umbraco.Field("metaDescription")" />
+    <meta name="keywords" content="@Umbraco.Field("metaKeywords")" />
+    <title>@Umbraco.Field("pageName")</title>
     <link href="~/Content/Styles/Bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Styles/Style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">

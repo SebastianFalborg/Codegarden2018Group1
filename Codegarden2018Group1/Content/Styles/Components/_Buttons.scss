@@ -10,12 +10,14 @@ a, button {
         display: inline-block;
         padding: 12px 0;
         color: black;
-        border: 0;
+        border: 1px solid $gray;
         text-align: center;
+        margin-bottom: 15px;
 
         &.green-btn {
             background-color: $green;
             color: white;
+            border: 1px solid $green;
         }
     }
 }
