@@ -8,8 +8,9 @@ $red: #ff4053;
 $header-height: 80px;
 $menu-width: 400px;
 //transitions
-$cubic: cubic-bezier(0.785,.135,.15,.86);
-$transition: 0.4s $cubic;
+$cubic: cubic-bezier(.75,0,.25,1);
+$transition: 0.5s $cubic;
+$small-transition: 0.4s $cubic;
 $shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.15);
 
 // Breakpoints

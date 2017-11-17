@@ -6,13 +6,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    
+    <!--  Dynamic meta desc/keywords -->
     <meta name="description" content="@Umbraco.Field("metaDescription")" />
     <meta name="keywords" content="@Umbraco.Field("metaKeywords")" />
     <title>@Umbraco.Field("pageName")</title>
     <link href="~/Content/Styles/Bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Styles/Style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -32,10 +32,10 @@
           @Html.Partial("_Footer")
         </footer>
     </div>
-  
+  <!-- Sprite partial, for all the svg -->
     @Html.Partial("_Sprite")
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
+    @*<script src="~/Scripts/bootstrap.js"></script>*@
     <script src="~/Scripts/Custom/Custom.js"></script>
 </body>
 </html>

@@ -47,7 +47,7 @@ header {
                 }
 
                 &::after {
-                    transform: rotate(-90deg) translate(14px, 0px);
+                    transform: rotate(-90deg) translate(14px,0px);
                     background-color: $purple;
                 }
             }
@@ -125,32 +125,35 @@ header {
                 opacity: 0;
                 transition-delay: 0.5s;
                 transition: $transition;
-                &.active{
-                    a{
-                        text-decoration:underline;
+
+                &.active {
+                    a {
+                        @include font-bold;
                     }
                 }
+
                 a {
-                    @include font-bold;
+                    @include font-light;
                     color: white;
                     font-size: 1.1rem;
                     display: block;
                     margin: 15px 0;
-                    transition: $transition;
-                    
-                    &::before{
+                    transition: $small-transition;
+
+                    &::before {
                         content: '';
-                        display:inline-block;
-                        height:2px;
-                        width:0;
+                        display: inline-block;
+                        height: 2px;
+                        width: 0;
                         background-color: white;
-                        transition: $transition;
-                        margin-right:5px;
-                        vertical-align:middle;
+                        transition: $small-transition;
+                        margin-right: 5px;
+                        vertical-align: middle;
                     }
+
                     &:hover {
-                        &::before{
-                            width:15px;
+                        &::before {
+                            width: 15px;
                         }
                     }
                 }

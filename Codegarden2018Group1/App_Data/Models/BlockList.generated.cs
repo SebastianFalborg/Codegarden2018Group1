@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Gridpage</summary>
-	[PublishedContentModel("gridpage")]
-	public partial class Gridpage : PublishedContentModel, IContentComposition, ISEO
+	/// <summary>BlockList</summary>
+	[PublishedContentModel("blockList")]
+	public partial class BlockList : PublishedContentModel, IContentComposition, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "gridpage";
+		public new const string ModelTypeAlias = "blockList";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Gridpage(IPublishedContent content)
+		public BlockList(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +40,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Gridpage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BlockList, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}

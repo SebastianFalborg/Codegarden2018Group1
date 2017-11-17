@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Gridpage items</summary>
-	[PublishedContentModel("gridpageItems")]
-	public partial class GridpageItems : PublishedContentModel, IHideInNav, ILinkBlock
+	/// <summary>BlockListItem</summary>
+	[PublishedContentModel("blockListItem")]
+	public partial class BlockListItem : PublishedContentModel, ILinkBlock
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "gridpageItems";
+		public new const string ModelTypeAlias = "blockListItem";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public GridpageItems(IPublishedContent content)
+		public BlockListItem(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,18 +40,9 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GridpageItems, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BlockListItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Hide in umbraco navigation
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.HideInNav.GetUmbracoNaviHide(this); }
 		}
 
 		///<summary>
@@ -79,15 +70,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent LinkBlockImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.LinkBlock.GetLinkBlockImage(this); }
-		}
-
-		///<summary>
-		/// Link block link
-		///</summary>
-		[ImplementPropertyType("linkBlockLink")]
-		public IPublishedContent LinkBlockLink
-		{
-			get { return Umbraco.Web.PublishedContentModels.LinkBlock.GetLinkBlockLink(this); }
 		}
 	}
 }

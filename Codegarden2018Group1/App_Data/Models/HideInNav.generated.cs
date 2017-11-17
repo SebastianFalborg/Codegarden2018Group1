@@ -20,17 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	// Mixin content Type 1072 with alias "hideInNav"
-	/// <summary>Hide in nav</summary>
-	public partial interface IHideInNav : IPublishedContent
-	{
-		/// <summary>Hide in umbraco navigation</summary>
-		bool UmbracoNaviHide { get; }
-	}
-
 	/// <summary>Hide in nav</summary>
 	[PublishedContentModel("hideInNav")]
-	public partial class HideInNav : PublishedContentModel, IHideInNav
+	public partial class HideInNav : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "hideInNav";
@@ -59,10 +51,7 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("umbracoNaviHide")]
 		public bool UmbracoNaviHide
 		{
-			get { return GetUmbracoNaviHide(this); }
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
 		}
-
-		/// <summary>Static getter for Hide in umbraco navigation</summary>
-		public static bool GetUmbracoNaviHide(IHideInNav that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
 	}
 }

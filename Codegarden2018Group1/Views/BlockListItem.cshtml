@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.BlockListItem>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Shared/_Layout.cshtml";
+}
+<!-- one blog iew -->
+<div class="col-sm-4">
+    <div class="block-list-image cover" style="background-image: url('@Model.Content.LinkBlockImage.Url')">
+        <div class="image-gradient-overlay"></div>
+        <div class="block-list-content">
+            <h2>@Model.Content.LinkBlockHeadline</h2>
+            <p>@Model.Content.LinkBlockBodytext</p>
+
+        </div>
+    </div>
+</div>

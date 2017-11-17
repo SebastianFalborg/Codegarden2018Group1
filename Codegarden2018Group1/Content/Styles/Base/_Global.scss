@@ -66,7 +66,7 @@ hr {
 .main-wrapper {
     position: relative;
     transition: $transition;
-    transition-delay: 0.2s;
+    transition-delay: 0.18s;
 
     &.active {
         transform: translateX(-$menu-width / 2);
@@ -74,9 +74,11 @@ hr {
         .main-overlay {
             visibility: visible;
             opacity: 1;
+        
         }
     }
 }
+
 
 .white-format {
     h3, p {
