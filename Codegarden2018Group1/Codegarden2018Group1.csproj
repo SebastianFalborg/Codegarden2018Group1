@@ -341,6 +341,9 @@
     <Content Include="Views\BlockListItem.cshtml" />
     <Content Include="Views\BlockList.cshtml" />
     <Content Include="Views\Partials\_ListBlockItems.cshtml" />
+    <Content Include="Views\Partials\_SpeakerSchedule.cshtml" />
+    <Content Include="Views\SpeakerItem.cshtml" />
+    <Content Include="Views\Speakerspage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
