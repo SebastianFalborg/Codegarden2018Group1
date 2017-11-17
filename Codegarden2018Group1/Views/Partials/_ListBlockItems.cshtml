@@ -3,13 +3,13 @@
 @{
     var selection = Model.Content.Site().FirstChild("blockList").Children("blockListItem")
                         .Where(x => x.IsVisible());
-
 }
 <ul>
     
 	@foreach (var item in selection){
 		<li>
 			<a style="color: red;" href="@item.Url">@item.Name</a>
+      <h2>@item.GetPropertyValue("linkBlockHeadline")</h2>
 		</li>
 	}
 </ul>
