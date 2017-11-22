@@ -344,6 +344,7 @@
     <Content Include="Views\Partials\_SpeakerSchedule.cshtml" />
     <Content Include="Views\SpeakerItem.cshtml" />
     <Content Include="Views\Speakerspage.cshtml" />
+    <Content Include="Views\ProgramPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -391,6 +392,8 @@
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\LinkBlock.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\ProgramItem.generated.cs" />
+    <Compile Include="App_Data\Models\ProgramPage.generated.cs" />
     <Compile Include="App_Data\Models\SEO.generated.cs" />
     <Compile Include="App_Data\Models\SpeakerItem.generated.cs" />
     <Compile Include="App_Data\Models\Speakerspage.generated.cs" />

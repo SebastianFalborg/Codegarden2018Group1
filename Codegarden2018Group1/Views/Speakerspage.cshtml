@@ -3,3 +3,15 @@
 @{
 	Layout = null;
 }
+
+
+<div>
+    <ul>
+        @{
+            foreach (var speaker in Model.Content.Children<SpeakerItem>())
+            {
+                <p><a href="@speaker.Url">@speaker.Headline</a></p>
+            }
+        }
+    </ul>
+</div>
