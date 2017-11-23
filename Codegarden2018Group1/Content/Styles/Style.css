@@ -42,6 +42,9 @@ a {
     text-decoration: none;
     color: white; }
 
+ul li a {
+  color: black; }
+
 hr {
   border-top: 1px solid #9C9C9C; }
 

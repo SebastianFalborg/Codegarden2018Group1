@@ -54,7 +54,13 @@ a {
         color: white;
     }
 }
-
+ul{
+    li{
+        a{
+            color: black;
+        }
+    }
+}
 hr {
     border-top: 1px solid $light-gray;
 }

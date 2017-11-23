@@ -333,3 +333,4 @@ OpenCover/
 
 # ImageProcessor DiskCache 
 **/App_Data/cache/
+/Codegarden2018Group1/App_Data/umbraco.config

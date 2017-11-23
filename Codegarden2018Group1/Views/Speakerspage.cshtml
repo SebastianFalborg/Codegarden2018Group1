@@ -1,17 +1,40 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Speakerspage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+    Layout = "Shared/_Layout.cshtml";
 }
-
-
-<div>
-    <ul>
-        @{
-            foreach (var speaker in Model.Content.Children<SpeakerItem>())
-            {
-                <p><a href="@speaker.Url">@speaker.Headline</a></p>
-            }
-        }
-    </ul>
+<div class="main-banner cover" style="background-image:url('')">
+    <div class="image-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="banner-content">
+                <div class="col-xs-12">
+                    <h1>@Model.Content.Headline</h1>
+                </div>
+                <div class="col-xs-12">
+                    <p>@Model.Content.Bodytext</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div>
+                    <ul class="list-unstyled">
+                        @{
+                            foreach (var speaker in Model.Content.Children<SpeakerItem>())
+                            {
+                                <li>
+                                    <a href="@speaker.Url">@speaker.Headline</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
