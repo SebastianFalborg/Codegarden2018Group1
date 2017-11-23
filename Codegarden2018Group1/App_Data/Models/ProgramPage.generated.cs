@@ -76,7 +76,7 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Link block bodytext
 		///</summary>
 		[ImplementPropertyType("linkBlockBodytext")]
-		public string LinkBlockBodytext
+		public IHtmlString LinkBlockBodytext
 		{
 			get { return Umbraco.Web.PublishedContentModels.LinkBlock.GetLinkBlockBodytext(this); }
 		}

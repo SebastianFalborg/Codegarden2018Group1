@@ -11,71 +11,73 @@
         </svg>
     </div>
 </div>
-<div class="section">
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div class="col-md-8 col-md-push-2">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            @Model.Content.EventDescription
+<div class="frontpage-sections">
+    <div class="section">
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-8 col-md-push-2">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                @Model.Content.EventDescription
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <a target="_blank" href="@Model.Content.EventLink.Url" class="main-link green-btn">Convince your boss</a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="@Model.Content.EventLinkSecondary.Url" class="main-link">Se the program</a>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a target="_blank" href="@Model.Content.EventLink.Url" class="main-link green-btn">Convince your boss</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="@Model.Content.EventLinkSecondary.Url" class="main-link">Se the program</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-sm-push-1 custom-ul">
-                @Model.Content.EventListText
-            </div>
-            <div class="col-sm-6">
-                <img class="img-responsive" src="@Model.Content.EventImage.Url" />
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Speaker section here</h2>
-                <p>Get speakers from speaker documenttype</p>
-                @Html.Partial("_ListBlockItems")
+            <div class="row">
+                <div class="col-sm-5 col-sm-push-1 custom-ul">
+                    @Model.Content.EventListText
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-responsive" src="@Model.Content.EventImage.Url" />
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Themes section here</h2>
-                <p>Get all themes from themes documenttype</p>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Speaker section here</h2>
+                    <p>Get speakers from speaker documenttype</p>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="section">
-    <div class="container-fluid white-format">
-        <div class="image-container" style="background-image: url('@Model.Content.HelpYourselfImage.Url')">
-            <div class="image-gradient-overlay"></div>
-            <div class="container">
-                <div class="image-container-content">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>@Model.Content.HelpYourselfHeadline</h3>
-                            <p>@Model.Content.HelpYourselfBodytext</p>
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="@Model.Content.HelpYourselfLink.Url" class="main-link green-btn">Check it out</a>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Themes section here</h2>
+                    <p>Get all themes from themes documenttype</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container-fluid white-format">
+            <div class="image-container" style="background-image: url('@Model.Content.HelpYourselfImage.Url')">
+                <div class="image-gradient-overlay"></div>
+                <div class="container">
+                    <div class="image-container-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>@Model.Content.HelpYourselfHeadline</h3>
+                                <p>@Model.Content.HelpYourselfBodytext</p>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <a href="@Model.Content.HelpYourselfLink.Url" class="main-link green-btn">Check it out</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -84,26 +86,26 @@
             </div>
         </div>
     </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2>Blog section</h2>
-                <p>get the 2 newest blog post from blogpost documenttype</p>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-push-2">
+
+                    @Html.Partial("_LatestBlogs")
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-push-2">
-                <h2>@Model.Content.VenueHeadline</h2>
-                @Model.Content.VenueBodytext
-                <div class="row">
-                    <div class="col-sm-4 col-sm-push-4 col-xs-12">
-                        <a class="main-link green-btn" href="@Model.Content.VenueLink.Url">Convince your boss</a>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-push-2">
+                    <h2>@Model.Content.VenueHeadline</h2>
+                    @Model.Content.VenueBodytext
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-push-4 col-xs-12">
+                            <a class="main-link green-btn" href="@Model.Content.VenueLink.Url">Convince your boss</a>
+                        </div>
                     </div>
                 </div>
             </div>

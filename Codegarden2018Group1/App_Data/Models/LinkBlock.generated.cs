@@ -25,7 +25,7 @@ namespace Umbraco.Web.PublishedContentModels
 	public partial interface ILinkBlock : IPublishedContent
 	{
 		/// <summary>Link block bodytext</summary>
-		string LinkBlockBodytext { get; }
+		IHtmlString LinkBlockBodytext { get; }
 
 		/// <summary>Link block headline</summary>
 		string LinkBlockHeadline { get; }
@@ -63,13 +63,13 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Link block bodytext
 		///</summary>
 		[ImplementPropertyType("linkBlockBodytext")]
-		public string LinkBlockBodytext
+		public IHtmlString LinkBlockBodytext
 		{
 			get { return GetLinkBlockBodytext(this); }
 		}
 
 		/// <summary>Static getter for Link block bodytext</summary>
-		public static string GetLinkBlockBodytext(ILinkBlock that) { return that.GetPropertyValue<string>("linkBlockBodytext"); }
+		public static IHtmlString GetLinkBlockBodytext(ILinkBlock that) { return that.GetPropertyValue<IHtmlString>("linkBlockBodytext"); }
 
 		///<summary>
 		/// Link block headline

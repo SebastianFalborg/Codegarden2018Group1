@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Textpage</summary>
 	[PublishedContentModel("textpage")]
-	public partial class Textpage : PublishedContentModel, IContentComposition, ISEO
+	public partial class Textpage : PublishedContentModel, IContentComposition, IHideInNav, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "textpage";
@@ -79,6 +79,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Headline
 		{
 			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Hide in umbraco navigation
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.HideInNav.GetUmbracoNaviHide(this); }
 		}
 
 		///<summary>

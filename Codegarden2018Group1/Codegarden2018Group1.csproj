@@ -339,11 +339,12 @@
     <Content Include="Views\Partials\_BlogListItems.cshtml" />
     <Content Include="Views\BlockListItem.cshtml" />
     <Content Include="Views\BlockList.cshtml" />
-    <Content Include="Views\Partials\_ListBlockItems.cshtml" />
     <Content Include="Views\Partials\_SpeakerSchedule.cshtml" />
     <Content Include="Views\SpeakerItem.cshtml" />
     <Content Include="Views\Speakerspage.cshtml" />
     <Content Include="Views\ProgramPage.cshtml" />
+    <Content Include="Views\Partials\_LatestBlogs.cshtml" />
+    <Content Include="Views\LoginPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -390,6 +391,7 @@
     <Compile Include="App_Data\Models\HideInNav.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\LinkBlock.generated.cs" />
+    <Compile Include="App_Data\Models\LoginPage.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\ProgramItem.generated.cs" />
     <Compile Include="App_Data\Models\ProgramPage.generated.cs" />

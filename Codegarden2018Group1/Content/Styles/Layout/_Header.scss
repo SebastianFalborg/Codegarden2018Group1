@@ -10,16 +10,28 @@ $menu-icon-space-phone: 5px;
 
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: $header-height;
     z-index: 5;
+
+    .logo-container {
+        position: fixed;
+        left: 50px;
+        top: 50px;
+        z-index: 5;
+        &.change{
+            svg{
+                fill: black;
+            }
+        }
+        svg {
+            width: 120px;
+            height: 58px;
+            fill:white;
+        }
+    }
 }
 
 .menu-icon-container {
-    position: absolute;
+    position: fixed;
     top: 50px;
     right: 50px;
     cursor: pointer;
@@ -29,8 +41,11 @@ header {
     box-shadow: $shadow;
     background-color: $purple;
     border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
     transition: $transition;
-    &:hover{
+
+    &:hover {
         transform: scale(1.08);
     }
 
@@ -95,7 +110,7 @@ header {
     transform: translateX(100%);
     transition: $transition;
     transition-delay: 0.2s;
-
+    z-index:4;
     &.active {
         transform: translateX(0);
         transition-delay: 0s;
@@ -205,6 +220,27 @@ header {
         }
     }
 
+    header {
+        .logo-container {
+            top: 23px;
+            left: 15px;
+            z-index: 5;
+            transition: $transition;
+
+            &.change {
+                transform: translateY(-140%);
+                svg {
+                    fill: white;
+                }
+            }
+
+            svg {
+                width: 90px;
+                height: 34px;
+            }
+        }
+    }
+
     .navigation-container {
         width: 100%;
         transform: translateX(100%);
@@ -212,9 +248,8 @@ header {
         nav {
 
             ul {
-                width:100%;
-               padding-left:15px;
-
+                width: 100%;
+                padding-left: 15px;
             }
         }
     }

@@ -1,1 +1,75 @@
-﻿
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.main-link-block {
+    &:hover {
+        .link-block-wrap {
+            .link-block-image {
+                transform: scale(1.04);
+            }
+        }
+
+        .link-block-content {
+            transform: translateY(-30px);
+        }
+
+        .read-more {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+    }
+
+    .link-block-wrap {
+        overflow: hidden;
+        height: 350px;
+        width: 100%;
+
+        .link-block-image {
+            height: 100%;
+            position: relative;
+            transform: scale(1);
+            transition: $transition;
+        }
+    }
+
+    .link-block-content {
+        position: absolute;
+        bottom: 20px;
+        left: 40px;
+        transition: $transition;
+
+        h3 {
+            @include font-bold;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: white;
+        }
+    }
+
+    .read-more {
+        @include font-bold;
+        font-size: 1rem;
+        position: absolute;
+        bottom: 20px;
+        left: 40px;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: $transition;
+        transition-delay: 0;
+    }
+
+    margin-bottom: 25px;
+}
+
+@include phones {
+    .main-link-block {
+        .link-block-wrap {
+            height: 150px;
+        }
+
+        margin-bottom: 15px;
+    }
+}

@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>BlockListItem</summary>
 	[PublishedContentModel("blockListItem")]
-	public partial class BlockListItem : PublishedContentModel, ILinkBlock
+	public partial class BlockListItem : PublishedContentModel, ILinkBlock, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "blockListItem";
@@ -49,7 +49,7 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Link block bodytext
 		///</summary>
 		[ImplementPropertyType("linkBlockBodytext")]
-		public string LinkBlockBodytext
+		public IHtmlString LinkBlockBodytext
 		{
 			get { return Umbraco.Web.PublishedContentModels.LinkBlock.GetLinkBlockBodytext(this); }
 		}
@@ -70,6 +70,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent LinkBlockImage
 		{
 			get { return Umbraco.Web.PublishedContentModels.LinkBlock.GetLinkBlockImage(this); }
+		}
+
+		///<summary>
+		/// Meta description
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta keywords
+		///</summary>
+		[ImplementPropertyType("metaKeywords")]
+		public string MetaKeywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaKeywords(this); }
 		}
 	}
 }

@@ -1,26 +1,24 @@
-﻿
-
+﻿//$(window).width() < 768
+// Menu icon toggle and menu
 $("[data-menu-toggle]").click(function () {
     $(this).toggleClass("active");
     $(this).next().toggleClass("active");
     $("[data-main-wrapper]").toggleClass("active");
 });
 
-//var parallaxElements = $('[data-image-effect]'),
-//    parallaxQuantity = parallaxElements.length;
+// logo fill funtion
+$(function () {
+    var headerLogo = $('[data-header-logo]');
+    var banner = $(".main-banner");
+    var bannerTop = banner.offset().top; // top of element (0)
+    var bannerBottom = banner.offset().top + banner.height(); // 0 + 362px
 
-//$(window).on('scroll', function () {
-
-//    window.requestAnimationFrame(function () {
-
-//        for (var i = 0; i < parallaxQuantity; i++) {
-//            var currentElement = parallaxElements.eq(i);
-//            var scrolled = $(window).scrollTop();
-
-//            currentElement.css({
-//                'transform': 'translate3d(0,' + scrolled * -0.3 + 'px, 0)'
-//            });
-//        }
-//    });
-
-//});
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop() + 80; // how much the 'window' have scrolled
+        if ((scroll > bannerBottom)) {
+            headerLogo.addClass('change');
+        } else {
+            headerLogo.removeClass('change');
+        }
+    });
+})

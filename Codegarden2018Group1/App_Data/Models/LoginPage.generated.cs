@@ -20,24 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	// Mixin content Type 1072 with alias "hideInNav"
-	/// <summary>Hide in nav</summary>
-	public partial interface IHideInNav : IPublishedContent
-	{
-		/// <summary>Hide in umbraco navigation</summary>
-		bool UmbracoNaviHide { get; }
-	}
-
-	/// <summary>Hide in nav</summary>
-	[PublishedContentModel("hideInNav")]
-	public partial class HideInNav : PublishedContentModel, IHideInNav
+	/// <summary>Login page</summary>
+	[PublishedContentModel("loginPage")]
+	public partial class LoginPage : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "hideInNav";
+		public new const string ModelTypeAlias = "loginPage";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public HideInNav(IPublishedContent content)
+		public LoginPage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -48,21 +40,9 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HideInNav, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Hide in umbraco navigation
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return GetUmbracoNaviHide(this); }
-		}
-
-		/// <summary>Static getter for Hide in umbraco navigation</summary>
-		public static bool GetUmbracoNaviHide(IHideInNav that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
 	}
 }
