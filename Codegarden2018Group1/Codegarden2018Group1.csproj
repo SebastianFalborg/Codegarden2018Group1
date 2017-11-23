@@ -253,6 +253,7 @@
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Content\Img\Icons\icon.svg" />
+    <Content Include="Content\Img\Logo\umbraco-logo.svg" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap.css" />
@@ -407,7 +408,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Fonts\" />
-    <Folder Include="Content\Img\Logo\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
