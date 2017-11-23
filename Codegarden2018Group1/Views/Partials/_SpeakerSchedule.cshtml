@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Activities.Statements
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<SpeakerItem>
+    
+
+<div class="container">
+    <h2>Speakers program</h2>
+    <ul>
+        @foreach (var program in Model.Site().Descendants<IPublishedContent>().Where(x => x.HasProperty("Title")
+        && x.GetPropertyValue<IEnumerable<IPublishedContent>>("speakers").Any(y => y.GetPropertyValue("Headline").ToString() == Model.Headline)))
+        {
+            <h3>@program.GetPropertyValue("Title")</h3>
+            @program.GetPropertyValue("Location")<br/>
+            @program.GetPropertyValue("StartTime").ToString()
+        }
+    </ul>
+</div>
