@@ -1,8 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
-    var selection = Model.Content.Site().FirstChild("blockList").Children("blockListItem")
-                        .Where(x => x.IsVisible()).Take(2);
+    var selection = Umbraco.TypedContent(1131).Children("blockListItem")
+                         .Where(x => x.IsVisible())
+                         .OrderBy("UpdateDate desc");
 
 }
 <div class="row">
@@ -25,3 +26,5 @@
             </a>
         }
   </div>
+
+

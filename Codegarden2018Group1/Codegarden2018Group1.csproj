@@ -337,7 +337,6 @@
     <Content Include="Views\Partials\_Sprite.cshtml" />
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Textpage.cshtml" />
-    <Content Include="Views\Partials\_BlogListItems.cshtml" />
     <Content Include="Views\BlockListItem.cshtml" />
     <Content Include="Views\BlockList.cshtml" />
     <Content Include="Views\Partials\_SpeakerSchedule.cshtml" />
@@ -346,6 +345,7 @@
     <Content Include="Views\ProgramPage.cshtml" />
     <Content Include="Views\Partials\_LatestBlogs.cshtml" />
     <Content Include="Views\LoginPage.cshtml" />
+    <Content Include="Views\Partials\_GetThemes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
