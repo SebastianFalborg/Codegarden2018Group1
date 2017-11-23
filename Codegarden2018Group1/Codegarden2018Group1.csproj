@@ -337,7 +337,6 @@
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Textpage.cshtml" />
     <Content Include="Views\Partials\_BlogListItems.cshtml" />
-    <Content Include="Views\Gridpage.cshtml" />
     <Content Include="Views\BlockListItem.cshtml" />
     <Content Include="Views\BlockList.cshtml" />
     <Content Include="Views\Partials\_ListBlockItems.cshtml" />
