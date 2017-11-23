@@ -3,15 +3,19 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<SpeakerItem>
     
 
+@{
+    var programItemList = Model.Site().FirstChild<ProgramPage>().Children<ProgramItem>();
+
+}
+
 <div class="container">
     <h2>Speakers program</h2>
     <ul>
-        @foreach (var program in Model.Site().Descendants<IPublishedContent>().Where(x => x.HasProperty("Title")
-        && x.GetPropertyValue<IEnumerable<IPublishedContent>>("speakers").Any(y => y.GetPropertyValue("Headline").ToString() == Model.Headline)))
+        @foreach (var program in programItemList.Where(x => x.Speakers.Any(y => y.GetPropertyValue("Headline") == Model.Headline)))
         {
-            <h3>@program.GetPropertyValue("Title")</h3>
-            @program.GetPropertyValue("Location")<br/>
-            @program.GetPropertyValue("StartTime").ToString()
+            <h3>@program.Title</h3>
+            @program.Location<br/>
+            @program.StartTime.ToString("f")
         }
     </ul>
 </div>
