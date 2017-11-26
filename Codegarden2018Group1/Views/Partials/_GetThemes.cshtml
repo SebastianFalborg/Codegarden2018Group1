@@ -1,10 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    var selection = Umbraco.TypedContent(1131).Children("blockListItem")
-                         .Where(x => x.IsVisible())
-                         .OrderBy("UpdateDate desc");
-
+    var selection = Umbraco.TypedContent(1131).Children("blockListItem");
 }
 <div class="row">
         @foreach (var item in selection)
