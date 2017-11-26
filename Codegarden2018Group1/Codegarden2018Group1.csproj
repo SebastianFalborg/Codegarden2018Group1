@@ -264,6 +264,7 @@
     <Content Include="Content\Styles\Style.min.css">
       <DependentUpon>Style.css</DependentUpon>
     </Content>
+    <Content Include="Content\Styles\Swiper\swiper.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
@@ -317,6 +318,7 @@
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\swiper.min.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -346,6 +348,7 @@
     <Content Include="Views\Partials\_LatestBlogs.cshtml" />
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Partials\_GetThemes.cshtml" />
+    <Content Include="Views\Partials\_GetSpeakers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
