@@ -18,6 +18,7 @@
     <title>@Umbraco.Field("pageName")</title>
     <link href="~/Content/Styles/Bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Styles/Style.css" rel="stylesheet" />
+    <link href="~/Content/Styles/Swiper/swiper.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 </head>
 <body>
@@ -65,5 +66,48 @@
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     @*<script src="~/Scripts/bootstrap.js"></script>*@
     <script src="~/Scripts/Custom/Custom.js"></script>
+    <script src="~/Scripts/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 5,
+            spaceBetween: 50,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            // init: false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                1260: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+                1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                730: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                500: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                },
+                350: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                }
+            }
+        });
+
+    </script>
 </body>
 </html>
