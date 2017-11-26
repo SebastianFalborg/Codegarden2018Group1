@@ -1,0 +1,35 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+a, button {
+    &.main-link {
+        @include font-bold;
+        width: 100%;
+        background-color: transparent;
+        border-radius: 3px;
+        display: inline-block;
+        padding: 12px 0;
+        color: black;
+        border: 1px solid $gray;
+        text-align: center;
+        margin-bottom: 15px;
+        transition: $small-transition;
+
+        &.green-btn {
+            background-color: $green;
+            color: white;
+            border: 1px solid $green;
+
+            &:hover {
+                background-color: transparent;
+                color: $green;
+                border: 1px solid $green;
+            }
+        }
+
+        &:hover {
+            background-color: $gray;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.main-banner {
+    position: relative;
+    height: 60vh;
+
+    &.frontpage-banner {
+        height: 80vh;
+
+        .banner-content {
+            @include center;
+
+            svg {
+                width: 450px;
+                height: 318px;
+                fill:white;
+            }
+
+            .banner-links {
+                margin: 0 50px;
+
+                a {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    .banner-content{
+       @include center-y;
+       z-index:1;
+       h1, p{
+           text-align:left;
+           color: white;
+       }
+       p{
+           font-size: 1rem;
+       }
+    }
+}
+@include phones {
+    .main-banner {
+        height: 40vh;
+
+        &.frontpage-banner {
+            height: 100vh;
+
+            .banner-content {
+                svg {
+                    width: 270px;
+                    height: 190px;
+                }
+            }
+        }
+
+        .banner-content {
+            bottom:20px;
+            top:auto;
+            left:0;
+            transform:none;
+        }
+    }
+}

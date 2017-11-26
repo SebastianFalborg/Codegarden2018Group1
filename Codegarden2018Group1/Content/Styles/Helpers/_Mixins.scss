@@ -1,0 +1,120 @@
+﻿@import "Vars";
+
+// small phones
+@mixin small-phones {
+    @media only screen and (max-width: 350px) {
+        @content;
+    }
+}
+
+// phones
+@mixin phones {
+    @media only screen and (max-width: $extra-small) {
+        @content;
+    }
+}
+
+// tablets
+@mixin tablets {
+    @media only screen and (min-width: $small) and (max-width: $medium) {
+        @content;
+    }
+}
+
+// Mobile and tablets
+@mixin phones-tablets {
+    @media only screen and (max-width: $medium) {
+        @content;
+    }
+}
+
+@mixin tablet-horizontal {
+    @media only screen and (max-width: $tablet-horizontal) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (max-width: $large) {
+        @content;
+    }
+}
+
+@mixin desktop-xl {
+    @media only screen and (min-width: $extra-large) {
+  
+    }
+}
+
+// Helpers
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: none;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d8d9de;
+        outline: none;
+        border-radius: 25px;
+    }
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin all-sides {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+//font
+@mixin font-light {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+@mixin font-regular {
+    font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+}
+
+@mixin font-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+@mixin font-extra-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+
+

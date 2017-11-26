@@ -1,0 +1,23 @@
+﻿// Codegarden colors
+$purple: #7f71cd;
+$green: #39D18C;
+$gray: #545454;
+$light-gray: #9C9C9C;
+$red: #ff4053;
+// Layout
+$header-height: 80px;
+$menu-width: 400px;
+//transitions
+$cubic: cubic-bezier(.75,0,.25,1);
+$transition: 0.5s $cubic;
+$small-transition: 0.4s $cubic;
+$shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.15);
+
+// Breakpoints
+$extra-small: 767px;
+$small: 768px;
+$medium: 992px;
+$tablet-horizontal: 1025px;
+$large: 1200px;
+$larger: 1366px;
+$extra-large: 1600px; 

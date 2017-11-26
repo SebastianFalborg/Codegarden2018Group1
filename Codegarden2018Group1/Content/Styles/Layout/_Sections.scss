@@ -1,0 +1,26 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.section{
+    margin: 80px 0;
+}
+.image-container {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+
+    .image-container-content {
+        position: absolute;
+        bottom: 70px;
+        width: 100%;
+
+        p, h3 {
+            text-align: left;
+        }
+    }
+}
+@include phones {
+    .section {
+        margin: 35px 0;
+    }
+}

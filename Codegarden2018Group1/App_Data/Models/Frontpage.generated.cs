@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Frontpage</summary>
 	[PublishedContentModel("frontpage")]
-	public partial class Frontpage : PublishedContentModel
+	public partial class Frontpage : PublishedContentModel, IContentComposition, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "frontpage";
@@ -46,12 +46,129 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Event description
+		///</summary>
+		[ImplementPropertyType("eventDescription")]
+		public IHtmlString EventDescription
+		{
+			get { return this.GetPropertyValue<IHtmlString>("eventDescription"); }
+		}
+
+		///<summary>
+		/// Event image
+		///</summary>
+		[ImplementPropertyType("eventImage")]
+		public IPublishedContent EventImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("eventImage"); }
+		}
+
+		///<summary>
+		/// Event link
+		///</summary>
+		[ImplementPropertyType("eventLink")]
+		public IPublishedContent EventLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("eventLink"); }
+		}
+
+		///<summary>
+		/// Event link secondary
+		///</summary>
+		[ImplementPropertyType("eventLinkSecondary")]
+		public IPublishedContent EventLinkSecondary
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("eventLinkSecondary"); }
+		}
+
+		///<summary>
+		/// Event list text
+		///</summary>
+		[ImplementPropertyType("eventListText")]
+		public IHtmlString EventListText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("eventListText"); }
+		}
+
+		///<summary>
+		/// Help yourself bodytext
+		///</summary>
+		[ImplementPropertyType("helpYourselfBodytext")]
+		public string HelpYourselfBodytext
+		{
+			get { return this.GetPropertyValue<string>("helpYourselfBodytext"); }
+		}
+
+		///<summary>
+		/// Help yourself headline
+		///</summary>
+		[ImplementPropertyType("helpYourselfHeadline")]
+		public string HelpYourselfHeadline
+		{
+			get { return this.GetPropertyValue<string>("helpYourselfHeadline"); }
+		}
+
+		///<summary>
+		/// Help yourself image
+		///</summary>
+		[ImplementPropertyType("helpYourselfImage")]
+		public IPublishedContent HelpYourselfImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("helpYourselfImage"); }
+		}
+
+		///<summary>
+		/// Help yourself link
+		///</summary>
+		[ImplementPropertyType("helpYourselfLink")]
+		public IPublishedContent HelpYourselfLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("helpYourselfLink"); }
+		}
+
+		///<summary>
+		/// Venue bodytext
+		///</summary>
+		[ImplementPropertyType("venueBodytext")]
+		public IHtmlString VenueBodytext
+		{
+			get { return this.GetPropertyValue<IHtmlString>("venueBodytext"); }
+		}
+
+		///<summary>
+		/// Venue headline
+		///</summary>
+		[ImplementPropertyType("venueHeadline")]
+		public string VenueHeadline
+		{
+			get { return this.GetPropertyValue<string>("venueHeadline"); }
+		}
+
+		///<summary>
+		/// Venue link
+		///</summary>
+		[ImplementPropertyType("venueLink")]
+		public IPublishedContent VenueLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("venueLink"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]
 		public string Bodytext
 		{
-			get { return this.GetPropertyValue<string>("bodytext"); }
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetBodytext(this); }
+		}
+
+		///<summary>
+		/// Content image
+		///</summary>
+		[ImplementPropertyType("contentImage")]
+		public IPublishedContent ContentImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetContentImage(this); }
 		}
 
 		///<summary>
@@ -60,7 +177,25 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("headline")]
 		public string Headline
 		{
-			get { return this.GetPropertyValue<string>("headline"); }
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Meta description
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta keywords
+		///</summary>
+		[ImplementPropertyType("metaKeywords")]
+		public string MetaKeywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaKeywords(this); }
 		}
 	}
 }

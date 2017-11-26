@@ -1,0 +1,19 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.image-overlay, .main-overlay, .image-gradient-overlay {
+    position: absolute;
+    @include all-sides;
+    background: rgba(0,0,0,0.6);
+}
+
+.main-overlay {
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+}
+
+.image-gradient-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9))
+}

@@ -1,0 +1,52 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+footer {
+    background-color: $gray;
+    padding: 25px 0;
+
+    p {
+        color: white;
+        font-size: 0.7rem;
+        line-height:1.5;
+        margin:0;
+        text-align: left;
+    }
+
+    span, ul {
+        display: inline-block;
+    }
+
+    span {
+        color: $light-gray;
+        font-size: 0.7rem;
+    }
+
+    ul {
+        li {
+            display: inline-block;
+            margin: 0 5px;
+            a {
+                color: $light-gray;
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
+@include phones {
+    footer {
+        padding: 18px 0;
+
+
+        ul {
+            margin:0;
+            li {
+                display: inline-block;
+                margin: 0 5px;
+
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

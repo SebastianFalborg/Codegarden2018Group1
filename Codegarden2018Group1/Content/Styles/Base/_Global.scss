@@ -1,0 +1,158 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    @include font-regular;
+}
+
+h1, h2, h3, h4 {
+    @include font-bold;
+    line-height: 1.2;
+}
+
+h1 {
+    color: white;
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+    color: $red;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+p {
+    @include font-regular;
+    line-height: 24px;
+    margin: 0 0 20px;
+
+    img {
+        width: 100%;
+        margin: 30px 0;
+    }
+}
+
+a {
+    color: white;
+    transition: $transition;
+
+
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+        color: white;
+    }
+}
+ul{
+    li{
+        a{
+            color: black;
+        }
+    }
+}
+hr {
+    border-top: 1px solid $light-gray;
+}
+
+.cover {
+    @include cover;
+}
+.frontpage-sections {
+    h1, h2, h3, h4, p {
+        text-align: center;
+    }
+}
+.main-wrapper {
+    position: relative;
+    transition: $transition;
+    transition-delay: 0.18s;
+
+    &.active {
+        transform: translateX(-$menu-width / 2);
+
+        .main-overlay {
+            visibility: visible;
+            opacity: 1;
+        
+        }
+    }
+}
+
+
+.white-format {
+    h3, p {
+        color: white;
+    }
+}
+
+.custom-ul {
+    ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+
+        li {
+            padding: 4px 0;
+            &:before {
+                content: '';
+                background-image: url('/Content/Img/Icons/icon.svg');
+                width: 11px;
+                height: 12px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+@include phones {
+    html {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+    h2{
+        font-size: 28px;
+    }
+    .main-wrapper {
+        transition-delay: 0.1s;
+    }
+
+    hr {
+        margin-top: 18px;
+        margin-bottom: 10px;
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}

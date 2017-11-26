@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Activities.Statements
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<SpeakerItem>
+    
+
+@{
+    var programItemList = Model.Site().FirstChild<ProgramPage>().Children<ProgramItem>();
+
+}
+
+<div class="container">
+    <h2>Speakers program</h2>
+    <ul>
+        @foreach (var program in programItemList.Where(x => x.Speakers.Any(y => y.GetPropertyValue("Headline") == Model.Headline)))
+        {
+            <h3>@program.Title</h3>
+            @program.Location<br/>
+            @program.StartTime.ToString("f")
+        }
+    </ul>
+</div>

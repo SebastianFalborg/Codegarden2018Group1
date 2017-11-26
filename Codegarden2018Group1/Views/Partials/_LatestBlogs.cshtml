@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var selection = Model.Content.Site().FirstChild("blockList").Children("blockListItem")
+                        .Where(x => x.IsVisible()).Take(2);
+
+}
+<div class="row">
+        @foreach (var item in selection)
+        {
+            <a href="@item.Url">
+                <div class="col-sm-6 col-xs-12 main-link-block">
+                    <div class="link-block-wrap">
+                        <div class="link-block-image cover" style="background-image: url('@Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile')">
+                            <div class="image-gradient-overlay">
+                            </div>
+                           
+                        </div>
+                        <div class="link-block-content">
+                            <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
+                        </div>
+                        <div class="read-more">Læs mere</div>
+                    </div>
+                </div>
+            </a>
+        }
+  </div>

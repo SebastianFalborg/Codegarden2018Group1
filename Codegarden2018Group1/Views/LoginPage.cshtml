@@ -1,0 +1,77 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.LoginPage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Shared/_Layout.cshtml";
+    if (IsPost)
+    {
+        if (Request["username"] != null)
+        {
+            var un = Request["username"];
+            var pw = Request["password"];
+            if (Members.Login(un, pw))
+            {
+                Response.Redirect("/Frontpage/");
+            }
+        }
+        //if (Request["create"] != null)
+        //{
+        //    Members.
+        //}
+    }
+}
+@if (!Members.IsLoggedIn())
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-push-2">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Login</h2>
+                    </div>
+                    <form action="" method="post">
+                        <div class="col-xs-12">
+                            <input type="text" name="username" placeholder="Username" required />
+                        </div>
+                        <div class="col-xs-12">
+                            <input type="password" name="password" placeholder="Password" required />
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="submit" class="main-link">Login or die</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8 col-sm-push-2">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Creste user if you think you are important</h2>
+                    </div>
+                    <form action="" method="post">
+                        <div class="col-xs-12">
+                            <input type="text" placeholder="Brugernavn" />
+                        </div>
+                        <div class="col-xs-12">
+                            <input type="password" placeholder="Password" />
+                        </div>
+                        <div class="col-xs-12">
+                            <input type="email" placeholder="Email" />
+                        </div>
+                        <div class="col-xs-12">
+                            <input type="number" placeholder="Billetnr" />
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="submit">Opret</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <h2>Du er logget ind</h2>
+}

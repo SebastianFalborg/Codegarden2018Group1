@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<nav>
+        <ul class="list-unstyled">
+            <li class="@((Model.Content.IsAncestorOrSelf(Model.Content.Site())) ? "active" : "")">
+                <a href="/">Home</a>
+            </li>
+            @{ var allPages = Model.Content.Site().Children.Where(x => x.IsVisible());}
+            @foreach (var page in allPages)
+            {
+
+                <li class="@((page.IsAncestorOrSelf(Model.Content)) ? "active" : "")">
+                    <a href="@page.Url">@page.Name</a>
+                </li>
+            }
+        </ul>
+</nav>
