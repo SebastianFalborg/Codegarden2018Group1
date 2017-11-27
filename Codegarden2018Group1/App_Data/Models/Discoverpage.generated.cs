@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Login page</summary>
-	[PublishedContentModel("loginPage")]
-	public partial class LoginPage : PublishedContentModel, IContentComposition, ISEO
+	/// <summary>Discoverpage</summary>
+	[PublishedContentModel("discoverpage")]
+	public partial class Discoverpage : PublishedContentModel, IContentComposition, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "loginPage";
+		public new const string ModelTypeAlias = "discoverpage";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public LoginPage(IPublishedContent content)
+		public Discoverpage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +40,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Discoverpage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}

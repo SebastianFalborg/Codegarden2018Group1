@@ -1,11 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
-    if (Request["logout"] != null)
-    {
-        Members.Logout();
-        Response.Write("/");
-    }
 }
 
 <!DOCTYPE html>
@@ -44,17 +39,7 @@
     </header>
     <div class="main-wrapper" data-main-wrapper>
         <div class="main-overlay hidden-xs"></div>
-
-        <!-- Login message-->
-        @if (Members.IsLoggedIn())
-        {
-            <h2>Hello, @Members.GetCurrentMemberProfileModel().Name</h2>
-            <a style="color:blue; text-align:center;" href="/?logout=true">Log out or die</a>
-        }
-        <!-- Login message-->
         <div>
-
-
             @RenderBody()
         </div>
         <footer>

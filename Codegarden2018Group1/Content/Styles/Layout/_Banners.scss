@@ -14,7 +14,7 @@
             svg {
                 width: 450px;
                 height: 318px;
-                fill:white;
+                fill: white;
             }
 
             .banner-links {
@@ -26,16 +26,39 @@
             }
         }
     }
-    .banner-content{
-       @include center-y;
-       z-index:1;
-       h1, p{
-           text-align:left;
-           color: white;
-       }
-       p{
-           font-size: 1rem;
-       }
+
+    &.fullscreen-banner {
+        height: 100vh;
+
+        .banner-content {
+            @include center;
+
+            .user-area {
+                h1 {
+                    margin-bottom: 35px;
+                    margin-top:0;
+                    line-height:1;
+                }
+                span{
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .banner-content {
+        @include center-y;
+        z-index: 1;
+
+        h1, p {
+            text-align: left;
+            color: white;
+        }
+
+        p {
+            font-size: 1rem;
+        }
     }
 }
 @include phones {
