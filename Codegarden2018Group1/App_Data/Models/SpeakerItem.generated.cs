@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Sub headline
+		///</summary>
+		[ImplementPropertyType("subHeadline")]
+		public string SubHeadline
+		{
+			get { return this.GetPropertyValue<string>("subHeadline"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]

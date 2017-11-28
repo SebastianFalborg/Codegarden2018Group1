@@ -310,6 +310,7 @@
     <Content Include="Content\Styles\Layout\_Sections.scss" />
     <Content Include="Content\convince-your-boss-codegarden18.pdf" />
     <Content Include="Content\Styles\Components\_Forms.scss" />
+    <Content Include="Content\Styles\Partials\_Speakers.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
