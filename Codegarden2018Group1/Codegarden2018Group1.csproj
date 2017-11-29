@@ -351,7 +351,13 @@
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Partials\_GetThemes.cshtml" />
     <Content Include="Views\Partials\_GetSpeakers.cshtml" />
+<<<<<<< Updated upstream
     <Content Include="Views\Partials\_CreateUser.cshtml" />
+=======
+    <Content Include="Views\Discoverpage.cshtml" />
+    <Content Include="Views\Partials\_GetReady.cshtml" />
+    <Content Include="Views\Partials\_DontForget.cshtml" />
+>>>>>>> Stashed changes
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
