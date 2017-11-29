@@ -46,6 +46,33 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Get ready content
+		///</summary>
+		[ImplementPropertyType("getReadyContent")]
+		public IHtmlString GetReadyContent
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyContent"); }
+		}
+
+		///<summary>
+		/// Get ready to do
+		///</summary>
+		[ImplementPropertyType("getReadyToDo")]
+		public IHtmlString GetReadyToDo
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyToDo"); }
+		}
+
+		///<summary>
+		/// Get ready transport
+		///</summary>
+		[ImplementPropertyType("getReadyTransport")]
+		public IHtmlString GetReadyTransport
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyTransport"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]
