@@ -1,15 +1,44 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SpeakerItem>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+    Layout = "Shared/_Layout.cshtml";
+    var mainBanner = Model.Content.Ancestor();
 }
 
-<div class="container">
-    <div class="row">
-        <h1>@Model.Content.Headline</h1>
-        <img src="@(Model.Content.ContentImage != null ? Model.Content.ContentImage.Url : "http://via.placeholder.com/350/350")?height=250"/>
+<div class="main-banner cover" style="background-image:url('')">
+    <div class="image-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="banner-content">
+                <div class="col-xs-12">
+                    <h1>@Model.Content.Headline</h1>
+                </div>
+                <div class="col-xs-12">
+                    <p>@Model.Content.SubHeadline</p>
+                </div>
+            </div>
+        </div>
     </div>
-   
+</div>
+
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="img-full-width" src="@(Model.Content.ContentImage != null ? Model.Content.ContentImage.Url : "http://via.placeholder.com/350/350")" />
+            </div>
+            <div class="col-sm-6">
+                <header>
+                    <h4>ABOUT THE SPEAKER</h4>
+                </header>
+                <hr />
+            <p>@Model.Content.Bodytext</p>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 

@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>SpeakerItem</summary>
-	[PublishedContentModel("speakerItem")]
-	public partial class SpeakerItem : PublishedContentModel, IContentComposition, ISEO
+	/// <summary>Discoverpage</summary>
+	[PublishedContentModel("discoverpage")]
+	public partial class Discoverpage : PublishedContentModel, IContentComposition, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "speakerItem";
+		public new const string ModelTypeAlias = "discoverpage";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public SpeakerItem(IPublishedContent content)
+		public Discoverpage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,18 +40,36 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SpeakerItem, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Discoverpage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Sub headline
+		/// Get ready content
 		///</summary>
-		[ImplementPropertyType("subHeadline")]
-		public string SubHeadline
+		[ImplementPropertyType("getReadyContent")]
+		public IHtmlString GetReadyContent
 		{
-			get { return this.GetPropertyValue<string>("subHeadline"); }
+			get { return this.GetPropertyValue<IHtmlString>("getReadyContent"); }
+		}
+
+		///<summary>
+		/// Get ready to do
+		///</summary>
+		[ImplementPropertyType("getReadyToDo")]
+		public IHtmlString GetReadyToDo
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyToDo"); }
+		}
+
+		///<summary>
+		/// Get ready transport
+		///</summary>
+		[ImplementPropertyType("getReadyTransport")]
+		public IHtmlString GetReadyTransport
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyTransport"); }
 		}
 
 		///<summary>

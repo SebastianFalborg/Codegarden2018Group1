@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Web.Mvc.Html
+@using ClientDependency.Core
+@using Umbraco.Core
+@using Umbraco.Web.Controllers
+
+@{
+    var registerModel = Members.CreateRegistrationModel();
+    var redirectUrl = string.Format("{0}&register=true", Request.RawUrl);
+    registerModel.RedirectUrl = redirectUrl;
+    var succes = TempData["FormSucces"] != null;
+}
+
+
+@if (succes)
+{
+    <h2>This should redirect to </h2>
+}
+else
+{
+    using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
+    {
+
+    
+            @Html.TextBoxFor(m => registerModel.Name)
+    
+            @Html.TextBoxFor(m => registerModel.Email)
+          
+            @Html.TextBoxFor(m => registerModel.Password)
+            @*@Html.LabelFor(m => registerModel.MemberProperties[0].Value, registerModel.MemberProperties[0].Name)*@
+            @Html.EditorFor(m => registerModel.MemberProperties[0].Value)
+            @Html.HiddenFor(m => registerModel.MemberProperties[0].Alias)
+              <button class="main-link">Register</button>
+    }
+}
