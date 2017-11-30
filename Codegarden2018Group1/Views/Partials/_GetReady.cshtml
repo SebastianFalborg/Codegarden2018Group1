@@ -1,3 +1,4 @@
-﻿
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Discoverpage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
 
-<h2>GEt READY</h2>
+@Model.Content.GetReadyContent
