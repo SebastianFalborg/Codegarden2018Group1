@@ -309,6 +309,8 @@
     <Content Include="Content\Styles\Layout\_Overlay.scss" />
     <Content Include="Content\Styles\Layout\_Sections.scss" />
     <Content Include="Content\convince-your-boss-codegarden18.pdf" />
+    <Content Include="Content\Styles\Components\_Forms.scss" />
+    <Content Include="Content\Styles\Partials\_Speakers.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -349,6 +351,13 @@
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Partials\_GetThemes.cshtml" />
     <Content Include="Views\Partials\_GetSpeakers.cshtml" />
+
+    <Content Include="Views\Partials\_CreateUser.cshtml" />
+
+    <Content Include="Views\Discoverpage.cshtml" />
+    <Content Include="Views\Partials\_GetReady.cshtml" />
+    <Content Include="Views\Partials\_DontForget.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -389,6 +398,7 @@
     <Compile Include="App_Data\Models\BlockList.generated.cs" />
     <Compile Include="App_Data\Models\BlockListItem.generated.cs" />
     <Compile Include="App_Data\Models\ContentComposition.generated.cs" />
+    <Compile Include="App_Data\Models\Discoverpage.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />

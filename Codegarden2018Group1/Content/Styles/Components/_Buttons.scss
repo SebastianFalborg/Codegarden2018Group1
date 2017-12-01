@@ -1,7 +1,7 @@
 ﻿@import "../Helpers/Mixins";
 @import "../Helpers/Vars";
 
-a, button {
+a, button, span {
     &.main-link {
         @include font-bold;
         width: 100%;
@@ -14,6 +14,9 @@ a, button {
         text-align: center;
         margin-bottom: 15px;
         transition: $small-transition;
+        &:focus, &:active{
+            outline: none;
+        }
 
         &.green-btn {
             background-color: $green;

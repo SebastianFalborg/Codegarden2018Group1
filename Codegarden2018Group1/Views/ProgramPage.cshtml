@@ -1,5 +1,212 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProgramPage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+    Layout = "Shared/_Layout.cshtml";
+
+    var tuesdayProgramList = Model.Content.Children<ProgramItem>().Where(x => x.DateS.Contains("6/6")).OrderBy(x => x.StartTime).ToList();
+    List<ProgramItem> wednesdayProgramList = Model.Content.Children<ProgramItem>().Where(x => x.DateS.Contains("7/6")).OrderBy(x => x.StartTime).ToList();
+    var thursdayProgramList = Model.Content.Children<ProgramItem>().Where(x => x.DateS.Contains("8/6")).OrderBy(x => x.StartTime).ToList();
+    var fridayProgramList = Model.Content.Children<ProgramItem>().Where(x => x.DateS.Contains("9/6")).OrderBy(x => x.StartTime).ToList();
+
+    var locationList = new string[] {"Main Room", "Back Room", "Entrance Room", "Stjerneskibet (The starship)"};
+    ProgramItem[] tempProgramList = new ProgramItem[4];
+    string currentTime = "";
+
+}
+
+<div class="container-fluid">
+    <div class="section">
+        
+        <div class="container">
+            <h2>Tuesday</h2>
+            @{
+                <div class="row">
+                    <div class="col-md-1">
+                        <p>Time</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>@locationList[0]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[1]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[2]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[3]</p>
+                    </div>
+                </div>
+
+                for (int i = 0; i < tuesdayProgramList.Count; i++)
+                {
+                    currentTime = tuesdayProgramList[i].StartTime.ToShortTimeString();
+
+                    tempProgramList[Array.IndexOf(locationList, tuesdayProgramList[i].Location)] = tuesdayProgramList[i];
+
+                    if (i == tuesdayProgramList.Count - 1)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                    else if (tuesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                }
+            }
+        </div>
+
+        <div class="container">
+            <h2>Wednesday</h2>
+            @{
+                <div class="row">
+                    <div class="col-md-1">
+                        <p>Time</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>@locationList[0]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[1]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[2]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[3]</p>
+                    </div>
+                </div>
+
+                for (int i = 0; i < wednesdayProgramList.Count; i++)
+                {
+                    currentTime = wednesdayProgramList[i].StartTime.ToShortTimeString();
+
+                    tempProgramList[Array.IndexOf(locationList, wednesdayProgramList[i].Location)] = wednesdayProgramList[i];
+
+                    if (i == wednesdayProgramList.Count - 1)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                    else if (wednesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                }
+            }
+        </div>
+        
+        <div class="container">
+            <h2>Thursday</h2>
+            @{
+                <div class="row">
+                    <div class="col-md-1">
+                        <p>Time</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>@locationList[0]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[1]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[2]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[3]</p>
+                    </div>
+                </div>
+
+                for (int i = 0; i < thursdayProgramList.Count; i++)
+                {
+                    currentTime = thursdayProgramList[i].StartTime.ToShortTimeString();
+
+                    tempProgramList[Array.IndexOf(locationList, thursdayProgramList[i].Location)] = thursdayProgramList[i];
+
+                    if (i == thursdayProgramList.Count - 1)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                    else if (thursdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                }
+            }
+        </div>
+        
+        <div class="container">
+            <h2>Friday</h2>
+            @{
+                <div class="row">
+                    <div class="col-md-1">
+                        <p>Time</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>@locationList[0]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[1]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[2]</p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1">
+                        <p>@locationList[3]</p>
+                    </div>
+                </div>
+
+                for (int i = 0; i < fridayProgramList.Count; i++)
+                {
+                    currentTime = fridayProgramList[i].StartTime.ToShortTimeString();
+
+                    tempProgramList[Array.IndexOf(locationList, fridayProgramList[i].Location)] = fridayProgramList[i];
+
+                    if (i == fridayProgramList.Count - 1)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                    else if (fridayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                    {
+                        @InsertRow(tempProgramList, currentTime)
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@helper InsertRow(ProgramItem[] programList, string currentTime)
+{
+    <div class="row" style="background-color: lavender;">
+        <div class="col-md-1 " style="background-color: lavender;">
+            <p>@currentTime</p>
+        </div>
+        <div class="col-md-2" style="background-color: lavender;">
+            @if (programList[0] != null)
+            {
+                <p>@programList[0].Title</p>
+            }
+        </div>
+        <div class="col-md-2 col-md-offset-1" style="background-color: lavender;">
+            @if (programList[1] != null)
+            {
+                <p>@programList[1].Title</p>
+            }
+        </div>
+        <div class="col-md-2 col-md-offset-1" style="background-color: lavender;">
+            @if (programList[2] != null)
+            {
+                <p>@programList[2].Title</p>
+            }
+        </div>
+        <div class="col-md-2 col-md-offset-1" style="background-color: lavender;">
+            @if (programList[3] != null)
+            {
+                <p>@programList[3].Title</p>
+            }
+        </div>
+    </div>
+    Array.Clear(programList, 0, programList.Length);
 }

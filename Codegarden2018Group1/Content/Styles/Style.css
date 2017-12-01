@@ -95,10 +95,13 @@ hr {
     margin-top: 18px;
     margin-bottom: 10px; } }
 
+.img-full-width {
+  width: 100%; }
+
 .container-fluid {
   padding: 0; }
 
-a.main-link, button.main-link {
+a.main-link, button.main-link, span.main-link {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   width: 100%;
@@ -111,17 +114,35 @@ a.main-link, button.main-link {
   text-align: center;
   margin-bottom: 15px;
   transition: 0.4s cubic-bezier(0.75, 0, 0.25, 1); }
-  a.main-link.green-btn, button.main-link.green-btn {
+  a.main-link:focus, a.main-link:active, button.main-link:focus, button.main-link:active, span.main-link:focus, span.main-link:active {
+    outline: none; }
+  a.main-link.green-btn, button.main-link.green-btn, span.main-link.green-btn {
     background-color: #39D18C;
     color: white;
     border: 1px solid #39D18C; }
-    a.main-link.green-btn:hover, button.main-link.green-btn:hover {
+    a.main-link.green-btn:hover, button.main-link.green-btn:hover, span.main-link.green-btn:hover {
       background-color: transparent;
       color: #39D18C;
       border: 1px solid #39D18C; }
-  a.main-link:hover, button.main-link:hover {
+  a.main-link:hover, button.main-link:hover, span.main-link:hover {
     background-color: #545454;
     color: white; }
+
+input {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  border-radius: 3px;
+  padding: 12px 0;
+  border: none;
+  text-align: center;
+  margin-bottom: 15px;
+  background-color: white;
+  width: 100%;
+  color: #545454;
+  transition: 0.4s cubic-bezier(0.75, 0, 0.25, 1); }
+  input:focus, input:active {
+    outline: none;
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.15); }
 
 .main-banner {
   position: relative;
@@ -141,6 +162,20 @@ a.main-link, button.main-link {
         margin: 0 50px; }
         .main-banner.frontpage-banner .banner-content .banner-links a {
           margin-bottom: 15px; }
+  .main-banner.fullscreen-banner {
+    height: 100vh; }
+    .main-banner.fullscreen-banner .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .main-banner.fullscreen-banner .banner-content .user-area h1 {
+        margin-bottom: 35px;
+        margin-top: 0;
+        line-height: 1; }
+      .main-banner.fullscreen-banner .banner-content .user-area span {
+        color: white;
+        cursor: pointer; }
   .main-banner .banner-content {
     position: absolute;
     top: 50%;
@@ -440,4 +475,13 @@ header {
     margin-bottom: 15px; }
     .main-link-block .link-block-wrap {
       height: 150px; } }
+
+#speaker-size {
+  height: 250px; }
+  #speaker-size .link-block-content {
+    left: 10px;
+    text-align: left; }
+  #speaker-size .read-more {
+    font-size: 0.95rem;
+    left: 10px; }
 

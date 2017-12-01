@@ -9,13 +9,13 @@
             {
                 <div class="swiper-slide main-link-block">
                     <a href="@item.Url">
-                        <div class="link-block-wrap">
+                        <div id="speaker-size" class="link-block-wrap">
                             <div style="background-image: url('@Umbraco.Media(item.GetPropertyValue("contentImage").ToString()).UmbracoFile')" class="link-block-image cover">
                                 <div class="image-gradient-overlay"></div>
                                 <div class="link-block-content">
                                     <h3>@item.GetPropertyValue("headline")</h3>
                                 </div>
-                                <div class="read-more">Read more</div>
+                                <div class="read-more">@item.GetPropertyValue("subHeadline")</div>
                             </div>
                         </div>
                     </a>
@@ -24,7 +24,6 @@
 
         </div>
         <br/>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        
     </div>
 </div>

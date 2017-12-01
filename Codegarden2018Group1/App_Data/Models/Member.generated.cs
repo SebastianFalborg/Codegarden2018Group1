@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// FunFact
+		///</summary>
+		[ImplementPropertyType("funFact")]
+		public string FunFact
+		{
+			get { return this.GetPropertyValue<string>("funFact"); }
+		}
+
+		///<summary>
 		/// Is Approved
 		///</summary>
 		[ImplementPropertyType("umbracoMemberApproved")]
