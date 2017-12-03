@@ -311,6 +311,7 @@
     <Content Include="Content\convince-your-boss-codegarden18.pdf" />
     <Content Include="Content\Styles\Components\_Forms.scss" />
     <Content Include="Content\Styles\Partials\_Speakers.scss" />
+    <Content Include="Content\Styles\Partials\_LogoAnimation.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -351,13 +352,11 @@
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Partials\_GetThemes.cshtml" />
     <Content Include="Views\Partials\_GetSpeakers.cshtml" />
-
     <Content Include="Views\Partials\_CreateUser.cshtml" />
-
     <Content Include="Views\Discoverpage.cshtml" />
     <Content Include="Views\Partials\_GetReady.cshtml" />
     <Content Include="Views\Partials\_DontForget.cshtml" />
-
+    <Content Include="Views\Partials\_LogoAnimation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

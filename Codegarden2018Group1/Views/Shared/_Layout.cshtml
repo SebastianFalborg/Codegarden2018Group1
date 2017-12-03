@@ -47,7 +47,11 @@
         </footer>
     </div>
     <!-- Sprite partial, for all the svg -->
-    @Html.Partial("_Sprite")
+    @if (Request.Url.PathAndQuery != "/")
+    {
+        @Html.Partial("_Sprite")
+    }
+    
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     @*<script src="~/Scripts/bootstrap.js"></script>*@
     <script src="~/Scripts/Custom/Custom.js"></script>

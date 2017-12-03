@@ -46,6 +46,69 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Get ready content
+		///</summary>
+		[ImplementPropertyType("getReadyContent")]
+		public IHtmlString GetReadyContent
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyContent"); }
+		}
+
+		///<summary>
+		/// Get ready to do
+		///</summary>
+		[ImplementPropertyType("getReadyToDo")]
+		public IHtmlString GetReadyToDo
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyToDo"); }
+		}
+
+		///<summary>
+		/// Get ready transport
+		///</summary>
+		[ImplementPropertyType("getReadyTransport")]
+		public IHtmlString GetReadyTransport
+		{
+			get { return this.GetPropertyValue<IHtmlString>("getReadyTransport"); }
+		}
+
+		///<summary>
+		/// Umbraco awards bodytext
+		///</summary>
+		[ImplementPropertyType("umbracoAwardsBodytext")]
+		public string UmbracoAwardsBodytext
+		{
+			get { return this.GetPropertyValue<string>("umbracoAwardsBodytext"); }
+		}
+
+		///<summary>
+		/// Umbraco awards headline
+		///</summary>
+		[ImplementPropertyType("umbracoAwardsHeadline")]
+		public string UmbracoAwardsHeadline
+		{
+			get { return this.GetPropertyValue<string>("umbracoAwardsHeadline"); }
+		}
+
+		///<summary>
+		/// Umbraco awards image
+		///</summary>
+		[ImplementPropertyType("umbracoAwardsImage")]
+		public IPublishedContent UmbracoAwardsImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("umbracoAwardsImage"); }
+		}
+
+		///<summary>
+		/// Umbraco awards link
+		///</summary>
+		[ImplementPropertyType("umbracoAwardsLink")]
+		public IPublishedContent UmbracoAwardsLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("umbracoAwardsLink"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]
