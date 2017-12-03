@@ -24,22 +24,24 @@
             <div class="row">
                     
                         @{
-                            foreach (var speaker in Model.Content.Children<SpeakerItem>())
+                            foreach (var speaker in Model.Content.Children<SpeakerItem>().Where(x => x.IsVisible()))
                             {
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 main-link-block">
                                     <a href="@speaker.Url">
-                                        <div class="link-block-wrap">
+                                        <div id="speaker-size" class="link-block-wrap">
                                             <div style="background-image: url('@speaker.ContentImage.Url" class="link-block-image cover">
                                                 <div class="image-gradient-overlay"></div>
                                                 <div class="link-block-content">
                                                     <h3>@speaker.Headline</h3>
                                                 </div>
+                                                <div class="read-more">@speaker.GetPropertyValue("subHeadline")</div>
+
                                             </div>
                                             
                                         </div>
 
                                     </a>
-                                    <h5 class="">@speaker.Bodytext</h5>
+                                    
                                 </div>
                             }
                         }

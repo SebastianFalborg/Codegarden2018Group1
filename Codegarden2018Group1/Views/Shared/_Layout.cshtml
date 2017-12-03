@@ -1,11 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
-    if (Request["logout"] != null)
-    {
-        Members.Logout();
-        Response.Write("/");
-    }
 }
 
 <!DOCTYPE html>
@@ -44,17 +39,7 @@
     </header>
     <div class="main-wrapper" data-main-wrapper>
         <div class="main-overlay hidden-xs"></div>
-
-        <!-- Login message-->
-        @if (Members.IsLoggedIn())
-        {
-            <h2>Hello, @Members.GetCurrentMemberProfileModel().Name</h2>
-            <a style="color:blue; text-align:center;" href="/?logout=true">Log out or die</a>
-        }
-        <!-- Login message-->
         <div>
-
-
             @RenderBody()
         </div>
         <footer>
@@ -62,7 +47,11 @@
         </footer>
     </div>
     <!-- Sprite partial, for all the svg -->
-    @Html.Partial("_Sprite")
+    @if (Request.Url.PathAndQuery != "/")
+    {
+        @Html.Partial("_Sprite")
+    }
+    
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     @*<script src="~/Scripts/bootstrap.js"></script>*@
     <script src="~/Scripts/Custom/Custom.js"></script>
@@ -107,7 +96,39 @@
                 }
             }
         });
-
+        var swiperSecondary = new Swiper('[data-swiper-secondary]', {
+            slidesPerView: 3,
+            spaceBetween: 50,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                1260: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+                1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                730: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                500: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                },
+                350: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                }
+            }
+        });
     </script>
 </body>
 </html>

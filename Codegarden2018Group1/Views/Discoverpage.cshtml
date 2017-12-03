@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Discoverpage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Shared/_Layout.cshtml";
+}
+
+<div class="main-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')" data-image-effect>
+    <div class="image-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="banner-content">
+                <div class="col-xs-12">
+                    <h1>@Model.Content.Headline</h1>
+                </div>
+                <div class="col-xs-12">
+                    <p>@Model.Content.Bodytext</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8 col-md-push-2">
+            @Html.Partial("_GetReady")
+        </div>
+
+        <div class="col-md-8 col-md-push-2">
+            @Model.Content.GetReadyTransport
+        </div>
+
+        <div class="col-md-8 col-md-push-2">
+            @Model.Content.GetReadyToDo
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="container-fluid white-format">
+    <div class="image-container" style="background-image: url('@Model.Content.UmbracoAwardsImage.Url')">
+        <div class="image-gradient-overlay"></div>
+        <div class="container">
+            <div class="image-container-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>@Model.Content.UmbracoAwardsHeadline</h3>
+                        <p>@Model.Content.UmbracoAwardsBodytext</p>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="@Model.Content.UmbracoAwardsLink.Url" class="main-link green-btn">Go Umbraco</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

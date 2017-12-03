@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Login page</summary>
 	[PublishedContentModel("loginPage")]
-	public partial class LoginPage : PublishedContentModel
+	public partial class LoginPage : PublishedContentModel, IContentComposition, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "loginPage";
@@ -43,6 +43,51 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Bodytext
+		///</summary>
+		[ImplementPropertyType("bodytext")]
+		public string Bodytext
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetBodytext(this); }
+		}
+
+		///<summary>
+		/// Content image
+		///</summary>
+		[ImplementPropertyType("contentImage")]
+		public IPublishedContent ContentImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetContentImage(this); }
+		}
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[ImplementPropertyType("headline")]
+		public string Headline
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Meta description
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta keywords
+		///</summary>
+		[ImplementPropertyType("metaKeywords")]
+		public string MetaKeywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaKeywords(this); }
 		}
 	}
 }

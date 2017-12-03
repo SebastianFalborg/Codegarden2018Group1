@@ -1,5 +1,31 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+@{
+    Layout = null;
+    if (Request["userAction"] != null)
+    {
+        if(Request["userAction"] == "Login")
+        {
+            Response.Redirect("/login");
+        }
+        else
+        {
+            Members.Logout();
+            Response.Redirect("/");
+        }
+    }
+    //if (Request["logout"] != null)
+    //{
+    //    Members.Logout();
+    //    Response.Write("/");
+    //}
+}
+  <!-- Login message-->
+@if (Members.IsLoggedIn())
+{
+    <h2>Hello, @Members.GetCurrentMemberProfileModel().Name</h2>
+            <a style="color:blue; text-align:center;" href="/?logout=true">Log out or die</a>
+}
+<!-- Login message-->
 <nav>
         <ul class="list-unstyled">
             <li class="@((Model.Content.IsAncestorOrSelf(Model.Content.Site())) ? "active" : "")">
@@ -13,5 +39,12 @@
                     <a href="@page.Url">@page.Name</a>
                 </li>
             }
+            @*<li>
+                <form>
+                    <input type="hidden" name="userAction" value="@((Members.IsLoggedIn()) ? "Logout" : "Login")"/>
+                    <button class="main-link" type="submit">@((Members.IsLoggedIn()) ? "Logout" : "Login")</button>
+                </form>
+             
+            </li>*@
         </ul>
 </nav>

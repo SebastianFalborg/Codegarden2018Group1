@@ -1,0 +1,35 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+input {
+    @include font-regular;
+    border-radius: 3px;
+    padding: 12px 0;
+    border: none;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: white;
+    width: 100%;
+    color: $gray;
+    transition: $small-transition;
+
+    &:focus, &:active {
+        outline: none;
+        box-shadow: $shadow;
+    }
+}
+
+.votinglist {
+    input, label {
+        display: inline-block;
+        margin-top: 25px;
+
+        &[type=radio] {
+            width: auto;
+
+            &:focus, &:active {
+                box-shadow: none;
+            }
+        }
+    }
+}

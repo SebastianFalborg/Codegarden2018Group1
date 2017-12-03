@@ -1,0 +1,77 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.logo-wrapper-animation {
+    position: relative;
+}
+
+#logo-stroke {
+    position: absolute;
+    top: 0;
+    left: 0%;
+}
+
+.st0 {
+    fill: none;
+    stroke: white;
+    stroke-miterlimit: 10;
+}
+
+.ytIVWeCt_0 {
+    stroke-dasharray: 180 182;
+    stroke-dashoffset: 181;
+    animation: ytIVWeCt_draw 1500ms ease 0ms forwards;
+    animation-delay: 1000ms;
+}
+
+.ytIVWeCt_1 {
+    stroke-dasharray: 6043 6045;
+    stroke-dashoffset: 6044;
+    animation: ytIVWeCt_draw 1800ms ease 0ms forwards, fill 2s;
+    animation-delay: 1000ms;
+}
+
+@keyframes ytIVWeCt_draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes ytIVWeCt_fade {
+    0% {
+        stroke-opacity: 1;
+    }
+
+    93.33333333333333% {
+        stroke-opacity: 1;
+    }
+
+    100% {
+        stroke-opacity: 0;
+    }
+}
+
+#logo-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#logo-fill path {
+    fill: none;
+    animation: fill_logo 2500ms forwards;
+    animation-delay: 2500ms;
+}
+
+@keyframes fill_logo {
+    0% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: white;
+    }
+}
+
+
+

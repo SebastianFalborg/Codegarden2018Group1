@@ -4,24 +4,25 @@
     var selection = Umbraco.TypedContent(1131).Children("blockListItem");
 }
 <div class="row">
-        @foreach (var item in selection)
-        {
-            <a href="@item.Url">
-                <div class="col-sm-6 col-xs-12 main-link-block">
-                    <div class="link-block-wrap">
-                        <div class="link-block-image cover" style="background-image: url('@Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile')">
-                            <div class="image-gradient-overlay">
+    <div class="swiper-container swiper-container-horizontal" data-swiper-secondary>
+        <div class="swiper-wrapper">
+            @foreach (var item in selection)
+            {
+
+                <div class="swiper-slide main-link-block">
+                    <a href="@item.Url">
+                        <div class="link-block-wrap speaker-size">
+                            <div style="background-image: url('@Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile')" class="link-block-image cover">
+                                <div class="image-gradient-overlay"></div>
+                                <div class="link-block-content">
+                                    <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
+                                </div>
+                                <div class="read-more">Read more</div>
                             </div>
-                           
                         </div>
-                        <div class="link-block-content">
-                            <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
-                        </div>
-                        <div class="read-more">Læs mere</div>
-                    </div>
+                    </a>
                 </div>
-            </a>
-        }
-  </div>
-
-
+            }
+        </div>
+    </div>
+</div>

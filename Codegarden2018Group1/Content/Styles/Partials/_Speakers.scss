@@ -1,0 +1,22 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.speaker-size {
+ 
+
+    .link-block-content {
+        left: 10px;
+        text-align: left;
+        p, h3{
+            text-align:left;
+        }
+    }
+
+    .read-more {
+        font-size: 0.95rem;
+        left: 10px;
+    }
+}
+
+
+

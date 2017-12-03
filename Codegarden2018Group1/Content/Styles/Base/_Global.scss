@@ -24,7 +24,7 @@ h1 {
 h2 {
     font-size: 3rem;
     color: $red;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 h3 {
@@ -86,8 +86,14 @@ hr {
         }
     }
 }
-
-
+.vote-result {
+    h3{
+font-size: 1.1rem;
+    }
+    span{
+        display: block;
+    }
+}
 .white-format {
     h3, p {
         color: white;
@@ -124,9 +130,11 @@ hr {
     h1 {
         font-size: 30px;
     }
-    h2{
+
+    h2 {
         font-size: 28px;
     }
+
     .main-wrapper {
         transition-delay: 0.1s;
     }
@@ -135,24 +143,14 @@ hr {
         margin-top: 18px;
         margin-bottom: 10px;
     }
+
+    .frontpage-sections {
+        h1, h2, h3, h4, p {
+            text-align: left;
+        }
+    }
 }
 
-.swiper-container {
+.img-full-width {
     width: 100%;
-    height: 100%;
-}
-
-.swiper-slide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
 }

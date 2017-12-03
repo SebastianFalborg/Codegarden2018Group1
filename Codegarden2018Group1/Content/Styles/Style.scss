@@ -5,7 +5,7 @@
 
 // components
 @import "Components/Buttons";
-
+@import "Components/Forms";
 // layout
 @import "Layout/Banners";
 @import "Layout/Footer";
@@ -15,3 +15,5 @@
 
 // partials
 @import "Partials/MainBlock";
+@import "Partials/_LogoAnimation.scss";
+@import "Partials/_Speakers.scss";

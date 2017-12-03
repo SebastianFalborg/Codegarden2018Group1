@@ -10,12 +10,10 @@
 
         .banner-content {
             @include center;
+            height:170px;
+            width:450px;
 
-            svg {
-                width: 450px;
-                height: 318px;
-                fill:white;
-            }
+            
 
             .banner-links {
                 margin: 0 50px;
@@ -26,16 +24,39 @@
             }
         }
     }
-    .banner-content{
-       @include center-y;
-       z-index:1;
-       h1, p{
-           text-align:left;
-           color: white;
-       }
-       p{
-           font-size: 1rem;
-       }
+
+    &.fullscreen-banner {
+        height: 100vh;
+
+        .banner-content {
+            @include center;
+
+            .user-area {
+                h1 {
+                    margin-bottom: 35px;
+                    margin-top:0;
+                    line-height:1;
+                }
+                span{
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .banner-content {
+        @include center-y;
+        z-index: 1;
+
+        h1, p {
+            text-align: left;
+            color: white;
+        }
+
+        p {
+            font-size: 1rem;
+        }
     }
 }
 @include phones {
@@ -46,10 +67,8 @@
             height: 100vh;
 
             .banner-content {
-                svg {
-                    width: 270px;
+                   width: 270px;
                     height: 190px;
-                }
             }
         }
 
@@ -61,3 +80,4 @@
         }
     }
 }
+
