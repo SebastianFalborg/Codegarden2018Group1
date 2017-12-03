@@ -6,7 +6,7 @@ $("[data-menu-toggle]").click(function () {
     $("[data-main-wrapper]").toggleClass("active");
 });
 
-// logo fill funtion
+// logo fill function
 $(function () {
     var headerLogo = $('[data-header-logo]');
     var banner = $(".main-banner");

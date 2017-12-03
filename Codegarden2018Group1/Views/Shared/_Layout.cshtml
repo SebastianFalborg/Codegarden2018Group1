@@ -96,7 +96,39 @@
                 }
             }
         });
-
+        var swiperSecondary = new Swiper('[data-swiper-secondary]', {
+            slidesPerView: 3,
+            spaceBetween: 50,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                1260: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+                1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                730: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                500: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                },
+                350: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                }
+            }
+        });
     </script>
 </body>
 </html>

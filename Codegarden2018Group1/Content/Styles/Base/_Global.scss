@@ -24,7 +24,7 @@ h1 {
 h2 {
     font-size: 3rem;
     color: $red;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 h3 {
@@ -124,9 +124,11 @@ hr {
     h1 {
         font-size: 30px;
     }
-    h2{
+
+    h2 {
         font-size: 28px;
     }
+
     .main-wrapper {
         transition-delay: 0.1s;
     }
@@ -134,6 +136,12 @@ hr {
     hr {
         margin-top: 18px;
         margin-bottom: 10px;
+    }
+
+    .frontpage-sections {
+        h1, h2, h3, h4, p {
+            text-align: left;
+        }
     }
 }
 

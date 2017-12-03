@@ -19,7 +19,7 @@ h1 {
 h2 {
   font-size: 3rem;
   color: #ff4053;
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
 
 h3 {
   font-size: 2.5rem; }
@@ -93,7 +93,9 @@ hr {
     transition-delay: 0.1s; }
   hr {
     margin-top: 18px;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  .frontpage-sections h1, .frontpage-sections h2, .frontpage-sections h3, .frontpage-sections h4, .frontpage-sections p {
+    text-align: left; } }
 
 .img-full-width {
   width: 100%; }
@@ -445,6 +447,8 @@ header {
       position: relative;
       transform: scale(1);
       transition: 0.5s cubic-bezier(0.75, 0, 0.25, 1); }
+    .main-link-block .link-block-wrap.speaker-size {
+      height: 250px; }
   .main-link-block .link-block-content {
     position: absolute;
     bottom: 20px;
@@ -527,12 +531,13 @@ header {
   100% {
     fill: white; } }
 
-#speaker-size {
-  height: 250px; }
-  #speaker-size .link-block-content {
-    left: 10px;
+.speaker-size .link-block-content {
+  left: 10px;
+  text-align: left; }
+  .speaker-size .link-block-content p, .speaker-size .link-block-content h3 {
     text-align: left; }
-  #speaker-size .read-more {
-    font-size: 0.95rem;
-    left: 10px; }
+
+.speaker-size .read-more {
+  font-size: 0.95rem;
+  left: 10px; }
 

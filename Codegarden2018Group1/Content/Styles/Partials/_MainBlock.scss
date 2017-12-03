@@ -31,6 +31,10 @@
             transform: scale(1);
             transition: $transition;
         }
+
+        &.speaker-size {
+            height: 250px;
+        }
     }
 
     .link-block-content {
