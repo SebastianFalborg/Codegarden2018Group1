@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Date(s)
+		///</summary>
+		[ImplementPropertyType("dateS")]
+		public IEnumerable<string> DateS
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("dateS"); }
+		}
+
+		///<summary>
 		/// EndTime
 		///</summary>
 		[ImplementPropertyType("endTime")]
