@@ -64,6 +64,12 @@ hr {
       visibility: visible;
       opacity: 1; }
 
+.vote-result h3 {
+  font-size: 1.1rem; }
+
+.vote-result span {
+  display: block; }
+
 .white-format h3, .white-format p {
   color: white; }
 
@@ -145,6 +151,14 @@ input {
   input:focus, input:active {
     outline: none;
     box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.15); }
+
+.votinglist input, .votinglist label {
+  display: inline-block;
+  margin-top: 25px; }
+  .votinglist input[type=radio], .votinglist label[type=radio] {
+    width: auto; }
+    .votinglist input[type=radio]:focus, .votinglist input[type=radio]:active, .votinglist label[type=radio]:focus, .votinglist label[type=radio]:active {
+      box-shadow: none; }
 
 .main-banner {
   position: relative;

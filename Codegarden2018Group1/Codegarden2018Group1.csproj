@@ -357,6 +357,7 @@
     <Content Include="Views\Partials\_GetReady.cshtml" />
     <Content Include="Views\Partials\_DontForget.cshtml" />
     <Content Include="Views\Partials\_LogoAnimation.cshtml" />
+    <Content Include="Views\AwardsPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -394,6 +395,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\AwardsPage.generated.cs" />
     <Compile Include="App_Data\Models\BlockList.generated.cs" />
     <Compile Include="App_Data\Models\BlockListItem.generated.cs" />
     <Compile Include="App_Data\Models\ContentComposition.generated.cs" />

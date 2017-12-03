@@ -22,3 +22,22 @@ $(function () {
         }
     });
 })
+
+// VOTINGPAGE
+// producing a object with map, wich contains an array
+// Then use get() to work with array
+// Join() joins the elements of a array to string
+$("[data-vote]").click(function () {
+    var radioList = $('.votinglist input[type="radio"]:checked');
+    var checkedVals = radioList.map(function () {
+        return $(this).val();
+    }).get();
+    
+    if ($('.votinglist input[type="radio"]:checked').length == 4) {
+        $("[data-vote-result]").html("<h3>Thank you for you vote. You voted on<span>" + checkedVals + "</span></h3>");
+    } else {
+        $("[data-vote-result]").html("<span>You need to select one from each category</span>");
+    }
+
+});
+

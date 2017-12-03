@@ -18,3 +18,18 @@ input {
         box-shadow: $shadow;
     }
 }
+
+.votinglist {
+    input, label {
+        display: inline-block;
+        margin-top: 25px;
+
+        &[type=radio] {
+            width: auto;
+
+            &:focus, &:active {
+                box-shadow: none;
+            }
+        }
+    }
+}

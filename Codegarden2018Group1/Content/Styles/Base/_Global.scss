@@ -86,8 +86,14 @@ hr {
         }
     }
 }
-
-
+.vote-result {
+    h3{
+font-size: 1.1rem;
+    }
+    span{
+        display: block;
+    }
+}
 .white-format {
     h3, p {
         color: white;

@@ -1,0 +1,131 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.AwardsPage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Shared/_Layout.cshtml";
+}
+
+<div class="main-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')" data-image-effect>
+    <div class="image-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="banner-content">
+                <div class="col-xs-12">
+                    <h1>@Model.Content.Headline</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-push-1">
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Model.Content.Bodytext
+                    </div>
+                    <div class="section">
+                        <div class="col-xs-12">
+                            <h2>@Model.Content.TechnicalSolutionHeadline</h2>
+                            @Model.Content.TechnicalSolutionBodytext
+                            <form>
+                                <div class="votinglist">
+                                    <div class="row">
+                                        @if (CurrentPage.TechnicalSolutioncheckboxes.Length > 0)
+                                        {
+                                            foreach (var item in CurrentPage.TechnicalSolutioncheckboxes)
+                                            {
+                                                <div class="col-xs-12">
+                                                    <input type="radio" id="@item" name="vote" value="@item">
+                                                    <label for="@item">@item</label>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="col-xs-12">
+                            <h2>@Model.Content.BestEditingHeadline</h2>
+                            @Model.Content.BestEditingBodytext
+                            <form>
+                                <div class="votinglist">
+                                    <div class="row">
+                                        @if (CurrentPage.BestEditingList.Length > 0)
+                                        {
+                                            foreach (var item in CurrentPage.BestEditingList)
+                                            {
+                                                <div class="col-xs-12">
+                                                    <input type="radio" id="@item" name="vote" value="@item">
+                                                    <label for="@item">@item</label>
+                                                </div>
+                                            }
+                                        }
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="col-xs-12">
+                            <h2>@Model.Content.BestDesignHeadline</h2>
+                            @Model.Content.BestDesignBodytext
+                            <form>
+                                <div class="votinglist">
+                                    <div class="row">
+                                        @if (CurrentPage.BestDesignList.Length > 0)
+                                        {
+                                            foreach (var item in CurrentPage.BestDesignList)
+                                            {
+                                                <div class="col-xs-12">
+                                                    <input type="radio" id="@item" name="vote" value="@item">
+                                                    <label for="@item">@item</label>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="col-xs-12">
+                            <h2>@Model.Content.BestPackageHeadline</h2>
+                            @Model.Content.BestPackageBodytext
+                            <form>
+                                <div class="votinglist">
+                                    <div class="row">
+                                        @if (CurrentPage.BestPackageList.Length > 0)
+                                        {
+                                            foreach (var item in CurrentPage.BestPackageList)
+                                            {
+                                                <div class="col-xs-12">
+                                                    <input type="radio" id="@item" name="vote" value="@item">
+                                                    <label for="@item">@item</label>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="section vote-result">
+                                <div class="col-sm-6 col-xs-12">
+                                    <button class="main-link" data-vote>Vote</button>
+                                    <div data-vote-result></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
