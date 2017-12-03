@@ -10,12 +10,10 @@
 
         .banner-content {
             @include center;
+            height:170px;
+            width:450px;
 
-            svg {
-                width: 450px;
-                height: 318px;
-                fill: white;
-            }
+            
 
             .banner-links {
                 margin: 0 50px;
@@ -69,10 +67,8 @@
             height: 100vh;
 
             .banner-content {
-                svg {
-                    width: 270px;
+                   width: 270px;
                     height: 190px;
-                }
             }
         }
 
@@ -84,3 +80,4 @@
         }
     }
 }
+
