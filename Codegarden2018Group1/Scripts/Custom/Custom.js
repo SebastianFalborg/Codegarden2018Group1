@@ -33,11 +33,19 @@ $("[data-vote]").click(function () {
         return $(this).val();
     }).get();
     
-    if ($('.votinglist input[type="radio"]:checked').length == 4) {
+    if ($('.votinglist input[type="radio"]:checked').length === 4) {
         $("[data-vote-result]").html("<h3>Thank you for you vote. You voted on<span>" + checkedVals + "</span></h3>");
     } else {
         $("[data-vote-result]").html("<span>You need to select one from each category</span>");
     }
-
 });
 
+// needs to be optimized
+$("[data-go-create]").click(function () {
+    $("[data-login-form]").addClass("remove");
+    $("[data-create-form]").addClass("active");
+});
+$("[data-go-login]").click(function () {
+    $("[data-login-form]").removeClass("remove");
+    $("[data-create-form]").removeClass("active");
+});

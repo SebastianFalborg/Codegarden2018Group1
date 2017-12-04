@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Loginpage</summary>
-	[PublishedContentModel("loginPage")]
-	public partial class LoginPage : PublishedContentModel, IHideInNav, ISEO
+	/// <summary>AwardItem</summary>
+	[PublishedContentModel("awardItem")]
+	public partial class AwardItem : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "loginPage";
+		public new const string ModelTypeAlias = "awardItem";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public LoginPage(IPublishedContent content)
+		public AwardItem(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,45 +40,36 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AwardItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Login image
+		/// Website Author
 		///</summary>
-		[ImplementPropertyType("loginImage")]
-		public IPublishedContent LoginImage
+		[ImplementPropertyType("websiteAuthor")]
+		public string WebsiteAuthor
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("loginImage"); }
+			get { return this.GetPropertyValue<string>("websiteAuthor"); }
 		}
 
 		///<summary>
-		/// Hide in umbraco navigation
+		/// Website Image
 		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
+		[ImplementPropertyType("websiteImage")]
+		public IPublishedContent WebsiteImage
 		{
-			get { return Umbraco.Web.PublishedContentModels.HideInNav.GetUmbracoNaviHide(this); }
+			get { return this.GetPropertyValue<IPublishedContent>("websiteImage"); }
 		}
 
 		///<summary>
-		/// Meta description
+		/// Website Url
 		///</summary>
-		[ImplementPropertyType("metaDescription")]
-		public string MetaDescription
+		[ImplementPropertyType("websiteUrl")]
+		public string WebsiteUrl
 		{
-			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaDescription(this); }
-		}
-
-		///<summary>
-		/// Meta keywords
-		///</summary>
-		[ImplementPropertyType("metaKeywords")]
-		public string MetaKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.SEO.GetMetaKeywords(this); }
+			get { return this.GetPropertyValue<string>("websiteUrl"); }
 		}
 	}
 }

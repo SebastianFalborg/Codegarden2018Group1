@@ -24,10 +24,10 @@
         overflow: hidden;
         height: 350px;
         width: 100%;
+        position: relative;
 
         .link-block-image {
             height: 100%;
-            position: relative;
             transform: scale(1);
             transition: $transition;
         }

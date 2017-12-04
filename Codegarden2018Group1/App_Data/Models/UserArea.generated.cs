@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Loginpage</summary>
-	[PublishedContentModel("loginPage")]
-	public partial class LoginPage : PublishedContentModel, IHideInNav, ISEO
+	/// <summary>UserArea</summary>
+	[PublishedContentModel("userArea")]
+	public partial class UserArea : PublishedContentModel, IContentComposition, IHideInNav, ISEO
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "loginPage";
+		public new const string ModelTypeAlias = "userArea";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public LoginPage(IPublishedContent content)
+		public UserArea(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,18 +40,36 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<UserArea, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Login image
+		/// Bodytext
 		///</summary>
-		[ImplementPropertyType("loginImage")]
-		public IPublishedContent LoginImage
+		[ImplementPropertyType("bodytext")]
+		public string Bodytext
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("loginImage"); }
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetBodytext(this); }
+		}
+
+		///<summary>
+		/// Content image
+		///</summary>
+		[ImplementPropertyType("contentImage")]
+		public IPublishedContent ContentImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetContentImage(this); }
+		}
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[ImplementPropertyType("headline")]
+		public string Headline
+		{
+			get { return Umbraco.Web.PublishedContentModels.ContentComposition.GetHeadline(this); }
 		}
 
 		///<summary>

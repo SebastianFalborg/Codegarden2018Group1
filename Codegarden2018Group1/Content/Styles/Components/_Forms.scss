@@ -18,7 +18,9 @@ input {
         box-shadow: $shadow;
     }
 }
-
+textarea {
+    width: 100%;
+}
 .votinglist {
     input, label {
         display: inline-block;
@@ -32,4 +34,6 @@ input {
             }
         }
     }
+
+ 
 }

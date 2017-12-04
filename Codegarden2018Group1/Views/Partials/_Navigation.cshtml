@@ -1,18 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
-    if (Request["userAction"] != null)
-    {
-        if(Request["userAction"] == "Login")
-        {
-            Response.Redirect("/login");
-        }
-        else
-        {
-            Members.Logout();
-            Response.Redirect("/");
-        }
-    }
+    //if (Request["userAction"] != null)
+    //{
+    //    if(Request["userAction"] == "Login")
+    //    {
+    //        Response.Redirect("/login");
+    //    }
+    //}
     //if (Request["logout"] != null)
     //{
     //    Members.Logout();
@@ -20,11 +15,11 @@
     //}
 }
   <!-- Login message-->
-@if (Members.IsLoggedIn())
+@*@if (Members.IsLoggedIn())
 {
     <h2>Hello, @Members.GetCurrentMemberProfileModel().Name</h2>
             <a style="color:blue; text-align:center;" href="/?logout=true">Log out or die</a>
-}
+}*@
 <!-- Login message-->
 <nav>
         <ul class="list-unstyled">
