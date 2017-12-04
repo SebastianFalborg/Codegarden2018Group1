@@ -358,6 +358,8 @@
     <Content Include="Views\Partials\_DontForget.cshtml" />
     <Content Include="Views\Partials\_LogoAnimation.cshtml" />
     <Content Include="Views\AwardsPage.cshtml" />
+    <Content Include="Views\Test.cshtml" />
+    <Content Include="Views\UserArea.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -414,6 +416,7 @@
     <Compile Include="App_Data\Models\SpeakerItem.generated.cs" />
     <Compile Include="App_Data\Models\Speakerspage.generated.cs" />
     <Compile Include="App_Data\Models\Textpage.generated.cs" />
+    <Compile Include="App_Data\Models\UserArea.generated.cs" />
     <Compile Include="ProjectApi\TestController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

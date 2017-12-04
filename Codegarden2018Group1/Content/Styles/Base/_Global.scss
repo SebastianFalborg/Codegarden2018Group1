@@ -14,6 +14,9 @@ body {
 h1, h2, h3, h4 {
     @include font-bold;
     line-height: 1.2;
+    &.white-format{
+        color: white;
+    }
 }
 
 h1 {

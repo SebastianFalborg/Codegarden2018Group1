@@ -22,14 +22,14 @@ else
     {
 
     
-            @Html.TextBoxFor(m => registerModel.Name)
+            @Html.TextBoxFor(m => registerModel.Name, new { placeholder = "Name" })
     
-            @Html.TextBoxFor(m => registerModel.Email)
+            @Html.TextBoxFor(m => registerModel.Email, new { placeholder = "Email" })
           
-            @Html.TextBoxFor(m => registerModel.Password)
+            @Html.TextBoxFor(m => registerModel.Password, new { placeholder = "Password" })
             @*@Html.LabelFor(m => registerModel.MemberProperties[0].Value, registerModel.MemberProperties[0].Name)*@
-            @Html.EditorFor(m => registerModel.MemberProperties[0].Value)
+            @Html.TextAreaFor(m => registerModel.MemberProperties[0].Value, new { placeholder = "Fun fact" })
             @Html.HiddenFor(m => registerModel.MemberProperties[0].Alias)
-              <button class="main-link">Register</button>
+              <button class="main-link green-btn">Register</button>
     }
 }
