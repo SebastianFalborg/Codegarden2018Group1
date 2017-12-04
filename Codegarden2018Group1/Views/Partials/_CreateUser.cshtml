@@ -8,17 +8,12 @@
     var registerModel = Members.CreateRegistrationModel();
     var redirectUrl = string.Format("{0}&register=true", Request.RawUrl);
     registerModel.RedirectUrl = redirectUrl;
-    var succes = TempData["FormSucces"] != null;
+    //var succes = TempData["FormSucces"] != null;
 }
 
 
-@if (succes)
-{
-    <h2>This should redirect to </h2>
-}
-else
-{
-    using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
+
+    @using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
     {
 
     
@@ -32,4 +27,3 @@ else
             @Html.HiddenFor(m => registerModel.MemberProperties[0].Alias)
               <button class="main-link green-btn">Register</button>
     }
-}
