@@ -3,7 +3,7 @@
     var selection = Umbraco.TypedContent(1094).Children("speakerItem");
 }
 <div class="speaker-container">
-    <div class="swiper-container">
+    <div class="swiper-container" data-swipe-container>
         <div class="swiper-wrapper">
             @foreach (var item in selection)
             {
@@ -21,7 +21,6 @@
                     </a>
                 </div>
             }
-
         </div>
     </div>
 </div>

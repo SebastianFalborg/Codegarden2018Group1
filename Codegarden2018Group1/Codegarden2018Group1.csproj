@@ -414,6 +414,7 @@
     <Compile Include="App_Data\Models\SpeakerItem.generated.cs" />
     <Compile Include="App_Data\Models\Speakerspage.generated.cs" />
     <Compile Include="App_Data\Models\Textpage.generated.cs" />
+    <Compile Include="ProjectApi\TestController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -58,7 +58,7 @@
     <script src="~/Scripts/swiper.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('[data-swipe-container]', {
             slidesPerView: 5,
             spaceBetween: 50,
             loop: true,
@@ -101,18 +101,10 @@
             spaceBetween: 50,
             loop: true,
             autoplay: {
-                delay: 2500,
+                delay: 3500,
                 disableOnInteraction: false,
             },
             breakpoints: {
-                1260: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-                1000: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
                 730: {
                     slidesPerView: 2,
                     spaceBetween: 20,
