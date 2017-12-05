@@ -41,6 +41,7 @@
         position: absolute;
         bottom: 20px;
         left: 40px;
+        right:40px;
         transition: $transition;
 
         h3 {
@@ -50,6 +51,7 @@
 
         p {
             color: white;
+            margin:0;
         }
     }
 

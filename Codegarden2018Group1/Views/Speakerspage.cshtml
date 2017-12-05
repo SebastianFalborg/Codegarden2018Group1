@@ -22,30 +22,26 @@
                 <h4 class="headline-space">@Model.Content.Bodytext</h4>
             </div>
         </div>
-            <div class="row">
-                        @{
-                            foreach (var speaker in Model.Content.Children<SpeakerItem>().Where(x => x.IsVisible()))
-                            {
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 main-link-block">
-                                    <a href="@speaker.Url">
-                                        <div id="speaker-size" class="link-block-wrap">
-                                            <div style="background-image: url('@speaker.ContentImage.Url" class="link-block-image cover">
-                                                <div class="image-gradient-overlay"></div>
-                                                <div class="link-block-content">
-                                                    <h3>@speaker.Headline</h3>
-                                                    <p>@speaker.GetPropertyValue("subHeadline")</p>
-                                                </div>
-                                                <div class="read-more">Read more</div>
-
-                                            </div>
-                                            
-                                        </div>
-
-                                    </a>
-                                    
+        <div class="row">
+            @{
+                foreach (var speaker in Model.Content.Children<SpeakerItem>().Where(x => x.IsVisible()))
+                {
+                    <a href="@speaker.Url">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 main-link-block">
+                            <div class="link-block-wrap speaker-size">
+                                <div class="link-block-image cover" style="background-image: url('@speaker.ContentImage.Url')">
+                                    <div class="image-gradient-overlay"></div>
                                 </div>
-                            }
-                        }
-            </div>
+                                <div class="link-block-content">
+                                    <h3>@speaker.Headline</h3>
+                                    <p>@speaker.GetPropertyValue("subHeadline")</p>
+                                </div>
+                                <div class="read-more">Read more</div>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
     </div>
 </div>
