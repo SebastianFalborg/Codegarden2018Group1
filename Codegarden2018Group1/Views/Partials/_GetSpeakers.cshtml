@@ -1,4 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+
+
 @{
     var selection = Umbraco.TypedContent(1094).Children("speakerItem");
 }

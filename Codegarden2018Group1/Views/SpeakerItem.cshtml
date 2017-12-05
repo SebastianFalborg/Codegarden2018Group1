@@ -2,10 +2,12 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Shared/_Layout.cshtml";
-    var mainBanner = Model.Content.Ancestor();
+    //get banner image id from parent
+    var mainBanner = Model.Content.Parent.GetPropertyValue("contentImage");
+
 }
 
-<div class="main-banner cover" style="background-image:url('')">
+<div class="main-banner cover" style="background-image:url('@Umbraco.Media(mainBanner.ToString()).UmbracoFile')">
     <div class="image-overlay"></div>
     <div class="container">
         <div class="row">
