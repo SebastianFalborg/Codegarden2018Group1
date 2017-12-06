@@ -365,6 +365,8 @@
     <Content Include="Views\WorkshopItem.cshtml" />
     <Content Include="Views\Workshops.cshtml" />
     <Content Include="Views\Partials\_WorkshopSpeaker.cshtml" />
+    <Content Include="Views\Partials\_ExperienceSection.cshtml" />
+    <Content Include="Views\Partials\_LookingBack.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -413,6 +415,8 @@
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />
     <Compile Include="App_Data\Models\HideInNav.generated.cs" />
+    <Compile Include="App_Data\Models\HotspotItems.generated.cs" />
+    <Compile Include="App_Data\Models\Hotspots.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\LinkBlock.generated.cs" />
     <Compile Include="App_Data\Models\LoginPage.generated.cs" />

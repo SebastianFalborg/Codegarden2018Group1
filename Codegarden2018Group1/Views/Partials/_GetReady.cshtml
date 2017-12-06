@@ -1,4 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Discoverpage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 
-@Model.Content.GetReadyContent
+    <div class="row">
+        <div class="col-xs-12">
+           @Model.Content.GetReadyContent
+            <h5>Login form here</h5>
+        </div>
+
+        <div class="col-xs-12">
+
+            @Model.Content.GetReadyTransport
+        </div>
+
+        <div class="col-xs-12">
+            @Model.Content.GetReadyToDo
+        </div>
+    </div>
+
