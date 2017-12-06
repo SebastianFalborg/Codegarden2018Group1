@@ -364,6 +364,7 @@
     <Content Include="Views\Workshops.cshtml" />
     <Content Include="Views\Partials\_WorkshopSpeaker.cshtml" />
     <Content Include="Views\Partials\_ExperienceSection.cshtml" />
+    <Content Include="Views\Partials\_LookingBack.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

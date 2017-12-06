@@ -91,6 +91,42 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Looking back bodytext
+		///</summary>
+		[ImplementPropertyType("lookingBackBodytext")]
+		public string LookingBackBodytext
+		{
+			get { return this.GetPropertyValue<string>("lookingBackBodytext"); }
+		}
+
+		///<summary>
+		/// Looking back hashtag
+		///</summary>
+		[ImplementPropertyType("lookingBackHashtag")]
+		public string LookingBackHashtag
+		{
+			get { return this.GetPropertyValue<string>("lookingBackHashtag"); }
+		}
+
+		///<summary>
+		/// Looking back headline
+		///</summary>
+		[ImplementPropertyType("lookingBackHeadline")]
+		public string LookingBackHeadline
+		{
+			get { return this.GetPropertyValue<string>("lookingBackHeadline"); }
+		}
+
+		///<summary>
+		/// Looking back Image
+		///</summary>
+		[ImplementPropertyType("lookingBackImage")]
+		public IPublishedContent LookingBackImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("lookingBackImage"); }
+		}
+
+		///<summary>
 		/// Umbraco awards bodytext
 		///</summary>
 		[ImplementPropertyType("umbracoAwardsBodytext")]

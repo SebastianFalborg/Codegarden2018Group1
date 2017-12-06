@@ -14,7 +14,8 @@ body {
 h1, h2, h3, h4, h5 {
     @include font-bold;
     line-height: 1.2;
-    &.white-format{
+
+    &.white-format {
         color: white;
     }
 }
@@ -40,11 +41,13 @@ h4 {
     font-weight: 500;
     line-height: 1.5;
 }
+
 h5 {
     font-size: 1.75rem;
-    color:$red;
+    color: $red;
     margin: 15px 0;
 }
+
 p {
     @include font-regular;
     line-height: 24px;
@@ -66,18 +69,20 @@ a {
         color: white;
     }
 }
-ul{
-    li{
-        a{
+
+ul {
+    li {
+        a {
             color: black;
         }
     }
 }
+
 hr {
     border-top: 1px solid $light-gray;
 }
 
-.hr-special{
+.hr-special {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
@@ -86,11 +91,13 @@ hr {
 .cover {
     @include cover;
 }
+
 .frontpage-sections {
     h1, h2, h3, h4, p {
         text-align: center;
     }
 }
+
 .main-wrapper {
     position: relative;
     transition: $transition;
@@ -102,18 +109,35 @@ hr {
         .main-overlay {
             visibility: visible;
             opacity: 1;
-        
         }
     }
 }
+
 .vote-result {
-    h3{
-font-size: 1.1rem;
+    h3 {
+        font-size: 1.1rem;
     }
-    span{
+
+    span {
         display: block;
     }
 }
+
+.hashtag-section {
+    margin: 25px 0;
+    span {
+        width: 100%;
+        display: block;
+        font-size: 2.2rem;
+    }
+
+    span, p {
+        @include font-bold;
+        color: black;
+        font-size: 2rem;
+    }
+}
+
 .white-format {
     h3, p {
         color: white;
@@ -128,6 +152,7 @@ font-size: 1.1rem;
 
         li {
             padding: 4px 0;
+
             &:before {
                 content: '';
                 background-image: url('/Content/Img/Icons/icon.svg');
