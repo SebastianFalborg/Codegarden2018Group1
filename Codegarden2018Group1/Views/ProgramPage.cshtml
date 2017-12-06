@@ -13,165 +13,222 @@
     string currentTime = "";
 
 }
+<div class="main-banner cover" style="background-image:url('')">
+    <div class="image-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="banner-content">
+                <div class="col-xs-12">
+                    <h1>@Model.Content.Headline</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="container-fluid">
+
+<div class="container">
     <div class="section">
         
-        <div class="container">
-            <h2>Tuesday</h2>
-            @{
-                <div class="row">
-                    <div class="col-md-1">
-                        <p>Time</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p>@locationList[0]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[1]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[2]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[3]</p>
+        <div id="accordion" data-children=".item">
+            <div class="item">
+                <div class="program-header" >
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordion1" aria-expanded="true" aria-controls="accordion1">
+                        Tuesday
+                    </a>
+                </div>
+                <div id="accordion1" class="collapse in " role="tabpanel">
+                    <div class="container-fluid">
+                        @{
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>Time</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p>@locationList[0]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[1]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[2]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[3]</p>
+                                </div>
+                            </div>
+
+                            for (int i = 0; i < tuesdayProgramList.Count; i++)
+                            {
+                                currentTime = tuesdayProgramList[i].StartTime.ToShortTimeString();
+
+                                tempProgramList[Array.IndexOf(locationList, tuesdayProgramList[i].Location)] = tuesdayProgramList[i];
+
+                                if (i == tuesdayProgramList.Count - 1)
+                                {
+                                    @InsertRow(tempProgramList, currentTime)
+                                }
+                                else if (tuesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                                {
+                                    @InsertRow(tempProgramList, currentTime)
+                                }
+                            }
+                        }
                     </div>
                 </div>
+            </div>
 
-                for (int i = 0; i < tuesdayProgramList.Count; i++)
-                {
-                    currentTime = tuesdayProgramList[i].StartTime.ToShortTimeString();
 
-                    tempProgramList[Array.IndexOf(locationList, tuesdayProgramList[i].Location)] = tuesdayProgramList[i];
+            <div class="item">
+                <div class="program-header">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordion2" aria-expanded="false" aria-controls="accordion2">
+                        Wednesday
+                    </a>
 
-                    if (i == tuesdayProgramList.Count - 1)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                    else if (tuesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                }
-            }
-        </div>
-
-        <div class="container">
-            <h2>Wednesday</h2>
-            @{
-                <div class="row">
-                    <div class="col-md-1">
-                        <p>Time</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p>@locationList[0]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[1]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[2]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[3]</p>
-                    </div>
                 </div>
+                <div id="accordion2" class="collapse" role="tabpanel">
 
-                for (int i = 0; i < wednesdayProgramList.Count; i++)
-                {
-                    currentTime = wednesdayProgramList[i].StartTime.ToShortTimeString();
+                    <div class="container-fluid">
+                        @{
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>Time</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p>@locationList[0]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[1]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[2]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[3]</p>
+                                </div>
+                            </div>
 
-                    tempProgramList[Array.IndexOf(locationList, wednesdayProgramList[i].Location)] = wednesdayProgramList[i];
+                        for (int i = 0; i < wednesdayProgramList.Count; i++)
+                        {
+                            currentTime = wednesdayProgramList[i].StartTime.ToShortTimeString();
 
-                    if (i == wednesdayProgramList.Count - 1)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                    else if (wednesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                }
-            }
-        </div>
-        
-        <div class="container">
-            <h2>Thursday</h2>
-            @{
-                <div class="row">
-                    <div class="col-md-1">
-                        <p>Time</p>
+                            tempProgramList[Array.IndexOf(locationList, wednesdayProgramList[i].Location)] = wednesdayProgramList[i];
+
+                            if (i == wednesdayProgramList.Count - 1)
+                            {
+                    @InsertRow(tempProgramList, currentTime)
+                            }
+                            else if (wednesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                            {
+                    @InsertRow(tempProgramList, currentTime)
+                            }
+                        }
+                        }
                     </div>
-                    <div class="col-md-2">
-                        <p>@locationList[0]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[1]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[2]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[3]</p>
-                    </div>
+
                 </div>
+            </div>
 
-                for (int i = 0; i < thursdayProgramList.Count; i++)
-                {
-                    currentTime = thursdayProgramList[i].StartTime.ToShortTimeString();
-
-                    tempProgramList[Array.IndexOf(locationList, thursdayProgramList[i].Location)] = thursdayProgramList[i];
-
-                    if (i == thursdayProgramList.Count - 1)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                    else if (thursdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                }
-            }
-        </div>
-        
-        <div class="container">
-            <h2>Friday</h2>
-            @{
-                <div class="row">
-                    <div class="col-md-1">
-                        <p>Time</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p>@locationList[0]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[1]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[2]</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-1">
-                        <p>@locationList[3]</p>
-                    </div>
+            <div class="item">
+                <div class="program-header">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordion3" aria-expanded="false" aria-controls="accordion3">
+                        Thursday
+                    </a>
                 </div>
+                <div id="accordion3" class="collapse " role="tabpanel">
 
-                for (int i = 0; i < fridayProgramList.Count; i++)
-                {
-                    currentTime = fridayProgramList[i].StartTime.ToShortTimeString();
+                    <div class="container-fluid">
+                        @{
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>Time</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p>@locationList[0]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[1]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[2]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[3]</p>
+                                </div>
+                            </div>
 
-                    tempProgramList[Array.IndexOf(locationList, fridayProgramList[i].Location)] = fridayProgramList[i];
+                        for (int i = 0; i < thursdayProgramList.Count; i++)
+                        {
+                            currentTime = thursdayProgramList[i].StartTime.ToShortTimeString();
 
-                    if (i == fridayProgramList.Count - 1)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                    else if (fridayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
-                    {
-                        @InsertRow(tempProgramList, currentTime)
-                    }
-                }
-            }
+                            tempProgramList[Array.IndexOf(locationList, thursdayProgramList[i].Location)] = thursdayProgramList[i];
+
+                            if (i == thursdayProgramList.Count - 1)
+                            {
+                    @InsertRow(tempProgramList, currentTime)
+                            }
+                            else if (thursdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                            {
+                    @InsertRow(tempProgramList, currentTime)
+                            }
+                        }
+                        }
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="program-header">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordion4" aria-expanded="false" aria-controls="accordion4">
+                        Friday
+                    </a>
+                </div>
+                <div id="accordion4" class="collapse " role="tabpanel">
+
+                    <div class="container-fluid">
+                        @{
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <p>Time</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p>@locationList[0]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[1]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[2]</p>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <p>@locationList[3]</p>
+                                </div>
+                            </div>
+
+                        for (int i = 0; i < fridayProgramList.Count; i++)
+                        {
+                            currentTime = fridayProgramList[i].StartTime.ToShortTimeString();
+
+                            tempProgramList[Array.IndexOf(locationList, fridayProgramList[i].Location)] = fridayProgramList[i];
+
+                            if (i == fridayProgramList.Count - 1)
+                            {
+                    @InsertRow(tempProgramList, currentTime)
+                            }
+                            else if (fridayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                            {
+                    @InsertRow(tempProgramList, currentTime)
+                            }
+                        }
+                        }
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+
     </div>
 </div>
 
@@ -179,29 +236,29 @@
 
 @helper InsertRow(ProgramItem[] programList, string currentTime)
 {
-    <div class="row" style="background-color: lavender;">
-        <div class="col-md-1 " style="background-color: lavender;">
+    <div class="row">
+        <div class="col-md-1">
             <p>@currentTime</p>
         </div>
-        <div class="col-md-2" style="background-color: lavender;">
+        <div class="col-md-2">
             @if (programList[0] != null)
             {
                 <p>@programList[0].Title</p>
             }
         </div>
-        <div class="col-md-2 col-md-offset-1" style="background-color: lavender;">
+        <div class="col-md-2 col-md-offset-1">
             @if (programList[1] != null)
             {
                 <p>@programList[1].Title</p>
             }
         </div>
-        <div class="col-md-2 col-md-offset-1" style="background-color: lavender;">
+        <div class="col-md-2 col-md-offset-1">
             @if (programList[2] != null)
             {
                 <p>@programList[2].Title</p>
             }
         </div>
-        <div class="col-md-2 col-md-offset-1" style="background-color: lavender;">
+        <div class="col-md-2 col-md-offset-1">
             @if (programList[3] != null)
             {
                 <p>@programList[3].Title</p>
@@ -210,3 +267,4 @@
     </div>
     Array.Clear(programList, 0, programList.Length);
 }
+

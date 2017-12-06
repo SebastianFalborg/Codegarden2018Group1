@@ -46,6 +46,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Experience headline
+		///</summary>
+		[ImplementPropertyType("experienceHeadline")]
+		public string ExperienceHeadline
+		{
+			get { return this.GetPropertyValue<string>("experienceHeadline"); }
+		}
+
+		///<summary>
+		/// Experience map
+		///</summary>
+		[ImplementPropertyType("experienceMap")]
+		public string ExperienceMap
+		{
+			get { return this.GetPropertyValue<string>("experienceMap"); }
+		}
+
+		///<summary>
 		/// Get ready content
 		///</summary>
 		[ImplementPropertyType("getReadyContent")]
@@ -70,6 +88,42 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString GetReadyTransport
 		{
 			get { return this.GetPropertyValue<IHtmlString>("getReadyTransport"); }
+		}
+
+		///<summary>
+		/// Looking back bodytext
+		///</summary>
+		[ImplementPropertyType("lookingBackBodytext")]
+		public string LookingBackBodytext
+		{
+			get { return this.GetPropertyValue<string>("lookingBackBodytext"); }
+		}
+
+		///<summary>
+		/// Looking back hashtag
+		///</summary>
+		[ImplementPropertyType("lookingBackHashtag")]
+		public string LookingBackHashtag
+		{
+			get { return this.GetPropertyValue<string>("lookingBackHashtag"); }
+		}
+
+		///<summary>
+		/// Looking back headline
+		///</summary>
+		[ImplementPropertyType("lookingBackHeadline")]
+		public string LookingBackHeadline
+		{
+			get { return this.GetPropertyValue<string>("lookingBackHeadline"); }
+		}
+
+		///<summary>
+		/// Looking back Image
+		///</summary>
+		[ImplementPropertyType("lookingBackImage")]
+		public IPublishedContent LookingBackImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("lookingBackImage"); }
 		}
 
 		///<summary>

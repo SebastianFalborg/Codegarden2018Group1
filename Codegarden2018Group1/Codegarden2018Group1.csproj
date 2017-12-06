@@ -312,6 +312,7 @@
     <Content Include="Content\Styles\Components\_Forms.scss" />
     <Content Include="Content\Styles\Partials\_Speakers.scss" />
     <Content Include="Content\Styles\Partials\_LogoAnimation.scss" />
+    <Content Include="Content\Styles\Partials\_Program.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -321,6 +322,7 @@
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\swiper.min.js" />
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Web.config" />
