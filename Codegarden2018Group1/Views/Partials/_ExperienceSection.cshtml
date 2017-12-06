@@ -1,0 +1,66 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Discoverpage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Umbraco.Web.Models;
+
+
+@{
+    var selection = Model.Content.Site().FirstChild("discoverpage").FirstChild("hotspots").Children("hotspotItems")
+                        .Where(x => x.IsVisible());
+}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>@Model.Content.ExperienceHeadline</h2>
+        </div>
+    </div>
+</div>
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe src="@Model.Content.ExperienceMap" width="600" height="450" frameborder="0" style="border: 0" allowfullscreen=""></iframe>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+            <h5>Hotspots</h5>
+
+
+
+            <div class="swiper-container" data-swiper-secondary>
+                <div class="swiper-wrapper">
+                    @foreach (var item in selection)
+                    {
+                        <div class="swiper-slide main-link-block">
+                            <a href="@item.GetPropertyValue("hotspotLinks")" target="_blank">
+                                <div class="link-block-wrap speaker-size">
+                                    <div style="background-image: url('@Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile')" class="link-block-image cover">
+                                        <div class="image-gradient-overlay"></div>
+                                    </div>
+                                    <div class="link-block-content">
+                                        <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
+                                        <p>@item.GetPropertyValue("linkBlockBodytext")</p>
+                                    </div>
+                                    <div class="read-more">Read more</div>
+                                </div>
+                            </a>
+                        </div>
+
+                    }
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Instagram</h5>
+        </div>
+    </div>
+</div>
+

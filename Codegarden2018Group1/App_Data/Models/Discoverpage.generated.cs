@@ -46,6 +46,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Experience headline
+		///</summary>
+		[ImplementPropertyType("experienceHeadline")]
+		public string ExperienceHeadline
+		{
+			get { return this.GetPropertyValue<string>("experienceHeadline"); }
+		}
+
+		///<summary>
+		/// Experience map
+		///</summary>
+		[ImplementPropertyType("experienceMap")]
+		public string ExperienceMap
+		{
+			get { return this.GetPropertyValue<string>("experienceMap"); }
+		}
+
+		///<summary>
 		/// Get ready content
 		///</summary>
 		[ImplementPropertyType("getReadyContent")]

@@ -11,7 +11,7 @@ body {
     @include font-regular;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     @include font-bold;
     line-height: 1.2;
     &.white-format{
@@ -40,7 +40,11 @@ h4 {
     font-weight: 500;
     line-height: 1.5;
 }
-
+h5 {
+    font-size: 1.75rem;
+    color:$red;
+    margin: 15px 0;
+}
 p {
     @include font-regular;
     line-height: 24px;
