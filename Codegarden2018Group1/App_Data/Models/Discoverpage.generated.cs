@@ -127,6 +127,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Looking bad nested
+		///</summary>
+		[ImplementPropertyType("lookingBadNested")]
+		public IEnumerable<IPublishedContent> LookingBadNested
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("lookingBadNested"); }
+		}
+
+		///<summary>
 		/// Umbraco awards bodytext
 		///</summary>
 		[ImplementPropertyType("umbracoAwardsBodytext")]

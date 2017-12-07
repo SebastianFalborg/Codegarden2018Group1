@@ -238,15 +238,11 @@ textarea {
           left: 0;
           width: 100%; }
           .main-banner.fullscreen-banner .banner-content .user-area .user-forms .login-user.remove, .main-banner.fullscreen-banner .banner-content .user-area .user-forms .create-user.remove {
-            opacity: 0;
-            visibility: hidden; }
+            display: none; }
         .main-banner.fullscreen-banner .banner-content .user-area .user-forms .create-user {
-          visibility: hidden;
-          opacity: 0;
-          transition: 0.5s cubic-bezier(0.75, 0, 0.25, 1); }
+          display: none; }
           .main-banner.fullscreen-banner .banner-content .user-area .user-forms .create-user.active {
-            visibility: visible;
-            opacity: 1; }
+            display: block; }
   .main-banner .banner-content {
     position: absolute;
     top: 50%;

@@ -1,20 +1,32 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.LoginPage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+
+
+@using System.Web.Mvc.Html
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Umbraco.Web.Controllers
+
+
+
 @{
     Layout = "Shared/_Layout.cshtml";
-    if (IsPost)
-    {
-        if (Request["username"] != null)
-        {
-            var un = Request["username"];
-            var pw = Request["password"];
-            if (Members.Login(un, pw))
-            {
-                Response.Redirect("/user-area/");
-                //Response.Redirect("/Frontpage/");
-            }
-        }
-    }
+    //if (IsPost)
+    //{
+    //    if (Request["username"] != null)
+    //    {
+    //        var un = Request["username"];
+    //        var pw = Request["password"];
+    //        if (Members.Login(un, pw))
+    //        {
+    //            Response.Redirect("/user-area/");
+    //        }
+    //    }
+    //}
+
+    var loginModel = new LoginModel();
+    loginModel.RedirectUrl = "/user-area/";
+
 }
 
 <div class="main-banner fullscreen-banner cover" style="background-image:url('@Model.Content.LoginImage.Url')">
@@ -27,11 +39,37 @@
                 <div class="user-forms">
                     <div class="login-user" data-login-form>
                         <h4>Please login</h4>
-                        <form action="" method="post">
-                            <input type="text" name="username" placeholder="Username" required />
-                            <input type="password" name="password" placeholder="Password" required />
-                            <button type="submit" class="main-link green-btn">Login or die</button>
-                        </form>
+                        @*@using (Html.BeginForm("Logon", "Account"))
+                            {
+                                <form action="" method="post">
+                                    <input type="text" name="username" placeholder="Username" required />
+                                    <input type="password" name="password" placeholder="Password" required />
+                                    <button type="submit" name="loginuser" class="main-link green-btn">Login</button>
+                                </form>
+                            }*@
+
+
+
+                        @using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin"))
+                        {
+
+                            @Html.ValidationSummary("loginModel", true)
+                            @*@Html.ValidationSummary(true)*@
+
+                            @Html.LabelFor(m => loginModel.Username)
+                            @Html.TextBoxFor(m => loginModel.Username)
+                            @Html.ValidationMessageFor(m => loginModel.Username)
+                            <br />
+
+                                @Html.LabelFor(m => loginModel.Password)
+                                @Html.PasswordFor(m => loginModel.Password)
+                                @Html.ValidationMessageFor(m => loginModel.Password)
+                                <br />
+
+                                <button type="submit" name="loginuser" class="main-link green-btn">Login</button>
+                                @Html.HiddenFor(m => loginModel.RedirectUrl)
+                        }
+
                         <span data-go-create>Or create a user</span>
                     </div>
                     <div class="create-user" data-create-form>
@@ -43,7 +81,7 @@
             }
             else
             {
-                <h2>else</h2>
+                <h2>Du er logget ind</h2>
             }
         </div>
     </div>
