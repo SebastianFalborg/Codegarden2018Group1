@@ -252,6 +252,7 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="Content\Img\Icons\avatar.svg" />
     <Content Include="Content\Img\Icons\icon.svg" />
     <Content Include="Content\Img\Logo\umbraco-logo.svg" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.css" />
@@ -313,6 +314,7 @@
     <Content Include="Content\Styles\Partials\_Speakers.scss" />
     <Content Include="Content\Styles\Partials\_LogoAnimation.scss" />
     <Content Include="Content\Styles\Partials\_Program.scss" />
+    <Content Include="Content\Styles\Layout\_UserArea.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -367,6 +369,7 @@
     <Content Include="Views\Partials\_WorkshopSpeaker.cshtml" />
     <Content Include="Views\Partials\_ExperienceSection.cshtml" />
     <Content Include="Views\Partials\_LookingBack.cshtml" />
+    <Content Include="Views\Partials\_UserArea.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

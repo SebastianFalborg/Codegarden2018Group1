@@ -1,11 +1,31 @@
 ﻿//$(window).width() < 768
 // Menu icon toggle and menu
-$("[data-menu-toggle]").click(function () {
+
+var userToggle = $("[data-user-toggle]");
+var menuToggle = $("[data-menu-toggle]");
+var wrapperToggle = $("[data-main-wrapper]");
+
+
+menuToggle.click(function () {
     $(this).toggleClass("active");
     $(this).next().toggleClass("active");
-    $("[data-main-wrapper]").toggleClass("active");
+    wrapperToggle.toggleClass("active");
+    if (userToggle.hasClass("active")){
+        userToggle.removeClass("active");
+        userToggle.next().removeClass("active");
+        wrapperToggle.addClass("active");
+    }
 });
-
+userToggle.click(function () {
+    $(this).toggleClass("active");
+    $(this).next().toggleClass("active");
+    wrapperToggle.toggleClass("active");
+    if (menuToggle.hasClass("active")) {
+        menuToggle.removeClass("active");
+        menuToggle.next().removeClass("active");
+        wrapperToggle.addClass("active");
+    }
+});
 // logo fill function
 $(function () {
     var headerLogo = $('[data-header-logo]');
