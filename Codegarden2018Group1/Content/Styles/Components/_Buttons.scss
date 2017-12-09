@@ -35,4 +35,7 @@ a, button, span {
             color: white;
         }
     }
+    &.nostyle-link{
+        color: inherit;
+    }
 }

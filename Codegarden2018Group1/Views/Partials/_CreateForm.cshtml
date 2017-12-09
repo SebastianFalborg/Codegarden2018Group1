@@ -1,0 +1,60 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Web.Mvc.Html
+@using Umbraco.Web.Controllers
+
+@{
+
+    var registerModel = Members.CreateRegistrationModel();
+    //var redirectUrl = string.Format("{0}&register=true", Request.RawUrl);
+    //registerModel.RedirectUrl = "/";
+
+    var success = TempData["FormSucces"] != null;
+
+}
+
+@if (success)
+{
+    <h2>Virker ikke</h2>
+}
+
+else
+{
+    using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
+    {
+
+        <div class="form-group">
+            @Html.ValidationMessageFor(m => registerModel.Name)
+            @Html.TextBoxFor(m => registerModel.Name, new { placeholder = "Name" })
+
+        </div>
+        <div class="form-group">
+            @Html.ValidationMessageFor(m => registerModel.Email)
+            @Html.TextBoxFor(m => registerModel.Email, new { placeholder = "Email" })
+
+        </div>
+        <div class="form-group">
+            @Html.ValidationMessageFor(m => registerModel.Password)
+            @Html.TextBoxFor(m => registerModel.Password, new { placeholder = "Password" })
+
+        </div>
+        @*@Html.LabelFor(m => registerModel.MemberProperties[0].Value, registerModel.MemberProperties[0].Name)*@
+
+
+if (registerModel.MemberProperties != null)
+{
+    for (var i = 0; i < registerModel.MemberProperties.Count; i++)
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
+            @Html.EditorFor(m => registerModel.MemberProperties[i].Value, new { placeholder = "notdynamic" })
+            @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
+        </div>
+    }
+}
+
+
+        <button class="main-link green-btn">Register</button>
+
+    }
+    @*@Html.HiddenFor(m => registerModel.RedirectUrl)*@
+}

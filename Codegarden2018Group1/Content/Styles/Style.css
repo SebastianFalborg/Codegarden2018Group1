@@ -167,15 +167,18 @@ a.main-link, button.main-link, span.main-link {
     background-color: #545454;
     color: white; }
 
+a.nostyle-link, button.nostyle-link, span.nostyle-link {
+  color: inherit; }
+
 input {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   border-radius: 3px;
   padding: 12px 0;
-  border: none;
   text-align: center;
   margin-bottom: 15px;
   background-color: white;
+  border: 1px solid black;
   width: 100%;
   color: #545454;
   transition: 0.4s cubic-bezier(0.75, 0, 0.25, 1); }

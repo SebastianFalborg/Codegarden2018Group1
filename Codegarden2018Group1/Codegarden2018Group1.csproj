@@ -254,6 +254,7 @@
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Content\Img\Icons\avatar.svg" />
     <Content Include="Content\Img\Icons\icon.svg" />
+    <Content Include="Content\Img\Icons\man-user.svg" />
     <Content Include="Content\Img\Logo\umbraco-logo.svg" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.min.css" />
@@ -370,6 +371,9 @@
     <Content Include="Views\Partials\_ExperienceSection.cshtml" />
     <Content Include="Views\Partials\_LookingBack.cshtml" />
     <Content Include="Views\Partials\_UserArea.cshtml" />
+    <Content Include="Views\Partials\_LoginForm.cshtml" />
+    <Content Include="Views\Partials\_CreateForm.cshtml" />
+    <Content Include="Views\CreateUserPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -413,6 +417,7 @@
     <Compile Include="App_Data\Models\BlockListItem.generated.cs" />
     <Compile Include="App_Data\Models\CategoryContainer.generated.cs" />
     <Compile Include="App_Data\Models\ContentComposition.generated.cs" />
+    <Compile Include="App_Data\Models\CreateUserPage.generated.cs" />
     <Compile Include="App_Data\Models\Discoverpage.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />

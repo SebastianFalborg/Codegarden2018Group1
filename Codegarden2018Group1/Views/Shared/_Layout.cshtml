@@ -35,7 +35,8 @@
             </div>
         }
         <!-- end If page not frontpage -->
-        @if (Members.IsLoggedIn())
+        
+        @if (Members.IsLoggedIn() && Request.Url.PathAndQuery != "/?logout=true")
         {
             <div class="profile-icon-container" data-user-toggle>
                 <svg xmlns="http://www.w3.org/2000/svg">

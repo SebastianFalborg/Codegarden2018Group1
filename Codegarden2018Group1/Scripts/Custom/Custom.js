@@ -61,11 +61,11 @@ $("[data-vote]").click(function () {
 });
 
 // needs to be optimized
-$("[data-go-create]").click(function () {
-    $("[data-login-form]").addClass("remove");
-    $("[data-create-form]").addClass("active");
-});
-$("[data-go-login]").click(function () {
-    $("[data-login-form]").removeClass("remove");
-    $("[data-create-form]").removeClass("active");
-});
+//$("[data-go-create]").click(function () {
+//    $("[data-login-form]").addClass("remove");
+//    $("[data-create-form]").addClass("active");
+//});
+//$("[data-go-login]").click(function () {
+//    $("[data-login-form]").removeClass("remove");
+//    $("[data-create-form]").removeClass("active");
+//});
