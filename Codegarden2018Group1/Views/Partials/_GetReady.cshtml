@@ -13,17 +13,20 @@
 <div class="row">
     <div class="col-xs-12">
         @Model.Content.GetReadyContent
-        @if (!Members.IsLoggedIn())
-        {
-            @Html.Partial("_LoginForm")
-            <div>
-                <a class="nostyle-link" href="/create-user/">No user? create user her</a>
+        <div class="row">
+            <div class="col-sm-8 col-xs-12">
+                @if (!Members.IsLoggedIn())
+                {
+                    @Html.Partial("_LoginForm")
+                    <div>
+                        <a class="nostyle-link" href="/create-user/">No user? create user her</a>
+                    </div>
+                }
             </div>
-        }
+        </div>
     </div>
 
     <div class="col-xs-12">
-
         @Model.Content.GetReadyTransport
     </div>
 

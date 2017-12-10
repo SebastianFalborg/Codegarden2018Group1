@@ -2,13 +2,7 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Discoverpage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h2>@Model.Content.LookingBackHeadline</h2>
-        </div>
-    </div>
-</div>
+
 <div class="container-fluid white-format">
     <div class="image-container" style="background-image: url('@Model.Content.LookingBackImage.Url')">
         <div class="image-gradient-overlay"></div>
@@ -25,7 +19,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
+         <div class="col-md-8 col-md-push-2 col-xs-12">
             <div class="hashtag-section">
                 <span>""</span>
                 <p>@Model.Content.LookingBackHashtag</p>

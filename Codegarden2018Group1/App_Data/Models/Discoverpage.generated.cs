@@ -73,6 +73,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Get ready headline
+		///</summary>
+		[ImplementPropertyType("getReadyHeadline")]
+		public string GetReadyHeadline
+		{
+			get { return this.GetPropertyValue<string>("getReadyHeadline"); }
+		}
+
+		///<summary>
 		/// Get ready to do
 		///</summary>
 		[ImplementPropertyType("getReadyToDo")]

@@ -16,11 +16,9 @@
         </div>
     </div>
 </div>
-
-
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-push-2">
+        <div class="col-md-8 col-md-push-2 col-xs-12">
             <div class="section">
                 <div class="row">
                     <div class="col-xs-12">
@@ -28,23 +26,46 @@
                     </div>
                 </div>
             </div>
-           @Html.Partial("_GetReady")
         </div>
     </div>
 </div>
-<div class="section">
-    <div class="container-fluid white-format">
-        <div class="image-container" style="background-image: url('@Model.Content.UmbracoAwardsImage.Url')">
-            <div class="image-gradient-overlay"></div>
+<div id="accordion">
+    <div class="item">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-push-2 col-xs-12">
+                    <div class="program-header">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion1" aria-expanded="true" aria-controls="accordion1">
+                            @Model.Content.GetReadyHeadline
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accordion1" class="collapse in " role="tabpanel">
             <div class="container">
-                <div class="image-container-content">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>@Model.Content.UmbracoAwardsHeadline</h3>
-                            <p>@Model.Content.UmbracoAwardsBodytext</p>
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="@Model.Content.UmbracoAwardsLink.Url" class="main-link green-btn">Vote now</a>
+                <div class="row">
+                    <div class="col-md-8 col-md-push-2 col-xs-12">
+                        @Html.Partial("_GetReady")
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container-fluid white-format">
+                    <div class="image-container" style="background-image: url('@Model.Content.UmbracoAwardsImage.Url')">
+                        <div class="image-gradient-overlay"></div>
+                        <div class="container">
+                            <div class="image-container-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>@Model.Content.UmbracoAwardsHeadline</h3>
+                                        <p>@Model.Content.UmbracoAwardsBodytext</p>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <a href="@Model.Content.UmbracoAwardsLink.Url" class="main-link green-btn">Vote now</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -53,11 +74,51 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
 
-            
-            @Html.Partial("_ExperienceSection")
 
+    <div class="item">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-push-2 col-xs-12">
+                    <div class="program-header">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion2" aria-expanded="false" aria-controls="accordion2">
+                            @Model.Content.ExperienceHeadline
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accordion2" class="collapse" role="tabpanel">
+            <div class="container-fluid">
+
+
+                @Html.Partial("_ExperienceSection")
+
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-push-2 col-xs-12">
+                    <div class="program-header">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion3" aria-expanded="false" aria-controls="accordion3">
+                            @Model.Content.LookingBackHeadline
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div id="accordion3" class="collapse" role="tabpanel">
+            @Html.Partial("_LookingBack")
+     
+        </div>
+    </div>
 </div>
-@Html.Partial("_LookingBack")
+
+
+
+
+
+

@@ -14,7 +14,6 @@
 
 @if (success)
 {
-    <h2>Virker ikke</h2>
 }
 
 else
@@ -46,7 +45,7 @@ if (registerModel.MemberProperties != null)
     {
         <div class="form-group">
             @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
-            @Html.EditorFor(m => registerModel.MemberProperties[i].Value, new { placeholder = "notdynamic" })
+            @Html.EditorFor(m => registerModel.MemberProperties[i].Value)
             @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
         </div>
     }

@@ -197,6 +197,9 @@ textarea {
     .votinglist input[type=radio]:focus, .votinglist input[type=radio]:active, .votinglist label[type=radio]:focus, .votinglist label[type=radio]:active {
       box-shadow: none; }
 
+label {
+  color: white; }
+
 .main-banner {
   position: relative;
   height: 60vh; }
