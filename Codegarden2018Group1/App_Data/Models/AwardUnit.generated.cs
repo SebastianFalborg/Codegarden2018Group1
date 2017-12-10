@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>AwardItem</summary>
-	[PublishedContentModel("awardItem")]
-	public partial class AwardItem : PublishedContentModel
+	/// <summary>Award Unit</summary>
+	[PublishedContentModel("awardUnit")]
+	public partial class AwardUnit : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "awardItem";
+		public new const string ModelTypeAlias = "awardUnit";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public AwardItem(IPublishedContent content)
+		public AwardUnit(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +40,45 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AwardItem, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AwardUnit, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Website Author
+		/// Vote Count: Do not edit this field - Important
 		///</summary>
-		[ImplementPropertyType("websiteAuthor")]
-		public string WebsiteAuthor
+		[ImplementPropertyType("voteCount")]
+		public int VoteCount
 		{
-			get { return this.GetPropertyValue<string>("websiteAuthor"); }
+			get { return this.GetPropertyValue<int>("voteCount"); }
 		}
 
 		///<summary>
-		/// Website Image
+		/// Website Creator
 		///</summary>
-		[ImplementPropertyType("websiteImage")]
-		public IPublishedContent WebsiteImage
+		[ImplementPropertyType("websiteCreator")]
+		public string WebsiteCreator
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("websiteImage"); }
+			get { return this.GetPropertyValue<string>("websiteCreator"); }
 		}
 
 		///<summary>
-		/// Website Url
+		/// Website Domain
 		///</summary>
-		[ImplementPropertyType("websiteUrl")]
-		public string WebsiteUrl
+		[ImplementPropertyType("websiteDomain")]
+		public string WebsiteDomain
 		{
-			get { return this.GetPropertyValue<string>("websiteUrl"); }
+			get { return this.GetPropertyValue<string>("websiteDomain"); }
+		}
+
+		///<summary>
+		/// Website Picture
+		///</summary>
+		[ImplementPropertyType("websitePicture")]
+		public IPublishedContent WebsitePicture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("websitePicture"); }
 		}
 	}
 }

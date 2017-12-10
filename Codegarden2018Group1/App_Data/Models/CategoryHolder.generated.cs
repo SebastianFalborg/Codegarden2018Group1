@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>CategoryContainer</summary>
-	[PublishedContentModel("categoryContainer")]
-	public partial class CategoryContainer : PublishedContentModel
+	/// <summary>Category Holder</summary>
+	[PublishedContentModel("categoryHolder")]
+	public partial class CategoryHolder : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "categoryContainer";
+		public new const string ModelTypeAlias = "categoryHolder";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public CategoryContainer(IPublishedContent content)
+		public CategoryHolder(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,7 +40,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CategoryContainer, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CategoryHolder, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}

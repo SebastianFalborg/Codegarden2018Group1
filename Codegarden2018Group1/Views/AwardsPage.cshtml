@@ -2,6 +2,8 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Shared/_Layout.cshtml";
+    var categories = Model.Content.Children<CategoryHolder>();
+    int counter = 1;
 }
 
 <div class="main-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')" data-image-effect>
@@ -24,95 +26,46 @@
                     <div class="col-xs-12">
                         @Model.Content.Bodytext
                     </div>
-                    <div class="section">
-                        <div class="col-xs-12">
-                            <h2>@Model.Content.TechnicalSolutionHeadline</h2>
-                            @Model.Content.TechnicalSolutionBodytext
-                            <form>
-                                <div class="votinglist">
-                                    <div class="row">
-                                        @if (CurrentPage.TechnicalSolutioncheckboxes.Length > 0)
-                                        {
-                                            foreach (var item in CurrentPage.TechnicalSolutioncheckboxes)
-                                            {
-                                                <div class="col-xs-12">
-                                                    <input type="radio" id="@item" name="vote" value="@item">
-                                                    <label for="@item">@item</label>
-                                                </div>
-                                            }
-                                        }
-                                    </div>
+                    
+                    @foreach (var category in categories)
+                    {
+                        <div class="row">
+                            <section>
+                                <div class="col-xs-12">
+                                    <h2>@category.Name</h2>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="col-xs-12">
-                            <h2>@Model.Content.BestEditingHeadline</h2>
-                            @Model.Content.BestEditingBodytext
-                            <form>
-                                <div class="votinglist">
-                                    <div class="row">
-                                        @if (CurrentPage.BestEditingList.Length > 0)
-                                        {
-                                            foreach (var item in CurrentPage.BestEditingList)
-                                            {
-                                                <div class="col-xs-12">
-                                                    <input type="radio" id="@item" name="vote" value="@item">
-                                                    <label for="@item">@item</label>
-                                                </div>
-                                            }
-                                        }
 
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="col-xs-12">
-                            <h2>@Model.Content.BestDesignHeadline</h2>
-                            @Model.Content.BestDesignBodytext
-                            <form>
-                                <div class="votinglist">
-                                    <div class="row">
-                                        @if (CurrentPage.BestDesignList.Length > 0)
-                                        {
-                                            foreach (var item in CurrentPage.BestDesignList)
-                                            {
-                                                <div class="col-xs-12">
-                                                    <input type="radio" id="@item" name="vote" value="@item">
-                                                    <label for="@item">@item</label>
+                                @foreach (var award in category.DescendantsOrSelf<AwardUnit>())
+                                {
+
+                                    <div class="col-md-4 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                                        <div class="award-item effect7">
+                                            <div class="main-link-block">
+                                                <div class="link-block-wrap">
+                                                    <div class="link-block-image cover" style="background-image: url('@award.WebsitePicture.Url')"></div>
                                                 </div>
-                                            }
-                                        }
+                                            </div>
+                                            <div class="award-text">
+                                                <p><strong>By:</strong> @award.WebsiteCreator</p>
+                                                <p><strong>Url:</strong> @award.WebsiteDomain</p>
+                                            </div>
+                                            <div class="vote-btn">
+                                                <input type="radio" name='a-@counter' value="@award.Id" id="@award.Id" />
+                                                <label class="text-center" for="@award.Id">Vote Pedro</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                }
+
+                            </section>
                         </div>
-                    </div>
-                    <div class="section">
-                        <div class="col-xs-12">
-                            <h2>@Model.Content.BestPackageHeadline</h2>
-                            @Model.Content.BestPackageBodytext
-                            <form>
-                                <div class="votinglist">
-                                    <div class="row">
-                                        @if (CurrentPage.BestPackageList.Length > 0)
-                                        {
-                                            foreach (var item in CurrentPage.BestPackageList)
-                                            {
-                                                <div class="col-xs-12">
-                                                    <input type="radio" id="@item" name="vote" value="@item">
-                                                    <label for="@item">@item</label>
-                                                </div>
-                                            }
-                                        }
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                        counter++;
+
+                    }
+
+                    
+
+                    
 
                     <div class="col-xs-12">
                         <div class="row">
