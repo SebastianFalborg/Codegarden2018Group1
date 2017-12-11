@@ -143,5 +143,14 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<string>("umbracoMemberPasswordRetrievalQuestion"); }
 		}
+
+		///<summary>
+		/// WorkshopItems
+		///</summary>
+		[ImplementPropertyType("workshopItems")]
+		public IEnumerable<string> WorkshopItems
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("workshopItems"); }
+		}
 	}
 }

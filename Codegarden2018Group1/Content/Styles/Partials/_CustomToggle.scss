@@ -21,6 +21,7 @@
             border-bottom: 1px solid $gray;
             margin-bottom: 40px;
             transition: $transition;
+            cursor:pointer;
 
             h2, .custom-toggle-icon {
                 display: inline-block;
@@ -67,14 +68,19 @@
     .custom-toggle {
         .custom-item {
             .custom-item-header {
-                margin-bottom: 30px;
+                margin-bottom: 20px;
+
+                h2 {
+                    margin-bottom: 15px;
+                }
 
                 .custom-toggle-icon {
                     margin-top: 0;
 
                     &::after {
                         right: 0;
-                        font-size: 35px;
+                        font-size: 30px;
+                        top: -4px;
                     }
                 }
             }

@@ -25,7 +25,7 @@
                                 <a target="_blank" href="@Model.Content.EventLink.Url" class="main-link green-btn">Convince your boss</a>
                             </div>
                             <div class="col-sm-6">
-                                <a href="@Model.Content.EventLinkSecondary.Url" class="main-link">Se the program</a>
+                                <a href="@Model.Content.EventLinkSecondary.Url" class="main-link">See the program</a>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,14 @@
     </div>
     <div class="section">
         <div class="container-fluid">
-            <h2>Speakers</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Speakers</h2>
+                    </div>
+                </div>
+            </div>
+          
             @Html.Partial("_GetSpeakers")
         </div>
         <div class="container">
@@ -59,7 +66,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2>Themes</h2>
-                    @Html.Partial("_GetThemes")
+                  @Html.Partial("_GetThemes")
                 </div>
             </div>
             <div class="row">

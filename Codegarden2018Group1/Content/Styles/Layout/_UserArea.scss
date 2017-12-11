@@ -64,3 +64,13 @@
         }
     }
 }
+@include phones {
+    .user-area-container {
+       left:0;
+        width: auto;
+
+        .user-area-content {
+            padding-top: 30px;
+        }
+    }
+}

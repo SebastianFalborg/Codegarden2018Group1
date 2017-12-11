@@ -54,6 +54,7 @@ $("[data-vote]").click(function () {
     }).get();
 
     if ($('.votinglist input[type="radio"]:checked').length === 4) {
+    
         $("[data-vote-result]").html("<h3>Thank you for you vote. You voted on<span>" + checkedVals + "</span></h3>");
     } else {
         $("[data-vote-result]").html("<span>You need to select one from each category</span>");
@@ -62,14 +63,21 @@ $("[data-vote]").click(function () {
 
 
 // custom toggle
-$("[data-custom-list-item]").click(function () {
+var toggleList = $("[data-custom-list-item]");
+
+toggleList.click(function () {
     $(this).toggleClass("active");
     $(this).next().toggleClass("active");
 
     if ($(this).hasClass("active")) {
-        $("[data-custom-list-item]").removeClass("active");
-        $("[data-custom-list-item]").next().removeClass("active");
+        toggleList.removeClass("active");
+        toggleList.next().removeClass("active");
         $(this).addClass("active");
         $(this).next().addClass("active");
     }
+});
+
+// map overlay
+$("[data-map-overlay]").click(function () {
+    $(this).fadeOut("slow");
 });
