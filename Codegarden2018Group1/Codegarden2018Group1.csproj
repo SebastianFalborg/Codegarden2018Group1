@@ -367,7 +367,6 @@
     <Content Include="Views\Test.cshtml" />
     <Content Include="Views\WorkshopItem.cshtml" />
     <Content Include="Views\Workshops.cshtml" />
-    <Content Include="Views\Partials\_WorkshopSpeaker.cshtml" />
     <Content Include="Views\Partials\_ExperienceSection.cshtml" />
     <Content Include="Views\Partials\_LookingBack.cshtml" />
     <Content Include="Views\Partials\_UserArea.cshtml" />
