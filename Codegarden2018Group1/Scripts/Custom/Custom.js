@@ -10,7 +10,7 @@ menuToggle.click(function () {
     $(this).toggleClass("active");
     $(this).next().toggleClass("active");
     wrapperToggle.toggleClass("active");
-    if (userToggle.hasClass("active")){
+    if (userToggle.hasClass("active")) {
         userToggle.removeClass("active");
         userToggle.next().removeClass("active");
         wrapperToggle.addClass("active");
@@ -52,7 +52,7 @@ $("[data-vote]").click(function () {
     var checkedVals = radioList.map(function () {
         return $(this).val();
     }).get();
-    
+
     if ($('.votinglist input[type="radio"]:checked').length === 4) {
         $("[data-vote-result]").html("<h3>Thank you for you vote. You voted on<span>" + checkedVals + "</span></h3>");
     } else {
@@ -60,12 +60,16 @@ $("[data-vote]").click(function () {
     }
 });
 
-// needs to be optimized
-//$("[data-go-create]").click(function () {
-//    $("[data-login-form]").addClass("remove");
-//    $("[data-create-form]").addClass("active");
-//});
-//$("[data-go-login]").click(function () {
-//    $("[data-login-form]").removeClass("remove");
-//    $("[data-create-form]").removeClass("active");
-//});
+
+// custom toggle
+$("[data-custom-list-item]").click(function () {
+    $(this).toggleClass("active");
+    $(this).next().toggleClass("active");
+
+    if ($(this).hasClass("active")) {
+        $("[data-custom-list-item]").removeClass("active");
+        $("[data-custom-list-item]").next().removeClass("active");
+        $(this).addClass("active");
+        $(this).next().addClass("active");
+    }
+});

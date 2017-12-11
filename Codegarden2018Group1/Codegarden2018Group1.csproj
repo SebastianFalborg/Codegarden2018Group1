@@ -316,6 +316,7 @@
     <Content Include="Content\Styles\Partials\_LogoAnimation.scss" />
     <Content Include="Content\Styles\Partials\_Program.scss" />
     <Content Include="Content\Styles\Layout\_UserArea.scss" />
+    <Content Include="Content\Styles\Partials\_CustomToggle.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

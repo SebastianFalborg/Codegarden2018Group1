@@ -18,7 +18,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-push-2 col-xs-12">
+        <div class="col-xs-12">
             <div class="section">
                 <div class="row">
                     <div class="col-xs-12">
@@ -29,23 +29,23 @@
         </div>
     </div>
 </div>
-<div id="accordion">
-    <div class="item">
-        <div class="container">
+<div class="custom-toggle">
+    <div class="custom-item">
+        <div class="container active" data-custom-list-item>
             <div class="row">
-                <div class="col-md-8 col-md-push-2 col-xs-12">
-                    <div class="program-header">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion1" aria-expanded="true" aria-controls="accordion1">
-                            @Model.Content.GetReadyHeadline
-                        </a>
+                <div class="col-xs-12">
+                    <div class="custom-item-header">
+                        <h2>@Model.Content.GetReadyHeadline</h2>
+                        <div class="custom-toggle-icon">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="accordion1" class="collapse in " role="tabpanel">
+        <div class="custom-item-content active">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-md-push-2 col-xs-12">
+                    <div class="col-xs-12">
                         @Html.Partial("_GetReady")
                     </div>
                 </div>
@@ -74,48 +74,43 @@
             </div>
         </div>
     </div>
-
-
-    <div class="item">
-        <div class="container">
+    <div class="custom-item">
+        <div class="container" data-custom-list-item>
             <div class="row">
-                <div class="col-md-8 col-md-push-2 col-xs-12">
-                    <div class="program-header">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion2" aria-expanded="false" aria-controls="accordion2">
-                            @Model.Content.ExperienceHeadline
-                        </a>
+                <div class="col-xs-12">
+                    <div class="custom-item-header">
+                        <h2>@Model.Content.ExperienceHeadline</h2>
+                        <div class="custom-toggle-icon">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="accordion2" class="collapse" role="tabpanel">
+        <div class="custom-item-content">
             <div class="container-fluid">
-
-
                 @Html.Partial("_ExperienceSection")
-
             </div>
         </div>
     </div>
-
-    <div class="item">
-        <div class="container">
+    <div class="custom-item">
+        <div class="container" data-custom-list-item>
             <div class="row">
-                <div class="col-md-8 col-md-push-2 col-xs-12">
-                    <div class="program-header">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion3" aria-expanded="false" aria-controls="accordion3">
-                            @Model.Content.LookingBackHeadline
-                        </a>
+                <div class="col-xs-12">
+                    <div class="custom-item-header">
+                        <h2>@Model.Content.LookingBackHeadline</h2>
+                        <div class="custom-toggle-icon">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-            <div id="accordion3" class="collapse" role="tabpanel">
+        <div class="custom-item-content">
+
             @Html.Partial("_LookingBack")
-     
         </div>
     </div>
 </div>
+
 
 
 
