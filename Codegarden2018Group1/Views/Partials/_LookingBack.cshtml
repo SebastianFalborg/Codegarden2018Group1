@@ -1,0 +1,56 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Discoverpage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Umbraco.Web.Models;
+
+
+@{
+    var selection = Model.Content.Site().FirstChild("discoverpage").FirstChild("discoverImages").Children("discoverImagesItems")
+                        .Where(x => x.IsVisible());
+}
+<div class="container-fluid white-format">
+    <div class="image-container" style="background-image: url('@Model.Content.LookingBackImage.Url')">
+        <div class="image-gradient-overlay"></div>
+        <div class="container">
+            <div class="image-container-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>@Model.Content.LookingBackBodytext</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="hashtag-section">
+                <span>""</span>
+                <p>@Model.Content.LookingBackHashtag</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>images</h5>
+
+            <div class="swiper-container" data-swiper-secondary>
+                <div class="swiper-wrapper">
+                    @foreach (var item in selection)
+                    {
+                        <div class="swiper-slide main-link-block">
+                                <div class="link-block-wrap speaker-size">
+                                    <div style="background-image: url('@Umbraco.Media(item.GetPropertyValue("imageFile").ToString()).UmbracoFile')" class="link-block-image cover">
+                                        <div class="image-gradient-overlay"></div>
+                                    </div>
+                                </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

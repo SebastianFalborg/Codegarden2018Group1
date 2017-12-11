@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    var member = Members.GetCurrentMember();
+}
+<div class="user-area-container" data-user-area>
+    <div class="user-area-content">
+        <div class="user-area-header">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Hello</h3>
+                    <h3>@Members.GetCurrentMemberProfileModel().Name</h3>
+                </div>
+            </div>
+        </div>
+        <div class="user-area-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span>TicketID</span>
+                    <p>@Members.GetCurrentMember().GetPropertyValue("TicketId")</p>
+                </div>
+                <div class="col-xs-12">
+                    <span>Funfact</span>
+                    <p>@Members.GetCurrentMember().GetPropertyValue("funFact")</p>
+                </div>
+                <div class="col-xs-12">
+                    <span>Workshops</span>
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <p>Workshop 1</p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-area-footer">
+            <a class="main-link" href="/?logout=true">Log out</a>
+        </div>
+    </div>
+</div>

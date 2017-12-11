@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
+    var member = Members.GetCurrentMember();
     Layout = null;
     if (Request["logout"] != null)
     {
@@ -33,7 +34,17 @@
                 </a>
             </div>
         }
-        <!-- If page not frontpage -->
+        <!-- end If page not frontpage -->
+        
+        @if (Members.IsLoggedIn() && Request.Url.PathAndQuery != "/?logout=true")
+        {
+            <div class="profile-icon-container" data-user-toggle>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#icon-user" />
+                </svg>
+            </div>
+            @Html.Partial("_UserArea")
+        }
         <div class="menu-icon-container" data-menu-toggle>
             <span class="menu-icon"></span>
         </div>
@@ -41,6 +52,8 @@
             @Html.Partial("_Navigation")
         </div>
     </header>
+
+
     <div class="main-wrapper" data-main-wrapper>
         <div class="main-overlay hidden-xs"></div>
         <div>
@@ -51,13 +64,13 @@
         </footer>
     </div>
     <!-- Sprite partial, for all the svg -->
-    @if (Request.Url.PathAndQuery != "/")
-    {
-        @Html.Partial("_Sprite")
-    }
-    
+
+    @Html.Partial("_Sprite")
+
+
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
-    @*<script src="~/Scripts/bootstrap.js"></script>*@
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/Custom/Custom.js"></script>
     <script src="~/Scripts/swiper.min.js"></script>
     <!-- Initialize Swiper -->

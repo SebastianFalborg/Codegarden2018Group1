@@ -1,0 +1,66 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.user-area-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: $menu-width;
+    background-color: white;
+    transform: translateX(100%);
+    transition: $transition;
+    transition-delay: 0.2s;
+    z-index: 4;
+
+    &.active {
+        transform: translateX(0);
+        transition-delay: 0s;
+    }
+
+    .user-area-content {
+        padding: 15px;
+        padding-top: 60px;
+
+        .user-area-header {
+
+            h3 {
+                font-size: 2.8rem;
+                @include font-light;
+                margin-bottom: 5px;
+                color: $purple;
+
+                &:last-of-type {
+                    font-size: 2rem;
+                    @include font-bold;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .user-area-body {
+            margin-top: 40px;
+            span {
+                color: $purple;
+                @include font-bold;
+                font-size: 1.1rem;
+            }
+
+            p {
+                color: $gray;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .user-area-footer {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+
+        a {
+            display: block;
+        }
+    }
+}

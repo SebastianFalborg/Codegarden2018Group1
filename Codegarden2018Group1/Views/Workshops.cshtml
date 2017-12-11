@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Workshops>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Shared/_Layout.cshtml";
+    var allWorkshops = Model.Content.Children<WorkshopItem>()
+                 .OrderBy(n => n.CreateDate);
+}
+
+<div class="main-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')" data-image-effect>
+    <div class="image-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="banner-content">
+                <div class="col-xs-12">
+                    <h1>@Model.Content.Headline</h1>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h4 class="headline-space">@Model.Content.Bodytext</h4>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach (var item in allWorkshops)
+            {
+                <a href="@item.Url">
+                    <div class="col-sm-6 col-md-4 col-xs-12 main-link-block">
+                        <div class="link-block-wrap">
+                            <div class="link-block-image cover" style="background-image: url('@Umbraco.Media(item.GetPropertyValue("contentImage").ToString()).UmbracoFile')">
+                                <div class="image-gradient-overlay">
+                                </div>
+                            </div>
+                            <div class="link-block-content">
+                                <h3>@item.Name</h3>
+                            </div>
+                            <div class="read-more">Read more</div>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,83 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.custom-toggle {
+    .custom-item {
+        [data-custom-list-item] {
+            &.active {
+                .custom-item-header {
+                    border-bottom: 1px solid transparent;
+
+                    .custom-toggle-icon {
+                        &::after {
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+        }
+
+        .custom-item-header {
+            border-bottom: 1px solid $gray;
+            margin-bottom: 40px;
+            transition: $transition;
+
+            h2, .custom-toggle-icon {
+                display: inline-block;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            .custom-toggle-icon {
+                margin-top: 8px;
+                float: right;
+                position: relative;
+
+                &::after {
+                    content: '×';
+                    position: absolute;
+                    right: 15px;
+                    font-size: 40px;
+                    color: $red;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    transition: $transition;
+                }
+            }
+        }
+
+        .custom-item-content {
+            visibility: hidden;
+            max-height: 0;
+            overflow: hidden;
+            transition: $transition;
+
+            &.active {
+                visibility: visible;
+                max-height: 2000px;
+            }
+        }
+    }
+}
+
+
+@include phones {
+    .custom-toggle {
+        .custom-item {
+            .custom-item-header {
+                margin-bottom: 30px;
+
+                .custom-toggle-icon {
+                    margin-top: 0;
+
+                    &::after {
+                        right: 0;
+                        font-size: 35px;
+                    }
+                }
+            }
+        }
+    }
+}

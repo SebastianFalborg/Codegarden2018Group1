@@ -5,10 +5,10 @@ input {
     @include font-regular;
     border-radius: 3px;
     padding: 12px 0;
-    border: none;
     text-align: center;
     margin-bottom: 15px;
     background-color: white;
+    border: 1px solid black;
     width: 100%;
     color: $gray;
     transition: $small-transition;
@@ -34,6 +34,7 @@ textarea {
             }
         }
     }
-
- 
+}
+label{
+    color: white;
 }

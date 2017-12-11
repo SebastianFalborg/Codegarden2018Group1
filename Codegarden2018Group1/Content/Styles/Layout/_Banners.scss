@@ -60,19 +60,15 @@
                         width: 100%;
 
                         &.remove {
-                            opacity: 0;
-                            visibility: hidden;
+                           display:none;
                         }
                     }
 
                     .create-user {
-                        visibility: hidden;
-                        opacity: 0;
-                        transition: $transition;
+                      display:none;
 
                         &.active {
-                            visibility: visible;
-                            opacity: 1;
+                           display:block;
                         }
                     }
                 }

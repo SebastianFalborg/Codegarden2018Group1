@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>AwardItem</summary>
-	[PublishedContentModel("awardItem")]
-	public partial class AwardItem : PublishedContentModel
+	/// <summary>WorkshopItem</summary>
+	[PublishedContentModel("workshopItem")]
+	public partial class WorkshopItem : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "awardItem";
+		public new const string ModelTypeAlias = "workshopItem";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public AwardItem(IPublishedContent content)
+		public WorkshopItem(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +40,45 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AwardItem, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<WorkshopItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Website Author
+		/// Body Text
 		///</summary>
-		[ImplementPropertyType("websiteAuthor")]
-		public string WebsiteAuthor
+		[ImplementPropertyType("bodyText")]
+		public IHtmlString BodyText
 		{
-			get { return this.GetPropertyValue<string>("websiteAuthor"); }
+			get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
 		}
 
 		///<summary>
-		/// Website Image
+		/// ContentImage
 		///</summary>
-		[ImplementPropertyType("websiteImage")]
-		public IPublishedContent WebsiteImage
+		[ImplementPropertyType("contentImage")]
+		public IPublishedContent ContentImage
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("websiteImage"); }
+			get { return this.GetPropertyValue<IPublishedContent>("contentImage"); }
 		}
 
 		///<summary>
-		/// Website Url
+		/// headline
 		///</summary>
-		[ImplementPropertyType("websiteUrl")]
-		public string WebsiteUrl
+		[ImplementPropertyType("headline")]
+		public string Headline
 		{
-			get { return this.GetPropertyValue<string>("websiteUrl"); }
+			get { return this.GetPropertyValue<string>("headline"); }
+		}
+
+		///<summary>
+		/// Speakers
+		///</summary>
+		[ImplementPropertyType("speakers")]
+		public IEnumerable<IPublishedContent> Speakers
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("speakers"); }
 		}
 	}
 }

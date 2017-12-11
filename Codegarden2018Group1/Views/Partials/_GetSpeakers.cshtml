@@ -1,4 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+
+
 @{
     var selection = Umbraco.TypedContent(1094).Children("speakerItem");
 }
@@ -12,11 +15,12 @@
                         <div class="link-block-wrap speaker-size">
                             <div style="background-image: url('@Umbraco.Media(item.GetPropertyValue("contentImage").ToString()).UmbracoFile')" class="link-block-image cover">
                                 <div class="image-gradient-overlay"></div>
+                            </div>
                                 <div class="link-block-content">
                                     <h3>@item.GetPropertyValue("headline")</h3>
                                 </div>
                                 <div class="read-more">@item.GetPropertyValue("subHeadline")</div>
-                            </div>
+                          
                         </div>
                     </a>
                 </div>

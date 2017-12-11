@@ -1,4 +1,37 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Discoverpage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+@using System.Web.Mvc.Html
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Umbraco.Web.Controllers
 
-@Model.Content.GetReadyContent
+@{
+    var loginModel = new LoginModel();
+    loginModel.RedirectUrl = "/dscvr/";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        @Model.Content.GetReadyContent
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                @if (!Members.IsLoggedIn())
+                {
+                    @Html.Partial("_LoginForm")
+                    <div>
+                        <a class="nostyle-link" href="/create-user/">No user? create user her</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        @Model.Content.GetReadyTransport
+    </div>
+
+    <div class="col-xs-12">
+        @Model.Content.GetReadyToDo
+    </div>
+</div>
+

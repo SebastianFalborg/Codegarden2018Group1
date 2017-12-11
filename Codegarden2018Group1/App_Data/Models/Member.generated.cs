@@ -55,6 +55,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// TicketId
+		///</summary>
+		[ImplementPropertyType("ticketId")]
+		public string TicketId
+		{
+			get { return this.GetPropertyValue<string>("ticketId"); }
+		}
+
+		///<summary>
 		/// Is Approved
 		///</summary>
 		[ImplementPropertyType("umbracoMemberApproved")]

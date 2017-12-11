@@ -1,0 +1,29 @@
+﻿
+@using System.Web.Mvc.Html
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Umbraco.Web.Controllers
+
+
+@{
+    var loginModel = new LoginModel();
+    //loginModel.RedirectUrl = "/user-area/";
+
+}
+
+@using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin"))
+{
+
+    @Html.ValidationSummary("loginModel", true)
+
+    @Html.TextBoxFor(m => loginModel.Username, new { placeholder = "Username" })
+    @Html.ValidationMessageFor(m => loginModel.Username)
+
+
+    @Html.PasswordFor(m => loginModel.Password, new { placeholder = "Username" })
+    @Html.ValidationMessageFor(m => loginModel.Password)
+
+
+    <button type="submit" name="loginuser" class="main-link green-btn">Login</button>
+    @*@Html.HiddenFor(m => loginModel.RedirectUrl)*@
+}

@@ -23,6 +23,7 @@ namespace Codegarden2018Group1.ProjectApi
 
             foreach (var blog in blogitems)
             {
+
                 var b = new Blogs();
                 b.Headline = blog.Properties["linkBlockHeadline"].Value.ToString();
             

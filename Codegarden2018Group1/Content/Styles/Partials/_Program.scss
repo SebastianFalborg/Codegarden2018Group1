@@ -1,0 +1,145 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.item a {
+}
+
+.program-header {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #545454;
+    margin-bottom: 15px;
+}
+
+.program-header a {
+    display: block;
+    width: 100%;
+    color: #ff4053;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.program-header a:after {
+    content: '×';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: 90%;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+    transition: 0.25s all ease;
+}
+
+.program-header a[aria-expanded^="false"]:after {
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.program-header a[aria-expanded^="true"]:after {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.item .container-fluid .row:first-of-type p {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.item .container-fluid .row:nth-child(even) {
+    background-color: #fcfbe6;
+}
+
+.item .container-fluid .row div:first-of-type p {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+//scss down is jUst while testing
+
+
+.award-item {
+    border: solid 1px;
+    height: auto;
+    background-color: white;
+    margin-bottom: 40px;
+
+    &:hover {
+        border-color: $green;
+    }
+
+    .main-link-block {
+        .link-block-wrap {
+            height: 200px;
+        }
+    }
+}
+
+.effect7 {
+    position: relative;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.effect7:before, .effect7:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.effect7:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.effect7:hover:before, .effect7:hover:after {
+    opacity: 1;
+}
+
+
+
+.award-text {
+    padding: 10px;
+    p{
+        font-size: 15px;
+    }
+}
+
+.vote-btn {
+    background-color: $light-gray;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked + label {
+        background-color: $green;
+        transition: background-color 500ms linear;
+    }
+
+    label {
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
+        color: white;
+    }
+}

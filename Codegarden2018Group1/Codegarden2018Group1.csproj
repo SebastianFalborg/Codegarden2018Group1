@@ -252,7 +252,9 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="Content\Img\Icons\avatar.svg" />
     <Content Include="Content\Img\Icons\icon.svg" />
+    <Content Include="Content\Img\Icons\man-user.svg" />
     <Content Include="Content\Img\Logo\umbraco-logo.svg" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.min.css" />
@@ -312,6 +314,9 @@
     <Content Include="Content\Styles\Components\_Forms.scss" />
     <Content Include="Content\Styles\Partials\_Speakers.scss" />
     <Content Include="Content\Styles\Partials\_LogoAnimation.scss" />
+    <Content Include="Content\Styles\Partials\_Program.scss" />
+    <Content Include="Content\Styles\Layout\_UserArea.scss" />
+    <Content Include="Content\Styles\Partials\_CustomToggle.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -321,6 +326,7 @@
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\swiper.min.js" />
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Web.config" />
@@ -359,7 +365,17 @@
     <Content Include="Views\Partials\_LogoAnimation.cshtml" />
     <Content Include="Views\AwardsPage.cshtml" />
     <Content Include="Views\Test.cshtml" />
-    <Content Include="Views\UserArea.cshtml" />
+    <Content Include="Views\WorkshopItem.cshtml" />
+    <Content Include="Views\Workshops.cshtml" />
+    <Content Include="Views\Partials\_WorkshopSpeaker.cshtml" />
+    <Content Include="Views\Partials\_ExperienceSection.cshtml" />
+    <Content Include="Views\Partials\_LookingBack.cshtml" />
+    <Content Include="Views\Partials\_UserArea.cshtml" />
+    <Content Include="Views\Partials\_LoginForm.cshtml" />
+    <Content Include="Views\Partials\_CreateForm.cshtml" />
+    <Content Include="Views\CreateUserPage.cshtml" />
+    <Content Include="Views\AwardUnit.cshtml" />
+    <Content Include="Views\CategoryHolder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -398,14 +414,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\Models\AwardsPage.generated.cs" />
+    <Compile Include="App_Data\Models\AwardUnit.generated.cs" />
     <Compile Include="App_Data\Models\BlockList.generated.cs" />
     <Compile Include="App_Data\Models\BlockListItem.generated.cs" />
+    <Compile Include="App_Data\Models\CategoryHolder.generated.cs" />
     <Compile Include="App_Data\Models\ContentComposition.generated.cs" />
+    <Compile Include="App_Data\Models\CreateUserPage.generated.cs" />
     <Compile Include="App_Data\Models\Discoverpage.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />
     <Compile Include="App_Data\Models\HideInNav.generated.cs" />
+    <Compile Include="App_Data\Models\HotspotItems.generated.cs" />
+    <Compile Include="App_Data\Models\Hotspots.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\LinkBlock.generated.cs" />
     <Compile Include="App_Data\Models\LoginPage.generated.cs" />
@@ -417,6 +438,8 @@
     <Compile Include="App_Data\Models\Speakerspage.generated.cs" />
     <Compile Include="App_Data\Models\Textpage.generated.cs" />
     <Compile Include="App_Data\Models\UserArea.generated.cs" />
+    <Compile Include="App_Data\Models\WorkshopItem.generated.cs" />
+    <Compile Include="App_Data\Models\Workshops.generated.cs" />
     <Compile Include="ProjectApi\TestController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

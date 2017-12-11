@@ -1,18 +1,12 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.LoginPage>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CreateUserPage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using System.Web.Mvc.Html
-@using Umbraco.Web
-@using Umbraco.Web.Models
-@using Umbraco.Web.Controllers
-
 
 @{
     Layout = "Shared/_Layout.cshtml";
-    
-
 }
 
-<div class="main-banner fullscreen-banner cover" style="background-image:url('@Model.Content.LoginImage.Url')">
+<div class="main-banner fullscreen-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')">
     <div class="image-overlay"></div>
     <div class="banner-content">
         <div class="user-area">
@@ -21,10 +15,10 @@
             {
                 <div class="user-forms">
                     <div class="login-user" data-login-form>
-                        <h4>Please login</h4>
-                       @Html.Partial("_LoginForm")
+                        <h4>@Model.Content.Headline</h4>
+                        @Html.Partial("_CreateForm")
 
-                        <span data-go-create>Or create a user</span>
+                        <a href="/login-page/">Or Login</a>
                     </div>
                 </div>
             }

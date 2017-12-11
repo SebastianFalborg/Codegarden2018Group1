@@ -1,14 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using System.Web.Mvc.Html
-@using ClientDependency.Core
-@using Umbraco.Core
 @using Umbraco.Web.Controllers
 
 @{
-    
+
     var registerModel = Members.CreateRegistrationModel();
     //var redirectUrl = string.Format("{0}&register=true", Request.RawUrl);
-    registerModel.RedirectUrl = "/";
+    //registerModel.RedirectUrl = "/";
 
     var success = TempData["FormSucces"] != null;
 
@@ -41,17 +39,17 @@ else
         @*@Html.LabelFor(m => registerModel.MemberProperties[0].Value, registerModel.MemberProperties[0].Name)*@
 
 
-                    if (registerModel.MemberProperties != null)
-                    {
-                    for (var i = 0; i < registerModel.MemberProperties.Count; i++)
-                    {
-                    <div class="form-group">
-                        @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
-                        @Html.EditorFor(m => registerModel.MemberProperties[i].Value, new { placeholder = "notdynamic" })
-                        @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
-                    </div>
-                    }
-                    }
+if (registerModel.MemberProperties != null)
+{
+    for (var i = 0; i < registerModel.MemberProperties.Count; i++)
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
+            @Html.EditorFor(m => registerModel.MemberProperties[i].Value)
+            @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
+        </div>
+    }
+}
 
 
         <button class="main-link green-btn">Register</button>
