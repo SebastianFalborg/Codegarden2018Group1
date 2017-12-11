@@ -1,4 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.WorkshopItem>
+@using Newtonsoft.Json
+@using Umbraco.Core.Services
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 
 @{
@@ -67,11 +69,28 @@
         </div>
         <hr class="hr-special"/>
         <div class="row">
-            <div class="col-md-12 text-center">
-                <h4>Login to sign up for the workshops</h4> 
-            </div>
             <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
-                <a href="/user-area/"><button class="main-link green-btn">Login</button></a>
+                @if (Members.IsLoggedIn())
+                {
+                    if(Members.GetCurrentMember().GetPropertyValue<IEnumerable<string>>("WorkshopItems").Contains(Model.Content.Name))
+                    {
+                        <p>You are already signed up</p>
+                    }
+                    else
+                    {
+                        <p>Signup</p>
+                        //var ms = ApplicationContext.Current.Services.MemberService;
+                        //var member = ms.GetById(Members.GetCurrentMemberId());
+                        //member.SetValue("workshopItems", "100");
+                    }
+                }
+                else
+                {
+                    <div class="col-md-12 text-center">
+                        <h4>Login to sign up for the workshops</h4> 
+                    </div>
+                    <a href="/login-page/"><button class="main-link green-btn">Login</button></a>
+                }
             </div>
         </div>
     </div>
