@@ -6,6 +6,7 @@
 @{
     Layout = "Shared/_Layout.cshtml";
     var speakers = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("speakers");
+    }
 }
 
 <div class="main-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')">
@@ -17,7 +18,7 @@
                     <h1>@Model.Content.Name</h1>
                 </div>
                 <div class="col-xs-12">
-                    <p>@Model.Content.Headline</p>
+                    <p>Workshop</p>
                 </div>
             </div>
         </div>
@@ -69,19 +70,19 @@
         </div>
         <hr class="hr-special"/>
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+
                 @if (Members.IsLoggedIn())
                 {
-                    if(Members.GetCurrentMember().GetPropertyValue<IEnumerable<string>>("WorkshopItems").Contains(Model.Content.Name))
+                    if(Members.GetCurrentMember().GetPropertyValue<IEnumerable<string>>("WorkshopItems").Contains(Model.Content.Headline))
                     {
                         <p>You are already signed up</p>
                     }
                     else
                     {
-                        <p>Signup</p>
-                        //var ms = ApplicationContext.Current.Services.MemberService;
-                        //var member = ms.GetById(Members.GetCurrentMemberId());
-                        //member.SetValue("workshopItems", "100");
+                        <form action="" method="post">
+                            <input name="signUp" value="@Model.Content.Id" hidden=""/>
+                            <button type="submit">Sign up for workshop</button>
+                        </form>
                     }
                 }
                 else
@@ -89,9 +90,11 @@
                     <div class="col-md-12 text-center">
                         <h4>Login to sign up for the workshops</h4> 
                     </div>
-                    <a href="/login-page/"><button class="main-link green-btn">Login</button></a>
+                    <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+                        <a href="/login-page/"><button class="main-link green-btn">Login</button></a>
+                    </div>
                 }
-            </div>
+
         </div>
     </div>
 </div>
