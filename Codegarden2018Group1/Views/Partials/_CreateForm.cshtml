@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Net.Http
 @using System.Web.Mvc.Html
 @using Umbraco.Web.Controllers
 
@@ -10,50 +11,102 @@
 
     var success = TempData["FormSucces"] != null;
 
+
 }
 
 @if (success)
 {
-}
 
+}
 else
 {
-    using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
+    if (IsPost)
     {
+        if (Request["ticketNumber"] != null)
+        {
+            var ticketNumber = Request["ticketNumber"];
+            if (TicketNumberCheck(ticketNumber))
+            {
+                    using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
+                    {
 
-        <div class="form-group">
-            @Html.ValidationMessageFor(m => registerModel.Name)
-            @Html.TextBoxFor(m => registerModel.Name, new { placeholder = "Name" })
+                        <div class="form-group">
+                            @Html.ValidationMessageFor(m => registerModel.Name)
+                            @Html.TextBoxFor(m => registerModel.Name, new {placeholder = "Name"})
 
-        </div>
-        <div class="form-group">
-            @Html.ValidationMessageFor(m => registerModel.Email)
-            @Html.TextBoxFor(m => registerModel.Email, new { placeholder = "Email" })
+                        </div>
+                        <div class="form-group">
+                            @Html.ValidationMessageFor(m => registerModel.Email)
+                            @Html.TextBoxFor(m => registerModel.Email, new {placeholder = "Email"})
 
-        </div>
-        <div class="form-group">
-            @Html.ValidationMessageFor(m => registerModel.Password)
-            @Html.TextBoxFor(m => registerModel.Password, new { placeholder = "Password" })
+                        </div>
+                        <div class="form-group">
+                            @Html.ValidationMessageFor(m => registerModel.Password)
+                            @Html.TextBoxFor(m => registerModel.Password, new {placeholder = "Password"})
 
-        </div>
-        @*@Html.LabelFor(m => registerModel.MemberProperties[0].Value, registerModel.MemberProperties[0].Name)*@
+                        </div>
+                        @*@Html.LabelFor(m => registerModel.MemberProperties[0].Value, registerModel.MemberProperties[0].Name)*@
 
 
-if (registerModel.MemberProperties != null)
-{
-    for (var i = 0; i < registerModel.MemberProperties.Count; i++)
+                        if (registerModel.MemberProperties != null)
+                        {
+                            for (var i = 0; i < registerModel.MemberProperties.Count; i++)
+                            {
+                                if (registerModel.MemberProperties[i].Name == "TicketId")
+                                {
+                                    registerModel.MemberProperties[i].Value = ticketNumber;
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
+                                        @Html.EditorFor(m => registerModel.MemberProperties[i].Value, new {htmlAttributes = new Dictionary<string, object>() {{"readonly", "readonly"}}})
+                                        @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
+                                        @Html.EditorFor(m => registerModel.MemberProperties[i].Value)
+                                        @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
+                                    </div>
+                                }
+                            }
+                        }
+                        <button class="main-link green-btn">Register</button>
+
+                    }
+            @*@Html.HiddenFor(m => registerModel.RedirectUrl)*@
+            }
+            else
+            {
+                <p>Ticker number</p>
+                <p>Please input correct Ticket number</p>
+                <form action="" method="post">
+                    <input type="text" name="ticketNumber"/>
+                    <button class="alert" type="submit">Register</button>
+                </form>
+            }
+        }
+    }
+    else
     {
-        <div class="form-group">
-            @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
-            @Html.EditorFor(m => registerModel.MemberProperties[i].Value)
-            @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
-        </div>
+        <p>Ticker number</p>
+        <form action="" method="post">
+            <input type="text" name="ticketNumber"/>
+            <button class="alert" type="submit">Register</button>
+        </form>
     }
 }
 
+@*Example of how the function works. 
+It returns true or false, and the input "TicketNumber" is where the TicketNumber is input as a string
+@var trueOrFalse = TicketNumberCheck("TicketNumber")*@
 
-        <button class="main-link green-btn">Register</button>
-
+@functions {
+    private bool TicketNumberCheck(string ticketNumber)
+    {
+        var answer = new HttpClient().GetAsync("http://codegarden2018ticketapi.azurewebsites.net/api/ticket/" + ticketNumber).Result.StatusCode;
+        if (answer == HttpStatusCode.OK)
+            return true;
+        return false;
     }
-    @*@Html.HiddenFor(m => registerModel.RedirectUrl)*@
 }
