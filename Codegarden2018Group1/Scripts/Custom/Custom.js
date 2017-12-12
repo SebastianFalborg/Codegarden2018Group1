@@ -26,22 +26,7 @@ userToggle.click(function () {
         wrapperToggle.addClass("active");
     }
 });
-// logo fill function
-$(function () {
-    var headerLogo = $('[data-header-logo]');
-    var banner = $(".main-banner");
-    var bannerTop = banner.offset().top; // top of element (0)
-    var bannerBottom = banner.offset().top + banner.height(); // 0 + 362px
 
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop() + 80; // how much the 'window' have scrolled
-        if ((scroll > bannerBottom)) {
-            headerLogo.addClass('change');
-        } else {
-            headerLogo.removeClass('change');
-        }
-    });
-})
 
 // VOTINGPAGE
 // producing a object with map, wich contains an array
@@ -81,3 +66,29 @@ toggleList.click(function () {
 $("[data-map-overlay]").click(function () {
     $(this).fadeOut("slow");
 });
+$(document).ready(function () {
+    svgFill();
+});
+
+$(window).resize(function () {
+    svgFill();
+});
+
+
+
+// logo fill function
+function svgFill() {
+    var headerLogo = $('[data-header-logo]');
+    var banner = $(".main-banner");
+    var bannerTop = banner.offset().top; // top of element (0)
+    var bannerBottom = banner.offset().top + banner.height(); // 0 + 362px
+
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop() + 80; // how much the 'window' have scrolled
+        if ((scroll > bannerBottom)) {
+            headerLogo.addClass('change');
+        } else {
+            headerLogo.removeClass('change');
+        }
+    });
+}

@@ -38,3 +38,12 @@ textarea {
 label{
     color: white;
 }
+@include phones {
+    input {
+        padding: 8px 0;
+    }
+
+    .form-group {
+        margin: 0;
+    }
+}

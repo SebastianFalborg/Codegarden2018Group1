@@ -60,15 +60,15 @@
                         width: 100%;
 
                         &.remove {
-                           display:none;
+                            display: none;
                         }
                     }
 
                     .create-user {
-                      display:none;
+                        display: none;
 
                         &.active {
-                           display:block;
+                            display: block;
                         }
                     }
                 }
@@ -90,6 +90,7 @@
         }
     }
 }
+
 @include phones {
     .main-banner {
         height: 40vh;
@@ -98,17 +99,83 @@
             height: 100vh;
 
             .banner-content {
-                   width: 270px;
-                    height: 190px;
+                width: 270px;
+                height: 190px;
             }
         }
 
         .banner-content {
-            bottom:20px;
-            top:auto;
-            left:0;
-            transform:none;
+            bottom: 20px;
+            top: auto;
+            left: 0;
+            transform: none;
+        }
+
+
+        &.fullscreen-banner {
+
+            .banner-content {
+                left: 15px;
+                right:15px;
+                transform: none;
+                top: 80px;
+                width: auto;
+
+                .user-area {
+
+                    h1 {
+                        margin-bottom: 0;
+                    }
+
+                    h4 {
+                        color: white;
+                        margin-bottom: 15px;
+                    }
+
+                    span {
+                        color: white;
+                        cursor: pointer;
+                    }
+
+                    .user-forms {
+                        position: relative;
+                        height: 100%;
+
+                        .login-user, .create-user {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+
+                            &.remove {
+                                display: none;
+                            }
+                        }
+
+                        .create-user {
+                            display: none;
+
+                            &.active {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .banner-content {
+            @include center-y;
+            z-index: 1;
+
+            h1, p {
+                text-align: left;
+                color: white;
+            }
+
+            p {
+                font-size: 1rem;
+            }
         }
     }
 }
-

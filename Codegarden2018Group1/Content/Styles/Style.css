@@ -170,6 +170,10 @@ a.main-link, button.main-link, span.main-link {
 a.nostyle-link, button.nostyle-link, span.nostyle-link {
   color: inherit; }
 
+@media only screen and (max-width: 767px) {
+  a.main-link, button.main-link, span.main-link {
+    padding: 8px 0; } }
+
 input {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -200,6 +204,12 @@ textarea {
 
 label {
   color: white; }
+
+@media only screen and (max-width: 767px) {
+  input {
+    padding: 8px 0; }
+  .form-group {
+    margin: 0; } }
 
 .main-banner {
   position: relative;
@@ -273,7 +283,45 @@ label {
       bottom: 20px;
       top: auto;
       left: 0;
-      transform: none; } }
+      transform: none; }
+    .main-banner.fullscreen-banner .banner-content {
+      left: 15px;
+      right: 15px;
+      transform: none;
+      top: 80px;
+      width: auto; }
+      .main-banner.fullscreen-banner .banner-content .user-area h1 {
+        margin-bottom: 0; }
+      .main-banner.fullscreen-banner .banner-content .user-area h4 {
+        color: white;
+        margin-bottom: 15px; }
+      .main-banner.fullscreen-banner .banner-content .user-area span {
+        color: white;
+        cursor: pointer; }
+      .main-banner.fullscreen-banner .banner-content .user-area .user-forms {
+        position: relative;
+        height: 100%; }
+        .main-banner.fullscreen-banner .banner-content .user-area .user-forms .login-user, .main-banner.fullscreen-banner .banner-content .user-area .user-forms .create-user {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%; }
+          .main-banner.fullscreen-banner .banner-content .user-area .user-forms .login-user.remove, .main-banner.fullscreen-banner .banner-content .user-area .user-forms .create-user.remove {
+            display: none; }
+        .main-banner.fullscreen-banner .banner-content .user-area .user-forms .create-user {
+          display: none; }
+          .main-banner.fullscreen-banner .banner-content .user-area .user-forms .create-user.active {
+            display: block; }
+    .main-banner .banner-content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1; }
+      .main-banner .banner-content h1, .main-banner .banner-content p {
+        text-align: left;
+        color: white; }
+      .main-banner .banner-content p {
+        font-size: 1rem; } }
 
 footer {
   background-color: #545454;
@@ -479,7 +527,7 @@ header {
     z-index: 5;
     transition: 0.5s cubic-bezier(0.75, 0, 0.25, 1); }
     header .logo-container.change {
-      transform: translateY(-140%); }
+      transform: translateY(-160%); }
       header .logo-container.change svg {
         fill: white; }
     header .logo-container svg {
