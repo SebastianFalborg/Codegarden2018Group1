@@ -12,9 +12,13 @@
                     <div class="swiper-slide main-link-block">
                         <a href="@item.Url">
                             <div class="link-block-wrap speaker-size">
-                                <div style="background-image: url('@Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile')" class="link-block-image cover">
+
+                                <div style="background-image: url('@(item.HasValue("linkBlockImage") ?
+                        Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile : "" )')"
+                                     class="link-block-image cover">
                                     <div class="image-gradient-overlay"></div>
                                 </div>
+
                                 <div class="link-block-content">
                                     <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
                                 </div>

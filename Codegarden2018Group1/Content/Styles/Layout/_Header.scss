@@ -17,15 +17,17 @@ header {
         left: 50px;
         top: 50px;
         z-index: 5;
-        &.change{
-            svg{
+
+        &.change {
+            svg {
                 fill: black;
             }
         }
+
         svg {
             width: 120px;
             height: 58px;
-            fill:white;
+            fill: white;
         }
     }
 }
@@ -99,11 +101,13 @@ header {
         }
     }
 }
+
 .profile-icon-container {
     right: 120px;
     background-color: white;
     transition: $transition;
-    z-index:5;
+    z-index: 5;
+
     &.active {
         background-color: $purple;
 
@@ -122,159 +126,167 @@ header {
     }
 }
 
-    .navigation-container {
-        position: fixed;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: $menu-width;
-        background-color: $purple;
-        transform: translateX(100%);
-        transition: $transition;
-        transition-delay: 0.2s;
-        z-index: 4;
+.navigation-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: $menu-width;
+    background-color: $purple;
+    transform: translateX(100%);
+    transition: $transition;
+    transition-delay: 0.2s;
+    z-index: 4;
 
-        &.active {
-            transform: translateX(0);
-            transition-delay: 0s;
-
-            nav {
-                ul {
-                    li {
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-            }
-        }
+    &.active {
+        transform: translateX(0);
+        transition-delay: 0s;
 
         nav {
-            position: relative;
-            height: 100%;
-            width: 100%;
-
             ul {
-                @include center;
-                width: 80%;
-                text-align: left;
-
                 li {
-                    transform: translateX(-10px);
-                    opacity: 0;
-                    transition-delay: 0.5s;
-                    transition: $transition;
-
-                    &.active {
-                        a {
-                            @include font-bold;
-                        }
-                    }
-
-                    a {
-                        @include font-light;
-                        color: white;
-                        font-size: 1.1rem;
-                        display: block;
-                        margin: 15px 0;
-                        transition: $small-transition;
-
-                        &::before {
-                            content: '';
-                            display: inline-block;
-                            height: 2px;
-                            width: 0;
-                            background-color: white;
-                            transition: $small-transition;
-                            margin-right: 5px;
-                            vertical-align: middle;
-                        }
-
-                        &:hover {
-                            &::before {
-                                width: 15px;
-                            }
-                        }
-                    }
+                    transform: translateX(0);
+                    opacity: 1;
                 }
             }
         }
     }
 
-    @include phones {
-        .menu-icon-container {
-            top: 15px;
-            right: 15px;
-            width: ($menu-icon-width-phone * 1.8);
-            height: ($menu-icon-width-phone * 1.8);
+    nav {
+        position: relative;
+        height: 100%;
+        width: 100%;
 
-            &:hover {
-                transform: scale(1);
-            }
+        ul {
+            @include center;
+            width: 80%;
+            text-align: left;
 
-            &.active {
-                span {
-                    &.menu-icon {
-                        transform: rotate(45deg) translate(3px, 4px);
-
-                        &::after {
-                            transform: rotate(-90deg) translate(11px, 0px);
-                        }
-                    }
-                }
-            }
-
-            span {
-
-                &.menu-icon {
-                    width: $menu-icon-width-phone;
-                    height: $menu-icon-height-phone;
-                    margin: 15px 10px;
-
-                    &::before, &::after {
-                        top: $menu-icon-space-phone;
-                        width: $menu-icon-width-phone;
-                        height: $menu-icon-height-phone;
-                    }
-
-                    &::after {
-                        top: ($menu-icon-space-phone * 2);
-                    }
-                }
-            }
-        }
-
-        header {
-            .logo-container {
-                top: 23px;
-                left: 15px;
-                z-index: 5;
+            li {
+                transform: translateX(-10px);
+                opacity: 0;
+                transition-delay: 0.5s;
                 transition: $transition;
 
-                &.change {
-                    transform: translateY(-140%);
-
-                    svg {
-                        fill: white;
+                &.active {
+                    a {
+                        @include font-bold;
                     }
                 }
 
-                svg {
-                    width: 90px;
-                    height: 34px;
-                }
-            }
-        }
+                a {
+                    @include font-light;
+                    color: white;
+                    font-size: 1.1rem;
+                    display: block;
+                    margin: 15px 0;
+                    transition: $small-transition;
 
-        .navigation-container {
-            width: 100%;
-            transform: translateX(100%);
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        height: 2px;
+                        width: 0;
+                        background-color: white;
+                        transition: $small-transition;
+                        margin-right: 5px;
+                        vertical-align: middle;
+                    }
 
-            nav {
-
-                ul {
-                    width: 100%;
-                    padding-left: 15px;
+                    &:hover {
+                        &::before {
+                            width: 15px;
+                        }
+                    }
                 }
             }
         }
     }
+}
+
+@include phones {
+    .menu-icon-container, .profile-icon-container {
+        top: 15px;
+        right: 15px;
+        width: ($menu-icon-width-phone * 1.8);
+        height: ($menu-icon-width-phone * 1.8);
+
+        &:hover {
+            transform: scale(1);
+        }
+
+        &.active {
+            span {
+                &.menu-icon {
+                    transform: rotate(45deg) translate(3px, 4px);
+
+                    &::after {
+                        transform: rotate(-90deg) translate(11px, 0px);
+                    }
+                }
+            }
+        }
+
+        span {
+
+            &.menu-icon {
+                width: $menu-icon-width-phone;
+                height: $menu-icon-height-phone;
+                margin: 15px 10px;
+
+                &::before, &::after {
+                    top: $menu-icon-space-phone;
+                    width: $menu-icon-width-phone;
+                    height: $menu-icon-height-phone;
+                }
+
+                &::after {
+                    top: ($menu-icon-space-phone * 2);
+                }
+            }
+        }
+    }
+
+    .profile-icon-container {
+        right: 65px;
+        svg{
+            width:18px;
+            height: 18px;
+        }
+    }
+
+    header {
+        .logo-container {
+            top: 23px;
+            left: 15px;
+            z-index: 5;
+            transition: $transition;
+
+            &.change {
+                transform: translateY(-160%);
+
+                svg {
+                    fill: white;
+                }
+            }
+
+            svg {
+                width: 90px;
+                height: 34px;
+            }
+        }
+    }
+
+    .navigation-container {
+        width: 100%;
+        transform: translateX(100%);
+
+        nav {
+
+            ul {
+                width: 100%;
+                padding-left: 15px;
+            }
+        }
+    }
+}

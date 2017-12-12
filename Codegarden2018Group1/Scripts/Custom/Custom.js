@@ -26,8 +26,58 @@ userToggle.click(function () {
         wrapperToggle.addClass("active");
     }
 });
+
+
+// VOTINGPAGE
+// producing a object with map, wich contains an array
+// Then use get() to work with array
+// Join() joins the elements of a array to string
+$("[data-vote]").click(function () {
+    var radioList = $('.votinglist input[type="radio"]:checked');
+    var checkedVals = radioList.map(function () {
+        return $(this).val();
+    }).get();
+
+    if ($('.votinglist input[type="radio"]:checked').length === 4) {
+    
+        $("[data-vote-result]").html("<h3>Thank you for you vote. You voted on<span>" + checkedVals + "</span></h3>");
+    } else {
+        $("[data-vote-result]").html("<span>You need to select one from each category</span>");
+    }
+});
+
+
+// custom toggle
+var toggleList = $("[data-custom-list-item]");
+
+toggleList.click(function () {
+    $(this).toggleClass("active");
+    $(this).next().toggleClass("active");
+
+    if ($(this).hasClass("active")) {
+        toggleList.removeClass("active");
+        toggleList.next().removeClass("active");
+        $(this).addClass("active");
+        $(this).next().addClass("active");
+    }
+});
+
+// map overlay
+$("[data-map-overlay]").click(function () {
+    $(this).fadeOut("slow");
+});
+$(document).ready(function () {
+    svgFill();
+});
+
+$(window).resize(function () {
+    svgFill();
+});
+
+
+
 // logo fill function
-$(function () {
+function svgFill() {
     var headerLogo = $('[data-header-logo]');
     var banner = $(".main-banner");
     var bannerTop = banner.offset().top; // top of element (0)
@@ -41,35 +91,4 @@ $(function () {
             headerLogo.removeClass('change');
         }
     });
-})
-
-// VOTINGPAGE
-// producing a object with map, wich contains an array
-// Then use get() to work with array
-// Join() joins the elements of a array to string
-$("[data-vote]").click(function () {
-    var radioList = $('.votinglist input[type="radio"]:checked');
-    var checkedVals = radioList.map(function () {
-        return $(this).val();
-    }).get();
-
-    if ($('.votinglist input[type="radio"]:checked').length === 4) {
-        $("[data-vote-result]").html("<h3>Thank you for you vote. You voted on<span>" + checkedVals + "</span></h3>");
-    } else {
-        $("[data-vote-result]").html("<span>You need to select one from each category</span>");
-    }
-});
-
-
-// custom toggle
-$("[data-custom-list-item]").click(function () {
-    $(this).toggleClass("active");
-    $(this).next().toggleClass("active");
-
-    if ($(this).hasClass("active")) {
-        $("[data-custom-list-item]").removeClass("active");
-        $("[data-custom-list-item]").next().removeClass("active");
-        $(this).addClass("active");
-        $(this).next().addClass("active");
-    }
-});
+}

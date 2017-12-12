@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using System.Activities.Statements
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     var member = Members.GetCurrentMember();
+    var workshops = Members.GetCurrentMember().GetPropertyValue<IEnumerable<string>>("WorkshopItems");
 }
 <div class="user-area-container" data-user-area>
     <div class="user-area-content">
@@ -25,11 +27,14 @@
                 </div>
                 <div class="col-xs-12">
                     <span>Workshops</span>
-                  <div class="row">
-                      <div class="col-xs-12">
-                          <p>Workshop 1</p>
-                      </div>
-                  </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            @foreach (var item in workshops)
+                            {
+                                <p>@item</p>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

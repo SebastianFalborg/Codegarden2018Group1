@@ -419,6 +419,8 @@
     <Compile Include="App_Data\Models\CategoryHolder.generated.cs" />
     <Compile Include="App_Data\Models\ContentComposition.generated.cs" />
     <Compile Include="App_Data\Models\CreateUserPage.generated.cs" />
+    <Compile Include="App_Data\Models\DiscoverImages.generated.cs" />
+    <Compile Include="App_Data\Models\DiscoverImagesItems.generated.cs" />
     <Compile Include="App_Data\Models\Discoverpage.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />

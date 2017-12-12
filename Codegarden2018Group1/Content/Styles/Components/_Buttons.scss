@@ -14,7 +14,8 @@ a, button, span {
         text-align: center;
         margin-bottom: 15px;
         transition: $small-transition;
-        &:focus, &:active{
+
+        &:focus, &:active {
             outline: none;
         }
 
@@ -35,7 +36,17 @@ a, button, span {
             color: white;
         }
     }
-    &.nostyle-link{
+
+    &.nostyle-link {
         color: inherit;
+    }
+}
+
+@include phones {
+
+    a, button, span {
+        &.main-link {
+            padding: 8px 0;
+        }
     }
 }

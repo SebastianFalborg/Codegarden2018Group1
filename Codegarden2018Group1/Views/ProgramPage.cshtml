@@ -40,7 +40,7 @@
                 <div id="accordion1" class="collapse in " role="tabpanel">
                     <div class="container-fluid">
                         @{
-                            <div class="row">
+                            <div class="row hidden-xs">
                                 <div class="col-md-1">
                                     <p>Time</p>
                                 </div>
@@ -90,7 +90,7 @@
 
                     <div class="container-fluid">
                         @{
-                            <div class="row">
+                            <div class="row hidden-xs">
                                 <div class="col-md-1">
                                     <p>Time</p>
                                 </div>
@@ -139,7 +139,7 @@
 
                     <div class="container-fluid">
                         @{
-                            <div class="row">
+                            <div class="row hidden-xs">
                                 <div class="col-md-1">
                                     <p>Time</p>
                                 </div>
@@ -188,7 +188,7 @@
 
                     <div class="container-fluid">
                         @{
-                            <div class="row">
+                            <div class="row hidden-xs">
                                 <div class="col-md-1">
                                     <p>Time</p>
                                 </div>
@@ -243,24 +243,28 @@
         <div class="col-md-2">
             @if (programList[0] != null)
             {
+                <p class="visible-xs"><strong>@programList[0].Location</strong></p>
                 <p>@programList[0].Title</p>
             }
         </div>
         <div class="col-md-2 col-md-offset-1">
             @if (programList[1] != null)
             {
+                <p class="visible-xs"><strong>@programList[1].Location</strong></p>
                 <p>@programList[1].Title</p>
             }
         </div>
         <div class="col-md-2 col-md-offset-1">
             @if (programList[2] != null)
             {
+                <p class="visible-xs"><strong>@programList[2].Location</strong></p>
                 <p>@programList[2].Title</p>
             }
         </div>
         <div class="col-md-2 col-md-offset-1">
             @if (programList[3] != null)
             {
+                <p class="visible-xs"><strong>@programList[3].Location</strong></p>
                 <p>@programList[3].Title</p>
             }
         </div>

@@ -25,7 +25,7 @@ textarea {
     input, label {
         display: inline-block;
         margin-top: 25px;
-
+        color: black;
         &[type=radio] {
             width: auto;
 
@@ -37,4 +37,13 @@ textarea {
 }
 label{
     color: white;
+}
+@include phones {
+    input {
+        padding: 8px 0;
+    }
+
+    .form-group {
+        margin: 0;
+    }
 }
