@@ -100,6 +100,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Intro
+		///</summary>
+		[ImplementPropertyType("intro")]
+		public IHtmlString Intro
+		{
+			get { return this.GetPropertyValue<IHtmlString>("intro"); }
+		}
+
+		///<summary>
 		/// Looking back bodytext
 		///</summary>
 		[ImplementPropertyType("lookingBackBodytext")]

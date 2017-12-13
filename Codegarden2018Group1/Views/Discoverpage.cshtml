@@ -22,7 +22,11 @@
             <div class="section">
                 <div class="row">
                     <div class="col-xs-12">
-                        <p>@Model.Content.Bodytext</p>
+                        @Model.Content.Intro
+                        @if (Members.IsLoggedIn())
+                        {
+                            <h4>Hi @Members.GetCurrentMember().Name. Welcome back.</h4>
+                        }
                     </div>
                 </div>
             </div>
