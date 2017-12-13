@@ -252,11 +252,14 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="Content\Img\Icons\counterclockwise.svg" />
+    <Content Include="Content\Img\Icons\discussion.svg" />
     <Content Include="Content\Img\Icons\avatar.svg" />
     <Content Include="Content\Img\Icons\down-arrow.svg" />
     <Content Include="Content\Img\Icons\icon.svg" />
     <Content Include="Content\Img\Icons\man-user.svg" />
     <Content Include="Content\Img\Logo\umbraco-logo.svg" />
+    <Content Include="Content\Img\Icons\man-ready-to-jump.svg" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\Styles\Bootstrap\bootstrap.css" />
@@ -319,6 +322,8 @@
     <Content Include="Content\Styles\Partials\_Program.scss" />
     <Content Include="Content\Styles\Layout\_UserArea.scss" />
     <Content Include="Content\Styles\Partials\_CustomToggle.scss" />
+    <Content Include="Content\Styles\Partials\_Themes.scss" />
+    <Content Include="Content\Styles\Partials\_Small-bloks.scss" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -363,7 +368,6 @@
     <Content Include="Views\Partials\_CreateUser.cshtml" />
     <Content Include="Views\Discoverpage.cshtml" />
     <Content Include="Views\Partials\_GetReady.cshtml" />
-    <Content Include="Views\Partials\_DontForget.cshtml" />
     <Content Include="Views\Partials\_LogoAnimation.cshtml" />
     <Content Include="Views\AwardsPage.cshtml" />
     <Content Include="Views\Test.cshtml" />
@@ -377,6 +381,7 @@
     <Content Include="Views\CreateUserPage.cshtml" />
     <Content Include="Views\AwardUnit.cshtml" />
     <Content Include="Views\CategoryHolder.cshtml" />
+    <Content Include="Views\ThemesPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -421,9 +426,11 @@
     <Compile Include="App_Data\Models\CategoryHolder.generated.cs" />
     <Compile Include="App_Data\Models\ContentComposition.generated.cs" />
     <Compile Include="App_Data\Models\CreateUserPage.generated.cs" />
+    <Compile Include="App_Data\Models\DiscoverChecklistItem.generated.cs" />
     <Compile Include="App_Data\Models\DiscoverImages.generated.cs" />
     <Compile Include="App_Data\Models\DiscoverImagesItems.generated.cs" />
     <Compile Include="App_Data\Models\Discoverpage.generated.cs" />
+    <Compile Include="App_Data\Models\DiscoverpageChecklist.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\Frontpage.generated.cs" />

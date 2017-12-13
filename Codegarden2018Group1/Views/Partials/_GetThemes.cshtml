@@ -1,34 +1,34 @@
-﻿
-@*@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
 @{
-    var selection = Umbraco.TypedContent(1131).Children("blockListItem");
+    var selection = Model.Content.Site().FirstChild("themespage").Children("blockListItem")
+                        .Where(x => x.IsVisible()).Take(3);
+
 }
-<div class="row">
-    <div class="speaker-container">
-        <div class="swiper-container" data-swiper-secondary>
-            <div class="swiper-wrapper">
-                @foreach (var item in selection)
-                {
-                    <div class="swiper-slide main-link-block">
-                        <a href="@item.Url">
-                            <div class="link-block-wrap speaker-size">
+<div class="row themes">
+    @foreach (var item in selection)
+    {
 
-                                <div style="background-image: url('@(item.HasValue("linkBlockImage") ?
-                        Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile : "" )')"
-                                     class="link-block-image cover">
-                                    <div class="image-gradient-overlay"></div>
-                                </div>
-
-                                <div class="link-block-content">
-                                    <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
-                                </div>
-                                <div class="read-more">Read more</div>
-                            </div>
-                        </a>
+        <div class="col-sm-4 col-xs-12 main-link-block">
+            <div class="link-block-wrap" data-link-block>
+                <div class="link-block-image cover" style="background-image: url('@Umbraco.Media(item.GetPropertyValue("linkBlockImage").ToString()).UmbracoFile')">
+                    <div class="image-gradient-overlay">
                     </div>
-                }
+
+                </div>
+                <div class="toggle-content">
+                    <div class="link-block-content">
+                        <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
+                    </div>
+                    <div class="read-more">Read more</div>
+                </div>
+                <div class="link-block-behind">
+                    <h3>@item.GetPropertyValue("linkBlockHeadline")</h3>
+                    <p>@item.GetPropertyValue("linkBlockBodytext")</p>
+                </div>
             </div>
         </div>
-    </div>
-</div>*@
+
+    }
+</div>
 

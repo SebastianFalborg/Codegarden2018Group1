@@ -78,5 +78,21 @@
         }
 
         margin-bottom: 15px;
+
+
+
+
+        .link-block-content {
+            transform: translateY(-30px);
+            left: 15px;
+            right: 15px;
+        }
+
+        .read-more {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+            left:15px;
+        }
     }
 }

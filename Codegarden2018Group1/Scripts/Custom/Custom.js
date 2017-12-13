@@ -73,6 +73,12 @@ $("[data-service]").click(function (){
     alert("Sign up for workshop is under construction");
 });
 
+//toggle themes
+$('[data-link-block]').click(function () {
+    $(this).toggleClass("toggle-theme");
+});
+
+
 $(document).ready(function () {
     svgFill();
     discoverToggle();

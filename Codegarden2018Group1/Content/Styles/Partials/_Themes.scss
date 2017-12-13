@@ -1,0 +1,83 @@
+﻿@import "../Helpers/Mixins";
+@import "../Helpers/Vars";
+
+.themes {
+    color: white;
+    cursor: pointer;
+
+    h3, p {
+        text-align: left;
+    }
+
+    .link-block-wrap {
+        &.toggle-theme {
+            .link-block-behind {
+                visibility: visible;
+                transform: translateX(0);
+            }
+
+            .image-gradient-overlay {
+                background: rgba($purple,0.9);
+            }
+
+            .link-block-content {
+                transform: translateY(-30px) translateX(120%);
+                opacity: 0;
+            }
+
+            .read-more {
+                opacity: 0;
+                visibility: hidden;
+                transition-delay: 0s;
+            }
+        }
+
+        .image-gradient-overlay {
+            transition: $transition;
+        }
+
+        .link-block-behind {
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            right: 25px;
+            bottom: 5px;
+            max-height: 100%;
+            overflow-y: auto;
+            visibility: hidden;
+            transform: translateX(-100%);
+            transition: $transition;
+            @include custom-scrollbar;
+
+            h3 {
+                font-size: 24px;
+            }
+        }
+    }
+}
+@include phones {
+    .themes {
+
+        .link-block-wrap {
+            height: 280px;
+
+            .link-block-behind {
+                position: absolute;
+                top: 5px;
+                left: 10px;
+                right: 10px;
+                bottom: 5px;
+                max-height: 100%;
+                overflow-y: auto;
+                visibility: hidden;
+                transform: translateX(-100%);
+                transition: $transition;
+                @include custom-scrollbar;
+
+                h3 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

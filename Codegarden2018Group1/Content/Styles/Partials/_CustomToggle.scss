@@ -21,7 +21,18 @@
             border-bottom: 1px solid $gray;
             margin-bottom: 40px;
             transition: $transition;
-            cursor:pointer;
+            cursor: pointer;
+
+            .toggle-left-icon {
+                float: left;
+                margin-top:8px;
+                margin-right:15px;
+                svg{
+                    width:45px;
+                    height: 45px;
+                    fill: $red;
+                }
+            }
 
             h2, .custom-toggle-icon {
                 display: inline-block;
@@ -69,6 +80,17 @@
         .custom-item {
             .custom-item-header {
                 margin-bottom: 20px;
+
+                .toggle-left-icon {
+                    margin-top: 5px;
+                    margin-right: 10px;
+
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                        fill: $red;
+                    }
+                }
 
                 h2 {
                     margin-bottom: 15px;

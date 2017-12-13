@@ -1,0 +1,25 @@
+﻿@import "../Helpers/Vars";
+@import "../Helpers/Mixins";
+
+.small-block{
+    text-align:center;
+    .small-block-image{
+        margin-bottom:25px;
+        margin-top:25px;
+    }
+    .small-block-headline{
+        span{
+            @include font-bold;
+
+        }
+    }
+}
+@include phones {
+    .small-block {
+
+        .small-block-image {
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+    }
+}
