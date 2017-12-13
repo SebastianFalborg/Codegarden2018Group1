@@ -99,18 +99,24 @@ function svgFill() {
 //discover page
 
 function discoverToggle() {
-
     var todayDate = new Date().toISOString().slice(0, 10); // convert date to msql friendly string
-    var experienceStart = '2018-05-23'; // codegarden 18 start
-    var experienceEnd = '2018-05-25'; // codegarden 18 end
-    var toggleList = $("[data-custom-list-item]");
-    if (experienceStart > todayDate) {
+    var codegardenStart = '2018-05-23'; // codegarden 18 start
+    var codegardenEnd = '2018-05-25'; // codegarden 18 end
+    var getReady = $("[data-custom-list-item]#get-ready");
+    var experience = $("[data-custom-list-item]#experience");
+    var lookingBack = $("[data-custom-list-item]#looking-back");
+
+    if (codegardenStart > todayDate) {
         console.log('codegarden er ikke startet');
-        toggleList.removeClass("active");
-    } else if (experienceEnd < todayDate) {
+        getReady.addClass("active");
+        getReady.next().addClass("active");
+    } else if (codegardenEnd < todayDate) {
         console.log('codegarden er slut');
+        lookingBack.addClass("active");
+        lookingBack.next().addClass("active");
     } else {
         console.log('codegarden er igang');
+        experience.addClass("active");
+        experience.next().addClass("active");
     }
-
 }
