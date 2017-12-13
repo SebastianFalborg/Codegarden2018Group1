@@ -17,3 +17,74 @@
 .image-gradient-overlay {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9))
 }
+
+
+.embed-responsive {
+    height: 750px;
+    padding-bottom: 0 !important;
+
+    .image-overlay {
+        z-index: 1;
+        cursor: pointer;
+        transition: $transition;
+
+        &.hide-show {
+            transform: translateY(92%);
+
+            .map-text {
+                top: 4%;
+
+                span {
+                    &.activate {
+                        display: none;
+                    }
+
+                    &.deactivate {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .map-text {
+            @include center;
+            z-index: 2;
+            transition: $transition;
+
+            span {
+                color: white;
+                @include font-bold;
+                font-size: 1.2rem;
+                display: inline-block;
+
+                &.deactivate {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include phones {
+
+    .embed-responsive {
+
+        .image-overlay {
+
+            &.hide-show {
+                transform: translateY(92%);
+
+                .map-text {
+                    top: 4%;
+                }
+            }
+
+            .map-text {
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

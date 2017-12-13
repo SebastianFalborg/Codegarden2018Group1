@@ -39,7 +39,7 @@ $("[data-vote]").click(function () {
     }).get();
 
     if ($('.votinglist input[type="radio"]:checked').length === 4) {
-    
+
         $("[data-vote-result]").html("<h3>Thank you for you vote. You voted on<span>" + checkedVals + "</span></h3>");
     } else {
         $("[data-vote-result]").html("<span>You need to select one from each category</span>");
@@ -64,17 +64,20 @@ toggleList.click(function () {
 
 // map overlay
 $("[data-map-overlay]").click(function () {
-    $(this).fadeOut("slow");
+    $(this).toggleClass("hide-show");
 });
+
+
+
+
 $(document).ready(function () {
     svgFill();
+    discoverToggle();
 });
 
 $(window).resize(function () {
     svgFill();
 });
-
-
 
 // logo fill function
 function svgFill() {
@@ -91,4 +94,23 @@ function svgFill() {
             headerLogo.removeClass('change');
         }
     });
+}
+
+//discover page
+
+function discoverToggle() {
+
+    var todayDate = new Date().toISOString().slice(0, 10); // convert date to msql friendly string
+    var experienceStart = '2018-05-23'; // codegarden 18 start
+    var experienceEnd = '2018-05-25'; // codegarden 18 end
+    var toggleList = $("[data-custom-list-item]");
+    if (experienceStart > todayDate) {
+        console.log('codegarden er ikke startet');
+        toggleList.removeClass("active");
+    } else if (experienceEnd < todayDate) {
+        console.log('codegarden er slut');
+    } else {
+        console.log('codegarden er igang');
+    }
+
 }

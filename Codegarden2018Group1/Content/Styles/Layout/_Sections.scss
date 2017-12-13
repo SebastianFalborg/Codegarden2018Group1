@@ -24,19 +24,6 @@
 .embed-responsive {
     height: 750px;
     padding-bottom: 0 !important;
-
-    .image-overlay {
-        z-index: 1;
-        cursor: pointer;
-
-        span {
-            @include center;
-            z-index: 2;
-            color: white;
-            @include font-bold;
-            font-size: 1.2rem;
-        }
-    }
 }
 
 @include phones {
@@ -46,19 +33,5 @@
 
     .embed-responsive {
         height: 350px;
-        padding-bottom: 0 !important;
-
-        .image-overlay {
-            z-index: 1;
-            cursor: pointer;
-
-            span {
-                @include center;
-                z-index: 2;
-                color: white;
-                @include font-bold;
-                font-size: 1.2rem;
-            }
-        }
     }
 }
