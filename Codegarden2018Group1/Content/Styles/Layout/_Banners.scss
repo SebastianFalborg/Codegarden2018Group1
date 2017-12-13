@@ -5,20 +5,20 @@
     position: relative;
     height: 60vh;
 
-    &.frontpage-banner {
+    &.alternativ-banner {
         height: 80vh;
 
         .banner-content {
             @include center;
+            top: 40%;
             height: 170px;
             width: 450px;
 
-            .banner-links {
-                margin: 0 50px;
-
-                a {
-                    margin-bottom: 15px;
-                }
+            a {
+                position: absolute;
+                bottom: -80px;
+                width: 80%;
+                margin: 0 10%;
             }
         }
     }
@@ -92,15 +92,39 @@
 }
 
 @include phones {
+    .scroll-down {
+        @include center-x;
+        bottom: 25px;
+        text-align: center;
+
+        span {
+            display: block;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        svg {
+            fill: white;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
     .main-banner {
         height: 40vh;
 
-        &.frontpage-banner {
+        &.alternativ-banner {
             height: 100vh;
 
             .banner-content {
                 width: 270px;
                 height: 190px;
+                top: 48%;
+
+                a {
+                    bottom: 20px;
+                }
             }
         }
 
@@ -116,7 +140,7 @@
 
             .banner-content {
                 left: 15px;
-                right:15px;
+                right: 15px;
                 transform: none;
                 top: 80px;
                 width: auto;

@@ -42,10 +42,15 @@ p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 24px;
-  margin: 0 0 20px; }
+  margin: 0 0 20px;
+  font-size: 1rem; }
   p img {
     width: 100%;
     margin: 30px 0; }
+
+.larger-text p {
+  font-size: 1.1rem;
+  line-height: 28px; }
 
 a {
   color: white;
@@ -132,7 +137,9 @@ hr {
     margin-top: 18px;
     margin-bottom: 10px; }
   .frontpage-sections h1, .frontpage-sections h2, .frontpage-sections h3, .frontpage-sections h4, .frontpage-sections p {
-    text-align: left; } }
+    text-align: left; }
+  .larger-text p {
+    line-height: 24px; } }
 
 .img-full-width {
   width: 100%; }
@@ -214,19 +221,21 @@ label {
 .main-banner {
   position: relative;
   height: 60vh; }
-  .main-banner.frontpage-banner {
+  .main-banner.alternativ-banner {
     height: 80vh; }
-    .main-banner.frontpage-banner .banner-content {
+    .main-banner.alternativ-banner .banner-content {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      top: 40%;
       height: 170px;
       width: 450px; }
-      .main-banner.frontpage-banner .banner-content .banner-links {
-        margin: 0 50px; }
-        .main-banner.frontpage-banner .banner-content .banner-links a {
-          margin-bottom: 15px; }
+      .main-banner.alternativ-banner .banner-content a {
+        position: absolute;
+        bottom: -80px;
+        width: 80%;
+        margin: 0 10%; }
   .main-banner.fullscreen-banner {
     height: 100vh; }
     .main-banner.fullscreen-banner .banner-content {
@@ -272,13 +281,31 @@ label {
       font-size: 1rem; }
 
 @media only screen and (max-width: 767px) {
+  .scroll-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    text-align: center; }
+    .scroll-down span {
+      display: block;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 5px; }
+    .scroll-down svg {
+      fill: white;
+      width: 20px;
+      height: 20px; }
   .main-banner {
     height: 40vh; }
-    .main-banner.frontpage-banner {
+    .main-banner.alternativ-banner {
       height: 100vh; }
-      .main-banner.frontpage-banner .banner-content {
+      .main-banner.alternativ-banner .banner-content {
         width: 270px;
-        height: 190px; }
+        height: 190px;
+        top: 48%; }
+        .main-banner.alternativ-banner .banner-content a {
+          bottom: 20px; }
     .main-banner .banner-content {
       bottom: 20px;
       top: auto;
@@ -538,7 +565,9 @@ header {
     transform: translateX(100%); }
     .navigation-container nav ul {
       width: 100%;
-      padding-left: 15px; } }
+      padding-left: 15px; }
+      .navigation-container nav ul li a {
+        font-size: 18px; } }
 
 .image-overlay, .main-overlay, .image-gradient-overlay {
   position: absolute;
@@ -611,7 +640,7 @@ header {
       text-align: left; }
 
 .embed-responsive {
-  height: 750px;
+  height: 650px;
   padding-bottom: 0 !important; }
 
 @media only screen and (max-width: 767px) {

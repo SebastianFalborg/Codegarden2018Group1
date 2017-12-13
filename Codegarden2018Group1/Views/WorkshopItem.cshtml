@@ -6,7 +6,7 @@
 @{
     Layout = "Shared/_Layout.cshtml";
     var speakers = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("speakers");
-    }
+}
 
 
 <div class="main-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')">
@@ -30,7 +30,7 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            
+
             <div class="col-lg-3 offset-md-1 col-md-4 col-sm-12">
                 <div class="row">
                     @foreach (var speaker in speakers)
@@ -68,32 +68,34 @@
 
             </div>
         </div>
-        <hr class="hr-special"/>
+        <hr />
         <div class="row">
 
-                @if (Members.IsLoggedIn())
+            @if (Members.IsLoggedIn())
+            {
+                if (Members.GetCurrentMember().GetPropertyValue<IEnumerable<string>>("WorkshopItems").Contains(Model.Content.Headline))
                 {
-                    if(Members.GetCurrentMember().GetPropertyValue<IEnumerable<string>>("WorkshopItems").Contains(Model.Content.Headline))
-                    {
-                        <p>You are already signed up</p>
-                    }
-                    else
-                    {
-                        <form action="" method="post">
-                            <input name="signUp" value="@Model.Content.Id" hidden=""/>
-                            <button type="submit">Sign up for workshop</button>
-                        </form>
-                    }
+                    <p>You are already signed up</p>
                 }
                 else
                 {
-                    <div class="col-md-12 text-center">
-                        <h4>Login to sign up for the workshops</h4> 
-                    </div>
                     <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
-                        <a href="/login-page/"><button class="main-link green-btn">Login</button></a>
+                        <form action="" method="post">
+                            <input name="signUp" value="@Model.Content.Id" hidden="" />
+                            <button class="main-link green-btn" data-service>Sign up for workshop</button>
+                        </form>
                     </div>
                 }
+            }
+            else
+            {
+                <div class="col-md-12 text-center">
+                    <h4>Login to sign up for the workshops</h4>
+                </div>
+                            <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+                                <a class="main-link green-btn" href="/login-page/">Login</a>
+                            </div>
+            }
 
         </div>
     </div>

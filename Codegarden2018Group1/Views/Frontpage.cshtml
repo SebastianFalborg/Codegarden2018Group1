@@ -3,20 +3,27 @@
 @{
     Layout = "Shared/_Layout.cshtml";
 }
-<div class="main-banner frontpage-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')">
+<div class="main-banner alternativ-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')">
     <div class="image-overlay"></div>
     <div class="banner-content">
         @Html.Partial("_LogoAnimation")
+       <a href="https://shop.umbraco.com/shop/cart/?p=7133&n=963" target="_blank" class="main-link green-btn">Buy tickets</a>
     </div>
+    <a class="scroll-down visible-xs" href="#down">
+        <span>scroll down</span>
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#icon-down" />
+        </svg>
+    </a>
 </div>
-<div class="frontpage-sections">
+<div class="frontpage-sections" id="down">
     <div class="section">
         <div class="container">
             <div class="section">
                 <div class="row">
                     <div class="col-md-8 col-md-push-2">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 larger-text">
                                 @Model.Content.EventDescription
                             </div>
                         </div>
@@ -102,6 +109,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-push-2">
+                    <h2>Blogs</h2>
                     @Html.Partial("_LatestBlogs")
                 </div>
             </div>
@@ -115,12 +123,12 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-push-2">
+                <div class="col-md-8 col-md-push-2 larger-text ">
                     <h2>@Model.Content.VenueHeadline</h2>
                     @Model.Content.VenueBodytext
                     <div class="row">
                         <div class="col-sm-4 col-sm-push-4 col-xs-12">
-                            <a class="main-link green-btn" href="@Model.Content.VenueLink.Url">Convince your boss</a>
+                            <a class="main-link green-btn" href="@Model.Content.VenueLink.Url">Discover codegarden</a>
                         </div>
                     </div>
                 </div>

@@ -52,13 +52,19 @@ p {
     @include font-regular;
     line-height: 24px;
     margin: 0 0 20px;
+    font-size: 1rem;
 
     img {
         width: 100%;
         margin: 30px 0;
     }
 }
-
+.larger-text {
+    p {
+        font-size: 1.1rem;
+        line-height: 28px;
+    }
+}
 a {
     color: white;
     transition: $transition;
@@ -192,6 +198,12 @@ hr {
     .frontpage-sections {
         h1, h2, h3, h4, p {
             text-align: left;
+        }
+    }
+
+    .larger-text {
+        p {
+            line-height: 24px;
         }
     }
 }

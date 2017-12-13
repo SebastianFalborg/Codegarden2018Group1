@@ -4,7 +4,7 @@
     Layout = "Shared/_Layout.cshtml";
 }
 
-<div class="main-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')" data-image-effect>
+<div class="main-banner alternativ-banner cover" style="background-image:url('@Model.Content.ContentImage.Url')" data-image-effect>
     <div class="image-overlay"></div>
     <div class="container">
         <div class="row">
@@ -13,6 +13,12 @@
                     <h1>@Model.Content.Headline</h1>
                 </div>
             </div>
+            <a class="scroll-down visible-xs" href="#down">
+                <span>scroll down</span>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#icon-down" />
+                </svg>
+            </a>
         </div>
     </div>
 </div>
@@ -21,7 +27,7 @@
         <div class="col-xs-12">
             <div class="section">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12" id="down">
                         <p>@Model.Content.Bodytext</p>
                     </div>
                 </div>

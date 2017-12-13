@@ -68,7 +68,10 @@ $("[data-map-overlay]").click(function () {
 });
 
 
-
+// sign up workshop
+$("[data-service]").click(function (){
+    alert("Sign up for workshop is under construction");
+});
 
 $(document).ready(function () {
     svgFill();
@@ -102,20 +105,20 @@ function discoverToggle() {
     var todayDate = new Date().toISOString().slice(0, 10); // convert date to msql friendly string
     var codegardenStart = '2018-05-23'; // codegarden 18 start
     var codegardenEnd = '2018-05-25'; // codegarden 18 end
-    var getReady = $("[data-custom-list-item]#get-ready");
-    var experience = $("[data-custom-list-item]#experience");
-    var lookingBack = $("[data-custom-list-item]#looking-back");
+    var getReady = $("[data-custom-list-item]#get-ready"); // codegarden get ready section
+    var experience = $("[data-custom-list-item]#experience"); // codegarden experience section
+    var lookingBack = $("[data-custom-list-item]#looking-back"); // codegarden looking back section
 
-    if (codegardenStart > todayDate) {
-        console.log('codegarden er ikke startet');
+    if (codegardenStart > todayDate) { // codegarden is not startet
+        console.log('codegarden is not startet');
         getReady.addClass("active");
         getReady.next().addClass("active");
-    } else if (codegardenEnd < todayDate) {
-        console.log('codegarden er slut');
+    } else if (codegardenEnd < todayDate) {// codegarden is ended
+        console.log('codegarden is ended');
         lookingBack.addClass("active");
         lookingBack.next().addClass("active");
-    } else {
-        console.log('codegarden er igang');
+    } else {// codegarden is running/active
+        console.log('codegarden is running');
         experience.addClass("active");
         experience.next().addClass("active");
     }

@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Blog intro text
+		///</summary>
+		[ImplementPropertyType("blogIntroText")]
+		public IHtmlString BlogIntroText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("blogIntroText"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]
