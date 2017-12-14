@@ -370,7 +370,6 @@
     <Content Include="Views\Partials\_GetReady.cshtml" />
     <Content Include="Views\Partials\_LogoAnimation.cshtml" />
     <Content Include="Views\AwardsPage.cshtml" />
-    <Content Include="Views\Test.cshtml" />
     <Content Include="Views\WorkshopItem.cshtml" />
     <Content Include="Views\Workshops.cshtml" />
     <Content Include="Views\Partials\_ExperienceSection.cshtml" />
@@ -379,9 +378,8 @@
     <Content Include="Views\Partials\_LoginForm.cshtml" />
     <Content Include="Views\Partials\_CreateForm.cshtml" />
     <Content Include="Views\CreateUserPage.cshtml" />
-    <Content Include="Views\AwardUnit.cshtml" />
-    <Content Include="Views\CategoryHolder.cshtml" />
     <Content Include="Views\ThemesPage.cshtml" />
+    <Content Include="Views\Partials\_MainBanner.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

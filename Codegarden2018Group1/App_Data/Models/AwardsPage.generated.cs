@@ -127,6 +127,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Page content text
+		///</summary>
+		[ImplementPropertyType("pageContentText")]
+		public IHtmlString PageContentText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageContentText"); }
+		}
+
+		///<summary>
 		/// Technical Solution bodytext
 		///</summary>
 		[ImplementPropertyType("technicalSolutionBodytext")]

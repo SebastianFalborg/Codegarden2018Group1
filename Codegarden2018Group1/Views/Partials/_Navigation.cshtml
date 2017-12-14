@@ -20,6 +20,12 @@
                     <a href="@page.Url">@page.Name</a>
                 </li>
             }
+            @if (!Members.IsLoggedIn())
+            {
+               <li>
+                   <a href="/login-page/">Login og create user</a>
+               </li>
+            }
             @*<li>
                 <form>
                     <input type="hidden" name="userAction" value="@((Members.IsLoggedIn()) ? "Logout" : "Login")"/>

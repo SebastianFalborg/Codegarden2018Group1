@@ -6,11 +6,13 @@
     .small-block-image{
         margin-bottom:25px;
         margin-top:25px;
+        img{
+            max-height:65px;
+        }
     }
     .small-block-headline{
         span{
             @include font-bold;
-
         }
     }
 }
