@@ -53,13 +53,14 @@ var toggleList = $("[data-custom-list-item]");
 toggleList.click(function () {
     $(this).toggleClass("active");
     $(this).next().toggleClass("active");
-
     if ($(this).hasClass("active")) {
         toggleList.removeClass("active");
         toggleList.next().removeClass("active");
         $(this).addClass("active");
         $(this).next().addClass("active");
+
     }
+
 });
 
 // map overlay

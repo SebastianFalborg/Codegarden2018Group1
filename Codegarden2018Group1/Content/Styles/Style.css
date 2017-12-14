@@ -47,6 +47,8 @@ p {
   p img {
     width: 100%;
     margin: 30px 0; }
+  p a {
+    color: black; }
 
 .larger-text p {
   font-size: 1.1rem;
@@ -292,7 +294,8 @@ label {
       text-align: left;
       color: white; }
     .main-banner .banner-content p {
-      font-size: 1rem; }
+      font-size: 1rem;
+      max-width: 50%; }
 
 @media only screen and (max-width: 767px) {
   .scroll-down {
@@ -362,7 +365,8 @@ label {
         text-align: left;
         color: white; }
       .main-banner .banner-content p {
-        font-size: 1rem; } }
+        font-size: 1rem;
+        max-width: 100%; } }
 
 footer {
   background-color: #545454;
@@ -963,7 +967,7 @@ header {
   .themes .link-block-wrap.toggle-theme .image-gradient-overlay {
     background: rgba(127, 113, 205, 0.9); }
   .themes .link-block-wrap.toggle-theme .link-block-content {
-    transform: translateY(-30px) translateX(120%);
+    transition-delay: 0s;
     opacity: 0; }
   .themes .link-block-wrap.toggle-theme .read-more {
     opacity: 0;
@@ -1027,6 +1031,8 @@ header {
   .small-block .small-block-image {
     margin-bottom: 25px;
     margin-top: 25px; }
+    .small-block .small-block-image img {
+      max-height: 65px; }
   .small-block .small-block-headline span {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700; }
