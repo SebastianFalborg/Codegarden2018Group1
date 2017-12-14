@@ -28,15 +28,18 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
                 <img class="img-full-width" src="@(Model.Content.ContentImage != null ? Model.Content.ContentImage.Url : "http://via.placeholder.com/350/350")" />
             </div>
-            <div class="col-sm-6">
-                <header>
-                    <h4>ABOUT THE SPEAKER</h4>
-                </header>
-                <hr />
-            <p>@Model.Content.Bodytext</p>
+            <div class="col-sm-7">
+                <div class="col-sm-12 ">
+                    <header>
+                        <h4>ABOUT THE SPEAKER</h4>
+                    </header>
+                    <p>@Model.Content.Bodytext</p>
+                </div>
+                <br />
+                <div class="col-sm-12 border-thin">@Html.Partial("_SpeakerSchedule")</div>
             </div>
 
         </div>
@@ -45,4 +48,3 @@
 
 
 
-@Html.Partial("_SpeakerSchedule")

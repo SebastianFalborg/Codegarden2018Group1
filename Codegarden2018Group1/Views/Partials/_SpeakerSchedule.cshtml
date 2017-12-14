@@ -8,14 +8,12 @@
 
 }
 
-<div class="container">
-    <h2>Speakers program</h2>
-    <ul>
+    <h4>SPEAKERS PROGRAM</h4>
+    
         @foreach (var program in programItemList.Where(x => x.Speakers.Any(y => y.GetPropertyValue("Headline") == Model.Headline)))
         {
-            <h3>@program.Title</h3>
-            @program.Location<br/>
-            @program.StartTime.ToString("f")
+           <p> @program.Title                      </p>
+           <p> <strong>@program.Location</strong>   </p>
+           <p> @program.StartTime.ToString("f")    </p>
         }
-    </ul>
-</div>
+    
