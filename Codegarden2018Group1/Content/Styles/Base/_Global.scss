@@ -151,6 +151,20 @@ hr {
     }
 }
 
+.black-format {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    a, p, span {
+        color: black;
+        font-size: 1rem;
+    }
+    a {
+        font-size: 12px;
+        text-decoration: underline;
+        display: block;
+    }
+}
+
 .custom-ul {
     ul {
         list-style: none;
@@ -205,6 +219,20 @@ hr {
     .larger-text {
         p {
             line-height: 24px;
+        }
+    }
+
+    .black-format {
+        span {
+            &:first-child {
+                margin-top: 10px;
+                display: inline-block;
+            }
+        }
+        p {
+            &.small-headline {
+                margin-bottom: 2px;
+            }
         }
     }
 }

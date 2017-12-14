@@ -109,6 +109,17 @@ hr {
 .white-format h3, .white-format p {
   color: white; }
 
+.black-format {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  .black-format a, .black-format p, .black-format span {
+    color: black;
+    font-size: 1rem; }
+  .black-format a {
+    font-size: 12px;
+    text-decoration: underline;
+    display: block; }
+
 .custom-ul ul {
   list-style: none;
   margin-left: 0;
@@ -139,7 +150,12 @@ hr {
   .frontpage-sections h1, .frontpage-sections h2, .frontpage-sections h3, .frontpage-sections h4, .frontpage-sections p {
     text-align: left; }
   .larger-text p {
-    line-height: 24px; } }
+    line-height: 24px; }
+  .black-format span:first-child {
+    margin-top: 10px;
+    display: inline-block; }
+  .black-format p.small-headline {
+    margin-bottom: 2px; } }
 
 .img-full-width {
   width: 100%; }
