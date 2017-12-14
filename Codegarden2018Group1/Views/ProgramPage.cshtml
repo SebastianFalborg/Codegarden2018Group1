@@ -60,7 +60,7 @@
 
                             for (int i = 0; i < tuesdayProgramList.Count; i++)
                             {
-                                currentTime = tuesdayProgramList[i].StartTime.ToShortTimeString();
+                                currentTime = tuesdayProgramList[i].StartTime.ToString("HH:mm");
 
                                 tempProgramList[Array.IndexOf(locationList, tuesdayProgramList[i].Location)] = tuesdayProgramList[i];
 
@@ -68,7 +68,7 @@
                                 {
                                     @InsertRow(tempProgramList, currentTime)
                                 }
-                                else if (tuesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                                else if (tuesdayProgramList[i + 1].StartTime.ToString("HH:mm") != currentTime)
                                 {
                                     @InsertRow(tempProgramList, currentTime)
                                 }
@@ -110,17 +110,17 @@
 
                         for (int i = 0; i < wednesdayProgramList.Count; i++)
                         {
-                            currentTime = wednesdayProgramList[i].StartTime.ToShortTimeString();
+                            currentTime = wednesdayProgramList[i].StartTime.ToString("HH:mm");
 
                             tempProgramList[Array.IndexOf(locationList, wednesdayProgramList[i].Location)] = wednesdayProgramList[i];
 
                             if (i == wednesdayProgramList.Count - 1)
                             {
-                    @InsertRow(tempProgramList, currentTime)
+                                @InsertRow(tempProgramList, currentTime)
                             }
-                            else if (wednesdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                            else if (wednesdayProgramList[i + 1].StartTime.ToString("HH:mm") != currentTime)
                             {
-                    @InsertRow(tempProgramList, currentTime)
+                                @InsertRow(tempProgramList, currentTime)
                             }
                         }
                         }
@@ -157,19 +157,19 @@
                                 </div>
                             </div>
 
-                        for (int i = 0; i < thursdayProgramList.Count; i++)
-                        {
-                            currentTime = thursdayProgramList[i].StartTime.ToShortTimeString();
-
-                            tempProgramList[Array.IndexOf(locationList, thursdayProgramList[i].Location)] = thursdayProgramList[i];
-
-                            if (i == thursdayProgramList.Count - 1)
+                            for (int i = 0; i < thursdayProgramList.Count; i++)
                             {
-                    @InsertRow(tempProgramList, currentTime)
+                                currentTime = thursdayProgramList[i].StartTime.ToString("HH:mm");
+
+                                tempProgramList[Array.IndexOf(locationList, thursdayProgramList[i].Location)] = thursdayProgramList[i];
+
+                                if (i == thursdayProgramList.Count - 1)
+                                {
+                                @InsertRow(tempProgramList, currentTime)
                             }
-                            else if (thursdayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                            else if (thursdayProgramList[i + 1].StartTime.ToString("HH:mm") != currentTime)
                             {
-                    @InsertRow(tempProgramList, currentTime)
+                                @InsertRow(tempProgramList, currentTime)
                             }
                         }
                         }
@@ -206,19 +206,19 @@
                                 </div>
                             </div>
 
-                        for (int i = 0; i < fridayProgramList.Count; i++)
-                        {
-                            currentTime = fridayProgramList[i].StartTime.ToShortTimeString();
-
-                            tempProgramList[Array.IndexOf(locationList, fridayProgramList[i].Location)] = fridayProgramList[i];
-
-                            if (i == fridayProgramList.Count - 1)
+                            for (int i = 0; i < fridayProgramList.Count; i++)
                             {
-                    @InsertRow(tempProgramList, currentTime)
+                                currentTime = fridayProgramList[i].StartTime.ToString("HH:mm");
+
+                                tempProgramList[Array.IndexOf(locationList, fridayProgramList[i].Location)] = fridayProgramList[i];
+
+                                if (i == fridayProgramList.Count - 1)
+                                {
+                                @InsertRow(tempProgramList, currentTime)
                             }
-                            else if (fridayProgramList[i + 1].StartTime.ToShortTimeString() != currentTime)
+                            else if (fridayProgramList[i + 1].StartTime.ToString("HH:mm") != currentTime)
                             {
-                    @InsertRow(tempProgramList, currentTime)
+                                @InsertRow(tempProgramList, currentTime)
                             }
                         }
                         }
@@ -236,36 +236,60 @@
 
 @helper InsertRow(ProgramItem[] programList, string currentTime)
 {
-    <div class="row">
+    <div class="row black-format">
         <div class="col-md-1">
-            <p>@currentTime</p>
+            <p class="small-headline">@currentTime</p>
         </div>
         <div class="col-md-2">
             @if (programList[0] != null)
             {
-                <p class="visible-xs"><strong>@programList[0].Location</strong></p>
-                <p>@programList[0].Title</p>
+                <div>
+                    <span class="visible-xs"><strong>@programList[0].Location</strong></span>
+                    <span>@programList[0].Title</span>
+                    @foreach (var speaker in programList[0].Speakers)
+                    {
+                        <a href="@speaker.Url">@speaker.Name</a>
+                    }
+                </div>
             }
         </div>
         <div class="col-md-2 col-md-offset-1">
             @if (programList[1] != null)
             {
-                <p class="visible-xs"><strong>@programList[1].Location</strong></p>
-                <p>@programList[1].Title</p>
+                <div>
+                    <span class="visible-xs"><strong>@programList[1].Location</strong></span>
+                    <span>@programList[1].Title</span>
+                    @foreach (var speaker in programList[1].Speakers)
+                    {
+                        <a href="@speaker.Url">@speaker.Name</a>
+                    }
+                </div>
             }
         </div>
         <div class="col-md-2 col-md-offset-1">
             @if (programList[2] != null)
             {
-                <p class="visible-xs"><strong>@programList[2].Location</strong></p>
-                <p>@programList[2].Title</p>
+                <div>
+                    <span class="visible-xs"><strong>@programList[2].Location</strong></span>
+                    <span>@programList[2].Title</span>
+                    @foreach (var speaker in programList[2].Speakers)
+                    {
+                        <a href="@speaker.Url">@speaker.Name</a>
+                    }
+                </div>
             }
         </div>
         <div class="col-md-2 col-md-offset-1">
             @if (programList[3] != null)
             {
-                <p class="visible-xs"><strong>@programList[3].Location</strong></p>
-                <p>@programList[3].Title</p>
+                <div>
+                    <span class="visible-xs"><strong>@programList[3].Location</strong></span>
+                    <span>@programList[3].Title</span>
+                    @foreach (var speaker in programList[3].Speakers)
+                    {
+                        <a href="@speaker.Url">@speaker.Name</a>
+                    }
+                </div>
             }
         </div>
     </div>
