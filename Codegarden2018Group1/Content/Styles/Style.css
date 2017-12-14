@@ -888,9 +888,6 @@ header {
 .speaker-program {
   margin-top: 40px; }
 
-.program-header .container-fluid a {
-  color: black; }
-
 .custom-toggle .custom-item [data-custom-list-item].active .custom-item-header {
   border-bottom: 1px solid transparent; }
   .custom-toggle .custom-item [data-custom-list-item].active .custom-item-header .custom-toggle-icon::after {
